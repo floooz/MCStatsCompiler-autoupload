@@ -38,11 +38,16 @@ def getLeaderboard(df, cat, subcat):
     print("Leaderboard of", cat, subcat, ":")
     print(row)
 
-def getBestAndWorst(df, username):
+def getBestAndWorst(df, username, cleaning, cleaningvalue):
+    if cleaning == "true":
+        before_value = df.shape[0]
+        df['zero_count'] = df.apply(lambda row: (row == 0).sum(), axis=1)
+        nb_players = len(os.listdir('stats'))
+        df.drop(df[df['zero_count'] > (nb_players-int(cleaningvalue))].index, inplace=True)
+        print(before_value - df.shape[0], "rows dropped out of", before_value, "because of cleaning.")
     ranks = df.rank(axis=1, method='min', ascending=False)
     print(ranks[username].sort_values(ascending=False).to_string())
 
-    #TODO: add an option to only take into account stats where less than X players have a non-0 value
     #TODO: add an option to also display the number of players that have a non-0 value
 
 
@@ -59,4 +64,4 @@ if config['LEADERBOARD']['Enable'] == "true":
 
 # First leaderboard testing
 if config['BESTANDWORST']['Enable'] == "true":
-    getBestAndWorst(df, config['BESTANDWORST']['Username'])
+    getBestAndWorst(df, config['BESTANDWORST']['Username'], config['BESTANDWORST']['Cleaning'], config['BESTANDWORST']['CleaningValue'])
