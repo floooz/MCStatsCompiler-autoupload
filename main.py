@@ -40,10 +40,9 @@ def getLeaderboard(df, cat, subcat):
 
 def getBestAndWorst(df, username):
     ranks = df.rank(axis=1, method='min', ascending=False)
-    ranks.to_csv('temp.csv')
+    print(ranks[username].sort_values(ascending=False).to_string())
 
-    #TODO: display all ranks for current player
-    #TODO: add an option to ignore all stats where less than X players have a non-0 value
+    #TODO: add an option to only take into account stats where less than X players have a non-0 value
     #TODO: add an option to also display the number of players that have a non-0 value
 
 
