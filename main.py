@@ -1,6 +1,7 @@
 import json
 import os
 import pandas as pd
+import configparser
 
 
 # 1. Import each json file and store it
@@ -8,7 +9,7 @@ import pandas as pd
 # 3. Based on a category and sub-category of stats, return the leaderboard 
 
 
-def loadData():
+def loadData(csvtoggle, csvpath):
     df = pd.DataFrame()
     names = pd.read_csv('names.csv')
     for filename in os.listdir('stats'):
@@ -25,14 +26,22 @@ def loadData():
             df = temp_df
         else:
             df = df.join(temp_df, how="outer")
-        df.to_csv('temp.csv')
-        #print(df)
+    if csvtoggle:
+        df.to_csv(csvpath)
     return df
     
 def getLeaderboard(df, cat, subcat):
     row = df.loc['stats'].loc[cat].loc[subcat].fillna(0).sort_values()
+    print("Leaderboard of", cat, subcat, ":")
     print(row)
 
 
-df = loadData()
-getLeaderboard(df, 'minecraft:custom', 'minecraft:enchant_item')
+# Read config
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Load the data
+df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath'])
+
+# First leaderboard testing
+getLeaderboard(df, config['LEADERBOARD']['Category'], config['LEADERBOARD']['Subcategory'])

@@ -1,0 +1,115 @@
+{
+  "uuid": "dc142b4e-a28a-4506-a552-3381f48c40c5",
+  "starterPrompted": true,
+  "starterLocked": false,
+  "starterSelected": true,
+  "starterUUID": "2022c9c2-421f-4334-b546-d39af039e125",
+  "keyItems": [],
+  "battleTheme": "cobblemon:battle.pvp.default",
+  "extraData": {
+    "cobbledex_discovery": {
+      "registers": {
+        "pikachu": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1738513578930,
+            "caughtTimestamp": 1738513578930
+          }
+        },
+        "litleo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1738513812923,
+            "caughtTimestamp": 1738513812923
+          }
+        }
+      },
+      "name": "cobbledex_discovery"
+    },
+    "Cobbledex_RewardHistory": {
+      "received": [
+        "1",
+        "2"
+      ],
+      "name": "Cobbledex_RewardHistory"
+    },
+    "captureCount": {
+      "name": "captureCount",
+      "defeats": {
+        "pikachu": 1,
+        "litleo": 1
+      }
+    },
+    "yacb$boostManager": {
+      "name": "yacb$boostManager",
+      "manager": {
+        "shinyBoost": {
+          "active": false,
+          "amplifier": 0.0,
+          "ticksRemain": 0
+        },
+        "speciesWeightBoosts": {},
+        "labelWeightBoosts": {},
+        "endedBoosts": [],
+        "shouldSave": true,
+        "saveTimer": 1200
+      }
+    },
+    "koStreak": {
+      "name": "koStreak",
+      "species": "tauros",
+      "count": 1
+    },
+    "koCount": {
+      "name": "koCount",
+      "defeats": {
+        "tauros": 1
+      }
+    },
+    "captureStreak": {
+      "name": "captureStreak",
+      "species": "litleo",
+      "count": 1
+    },
+    "encounter": {
+      "name": "encounter",
+      "encounters": {
+        "pikachu": true,
+        "tauros": true,
+        "miltank": true,
+        "wattrel": true,
+        "litleo": true
+      }
+    },
+    "cobblenavPlayerStatsData": {
+      "name": "cobblenavPlayerStatsData",
+      "totalPvpCount": 0,
+      "startDate": 1738513578929,
+      "grantedBadges": [],
+      "pokemonUsage": {
+        "2022c9c2-421f-4334-b546-d39af039e125": 3
+      }
+    }
+  },
+  "advancementData": {
+    "totalCaptureCount": 1,
+    "totalEggsHatched": 0,
+    "totalEvolvedCount": 0,
+    "totalBattleVictoryCount": 2,
+    "totalPvPBattleVictoryCount": 0,
+    "totalPvWBattleVictoryCount": 2,
+    "totalPvNBattleVictoryCount": 0,
+    "totalShinyCaptureCount": 0,
+    "totalTradedCount": 0,
+    "totalTypeCaptureCounts": {
+      "fire": 1,
+      "normal": 1
+    },
+    "totalDefeatedCounts": {
+      "cobblemon:tauros": 1
+    },
+    "aspectsCollected": {}
+  }
+}
