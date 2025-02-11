@@ -12,10 +12,10 @@ import configparser
 
 def loadData(csvtoggle, csvpath):
     df = pd.DataFrame()
-    names = pd.read_csv('../data/names.csv')
-    for filename in os.listdir('stats'):
+    names = pd.read_csv('data/names.csv')
+    for filename in os.listdir('main_module/stats'):
         print("Now processing", filename)
-        file = open('stats/' + filename)
+        file = open('main_module/stats/' + filename)
         data = json.load(file)
         # Import the JSON to a Pandas DF
         temp_df = pd.json_normalize(data, meta_prefix=True)
@@ -39,7 +39,7 @@ def getLeaderboard(df, cat, subcat):
     print(row)
 
 def getBestAndWorst(df, username, cleaning, cleaningvalue):
-    nb_players = len(os.listdir('stats'))
+    nb_players = len(os.listdir('main_module/stats'))
     if cleaning == "true":
         before_value = df.shape[0]
         df['zero_count'] = df.apply(lambda row: (row == 0).sum(), axis=1)
@@ -56,7 +56,7 @@ def getBestAndWorst(df, username, cleaning, cleaningvalue):
 
 # Read config
 config = configparser.ConfigParser()
-config.read('main_config.ini')
+config.read('main_module/main_config.ini')
 
 # Load the data
 df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath'])
