@@ -26,7 +26,7 @@ def loadData(csvtoggle, csvpath):
             df = temp_df
         else:
             df = df.join(temp_df, how="outer")
-    if csvtoggle:
+    if csvtoggle == "true":
         df.to_csv(csvpath)
     return df
     
