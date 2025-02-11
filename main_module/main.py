@@ -12,7 +12,7 @@ import configparser
 
 def loadData(csvtoggle, csvpath):
     df = pd.DataFrame()
-    names = pd.read_csv('names.csv')
+    names = pd.read_csv('../data/names.csv')
     for filename in os.listdir('stats'):
         print("Now processing", filename)
         file = open('stats/' + filename)
@@ -56,7 +56,7 @@ def getBestAndWorst(df, username, cleaning, cleaningvalue):
 
 # Read config
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('main_config.ini')
 
 # Load the data
 df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath'])
