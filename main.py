@@ -39,16 +39,19 @@ def getLeaderboard(df, cat, subcat):
     print(row)
 
 def getBestAndWorst(df, username, cleaning, cleaningvalue):
+    nb_players = len(os.listdir('stats'))
     if cleaning == "true":
         before_value = df.shape[0]
         df['zero_count'] = df.apply(lambda row: (row == 0).sum(), axis=1)
-        nb_players = len(os.listdir('stats'))
         df.drop(df[df['zero_count'] > (nb_players-int(cleaningvalue))].index, inplace=True)
+        df = df.drop('zero_count', axis=1)
         print(before_value - df.shape[0], "rows dropped out of", before_value, "because of cleaning.")
     ranks = df.rank(axis=1, method='min', ascending=False)
-    print(ranks[username].sort_values(ascending=False).to_string())
-
-    #TODO: add an option to also display the number of players that have a non-0 value
+    ranks['non_zero_values'] = df.apply(lambda row: nb_players - (row == 0).sum(), axis=1)
+    ranks['value'] = df[username]
+    output = ranks[[username, 'value', 'non_zero_values']].sort_values(username, ascending=False).rename(columns={username:"rank_"+username, "value":"value_"+username})
+    print(output) # add .to_string() for the whole output
+    #ranks.to_csv('temp.csv')
 
 
 # Read config
