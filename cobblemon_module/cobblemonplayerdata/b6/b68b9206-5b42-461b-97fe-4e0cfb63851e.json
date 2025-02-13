@@ -1,0 +1,205 @@
+{
+  "uuid": "b68b9206-5b42-461b-97fe-4e0cfb63851e",
+  "starterPrompted": true,
+  "starterLocked": false,
+  "starterSelected": true,
+  "starterUUID": "7cecfb13-4f82-44e7-b623-2ab5038bb0b0",
+  "keyItems": [],
+  "battleTheme": "cobblemon:battle.pvp.default",
+  "extraData": {
+    "cobbledex_discovery": {
+      "registers": {
+        "absol": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739381525900,
+            "caughtTimestamp": 1739381525900
+          }
+        },
+        "raticate": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739381939904,
+            "caughtTimestamp": 1739381939904
+          }
+        },
+        "spinarak": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739383281297,
+            "caughtTimestamp": 1739383281297
+          }
+        },
+        "jigglypuff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739383340683,
+            "caughtTimestamp": 1739383340683
+          }
+        },
+        "gastly": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739383411600,
+            "caughtTimestamp": 1739383411600
+          }
+        },
+        "kricketot": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739383433757,
+            "caughtTimestamp": 1739383433757
+          }
+        }
+      },
+      "name": "cobbledex_discovery"
+    },
+    "Cobbledex_RewardHistory": {
+      "received": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "name": "Cobbledex_RewardHistory"
+    },
+    "captureCount": {
+      "name": "captureCount",
+      "defeats": {
+        "absol": 1,
+        "raticate": 1,
+        "spinarak": 1,
+        "jigglypuff": 1,
+        "gastly": 1,
+        "kricketot": 1
+      }
+    },
+    "yacb$boostManager": {
+      "name": "yacb$boostManager",
+      "manager": {
+        "shinyBoost": {
+          "active": false,
+          "amplifier": 0.0,
+          "ticksRemain": 0
+        },
+        "speciesWeightBoosts": {},
+        "labelWeightBoosts": {},
+        "endedBoosts": [],
+        "shouldSave": true,
+        "saveTimer": 1200
+      }
+    },
+    "koStreak": {
+      "name": "koStreak",
+      "species": "spinarak",
+      "count": 1
+    },
+    "koCount": {
+      "name": "koCount",
+      "defeats": {
+        "spinarak": 1
+      }
+    },
+    "captureStreak": {
+      "name": "captureStreak",
+      "species": "kricketot",
+      "count": 1
+    },
+    "encounter": {
+      "name": "encounter",
+      "encounters": {
+        "absol": true,
+        "raticate": true,
+        "spinarak": true,
+        "jigglypuff": true,
+        "gastly": true,
+        "kricketot": true
+      }
+    },
+    "cobblenavPlayerStatsData": {
+      "name": "cobblenavPlayerStatsData",
+      "totalPvpCount": 1,
+      "startDate": 1739381525900,
+      "grantedBadges": [],
+      "pokemonUsage": {
+        "7cecfb13-4f82-44e7-b623-2ab5038bb0b0": 5,
+        "16944ae6-c95b-4a67-bc1d-03de4f7edf78": 1,
+        "204eb79d-ae0c-4947-9c44-e64dffdc5462": 4
+      }
+    },
+    "cobblenavContactData": {
+      "name": "cobblenavContactData",
+      "contacts": [
+        {
+          "key": "6581b47f-2f0e-4923-80b7-3a14342dcb8b",
+          "profile": {
+            "id": "6581b47f-2f0e-4923-80b7-3a14342dcb8b",
+            "name": "NakaStream"
+          },
+          "name": "NakaStream",
+          "title": "",
+          "winnings": 0,
+          "losses": 1,
+          "team": [
+            {
+              "name": "tinkaton",
+              "level": 63
+            },
+            {
+              "name": "shedinja",
+              "level": 64
+            },
+            {
+              "name": "gyarados",
+              "level": 55
+            },
+            {
+              "name": "decidueye",
+              "level": 36
+            },
+            {
+              "name": "golbat",
+              "level": 33
+            },
+            {
+              "name": "cinderace",
+              "level": 35
+            }
+          ],
+          "trainer": false
+        }
+      ],
+      "title": ""
+    }
+  },
+  "advancementData": {
+    "totalCaptureCount": 5,
+    "totalEggsHatched": 0,
+    "totalEvolvedCount": 0,
+    "totalBattleVictoryCount": 4,
+    "totalPvPBattleVictoryCount": 0,
+    "totalPvWBattleVictoryCount": 4,
+    "totalPvNBattleVictoryCount": 0,
+    "totalShinyCaptureCount": 0,
+    "totalTradedCount": 0,
+    "totalTypeCaptureCounts": {
+      "normal": 2,
+      "bug": 2,
+      "poison": 2,
+      "fairy": 1,
+      "ghost": 1
+    },
+    "totalDefeatedCounts": {
+      "cobblemon:spinarak": 1
+    },
+    "aspectsCollected": {}
+  }
+}

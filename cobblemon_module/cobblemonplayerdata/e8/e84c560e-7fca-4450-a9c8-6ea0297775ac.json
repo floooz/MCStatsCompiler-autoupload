@@ -1,0 +1,195 @@
+{
+  "uuid": "e84c560e-7fca-4450-a9c8-6ea0297775ac",
+  "starterPrompted": true,
+  "starterLocked": false,
+  "starterSelected": true,
+  "starterUUID": "e8df3c73-19b2-4239-922d-61252d95f03e",
+  "keyItems": [],
+  "battleTheme": "cobblemon:battle.pvp.default",
+  "extraData": {
+    "cobbledex_discovery": {
+      "registers": {
+        "piplup": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739305583593,
+            "caughtTimestamp": 1739305583593
+          }
+        },
+        "maschiff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739307948575,
+            "caughtTimestamp": 1739307948575
+          }
+        },
+        "prinplup": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739308021900,
+            "caughtTimestamp": 1739308021900
+          }
+        },
+        "empoleon": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739308026224,
+            "caughtTimestamp": 1739308026224
+          }
+        },
+        "illumise": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739308275243,
+            "caughtTimestamp": 1739308275243
+          }
+        }
+      },
+      "name": "cobbledex_discovery"
+    },
+    "Cobbledex_RewardHistory": {
+      "received": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "name": "Cobbledex_RewardHistory"
+    },
+    "captureCount": {
+      "name": "captureCount",
+      "defeats": {
+        "piplup": 1,
+        "maschiff": 1,
+        "prinplup": 1,
+        "empoleon": 1,
+        "illumise": 1
+      }
+    },
+    "yacb$boostManager": {
+      "name": "yacb$boostManager",
+      "manager": {
+        "shinyBoost": {
+          "active": false,
+          "amplifier": 0.0,
+          "ticksRemain": 0
+        },
+        "speciesWeightBoosts": {},
+        "labelWeightBoosts": {},
+        "endedBoosts": [],
+        "shouldSave": false,
+        "saveTimer": 1188
+      }
+    },
+    "koStreak": {
+      "name": "koStreak",
+      "species": "zigzagoon",
+      "count": 1
+    },
+    "koCount": {
+      "name": "koCount",
+      "defeats": {
+        "crabrawler": 1,
+        "gimmighoul": 1,
+        "zigzagoon": 1
+      }
+    },
+    "captureStreak": {
+      "name": "captureStreak",
+      "species": "illumise",
+      "count": 1
+    },
+    "encounter": {
+      "name": "encounter",
+      "encounters": {
+        "piplup": true,
+        "hoothoot": true,
+        "maschiff": true,
+        "prinplup": true,
+        "empoleon": true,
+        "illumise": true,
+        "crabrawler": true,
+        "gimmighoul": true,
+        "zigzagoon": true
+      }
+    },
+    "cobblenavPlayerStatsData": {
+      "name": "cobblenavPlayerStatsData",
+      "totalPvpCount": 1,
+      "startDate": 1739305583593,
+      "grantedBadges": [],
+      "pokemonUsage": {
+        "8ff1b855-9f53-4005-b1ef-aaee8a1a1948": 4,
+        "e8df3c73-19b2-4239-922d-61252d95f03e": 5,
+        "ae034385-ad0a-4204-bcd4-b5ad649261d6": 4
+      }
+    },
+    "cobblenavContactData": {
+      "name": "cobblenavContactData",
+      "contacts": [
+        {
+          "key": "6c4ea7ff-b834-408c-9368-fbd2a164ee0c",
+          "profile": {
+            "id": "6c4ea7ff-b834-408c-9368-fbd2a164ee0c",
+            "name": "aypierre"
+          },
+          "name": "aypierre",
+          "title": "",
+          "winnings": 1,
+          "losses": 0,
+          "team": [
+            {
+              "name": "charizard",
+              "level": 94
+            },
+            {
+              "name": "wooloo",
+              "level": 5
+            },
+            {
+              "name": "mudbray",
+              "level": 1
+            },
+            {
+              "name": "snubbull",
+              "level": 14
+            },
+            {
+              "name": "eevee",
+              "level": 72
+            }
+          ],
+          "trainer": false
+        }
+      ],
+      "title": ""
+    }
+  },
+  "advancementData": {
+    "totalCaptureCount": 2,
+    "totalEggsHatched": 0,
+    "totalEvolvedCount": 2,
+    "totalBattleVictoryCount": 4,
+    "totalPvPBattleVictoryCount": 1,
+    "totalPvWBattleVictoryCount": 3,
+    "totalPvNBattleVictoryCount": 0,
+    "totalShinyCaptureCount": 0,
+    "totalTradedCount": 0,
+    "totalTypeCaptureCounts": {
+      "dark": 1,
+      "bug": 1
+    },
+    "totalDefeatedCounts": {
+      "cobblemon:crabrawler": 1,
+      "cobblemon:gimmighoul": 1,
+      "cobblemon:zigzagoon": 1
+    },
+    "aspectsCollected": {}
+  }
+}

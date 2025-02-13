@@ -1,28 +1,36 @@
 {
-  "uuid": "dc142b4e-a28a-4506-a552-3381f48c40c5",
+  "uuid": "f421a72e-c577-46c8-9a95-36e44555c7eb",
   "starterPrompted": true,
   "starterLocked": false,
   "starterSelected": true,
-  "starterUUID": "2022c9c2-421f-4334-b546-d39af039e125",
+  "starterUUID": "a1e18e7a-49dc-4dab-9117-7b7f3b3e7eb5",
   "keyItems": [],
   "battleTheme": "cobblemon:battle.pvp.default",
   "extraData": {
     "cobbledex_discovery": {
       "registers": {
-        "pikachu": {
+        "piplup": {
           "normal": {
             "isShiny": false,
             "status": "CAUGHT",
-            "discoveredTimestamp": 1738513578930,
-            "caughtTimestamp": 1738513578930
+            "discoveredTimestamp": 1739380088299,
+            "caughtTimestamp": 1739380088299
           }
         },
-        "litleo": {
+        "prinplup": {
           "normal": {
             "isShiny": false,
             "status": "CAUGHT",
-            "discoveredTimestamp": 1738513812923,
-            "caughtTimestamp": 1738513812923
+            "discoveredTimestamp": 1739381303390,
+            "caughtTimestamp": 1739381303390
+          }
+        },
+        "nosepass": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739383406436,
+            "caughtTimestamp": 1739383406436
           }
         }
       },
@@ -31,15 +39,17 @@
     "Cobbledex_RewardHistory": {
       "received": [
         "1",
-        "2"
+        "2",
+        "3"
       ],
       "name": "Cobbledex_RewardHistory"
     },
     "captureCount": {
       "name": "captureCount",
       "defeats": {
-        "pikachu": 1,
-        "litleo": 1
+        "piplup": 1,
+        "prinplup": 1,
+        "nosepass": 1
       }
     },
     "yacb$boostManager": {
@@ -60,55 +70,63 @@
     "koStreak": {
       "name": "koStreak",
       "species": "tauros",
-      "count": 1
+      "count": 2
     },
     "koCount": {
       "name": "koCount",
       "defeats": {
-        "tauros": 1
+        "lechonk": 1,
+        "skiddo": 1,
+        "sentret": 1,
+        "tauros": 2
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "litleo",
+      "species": "nosepass",
       "count": 1
     },
     "encounter": {
       "name": "encounter",
       "encounters": {
-        "pikachu": true,
-        "tauros": true,
+        "piplup": true,
         "miltank": true,
-        "wattrel": true,
-        "litleo": true
+        "lechonk": true,
+        "skiddo": true,
+        "sentret": true,
+        "prinplup": true,
+        "tauros": true,
+        "nosepass": true
       }
     },
     "cobblenavPlayerStatsData": {
       "name": "cobblenavPlayerStatsData",
       "totalPvpCount": 0,
-      "startDate": 1738513578929,
+      "startDate": 1739380088299,
       "grantedBadges": [],
       "pokemonUsage": {
-        "2022c9c2-421f-4334-b546-d39af039e125": 3
+        "a1e18e7a-49dc-4dab-9117-7b7f3b3e7eb5": 7
       }
     }
   },
   "advancementData": {
     "totalCaptureCount": 1,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 0,
-    "totalBattleVictoryCount": 2,
+    "totalEvolvedCount": 1,
+    "totalBattleVictoryCount": 6,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 2,
+    "totalPvWBattleVictoryCount": 6,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "fire": 1,
-      "normal": 1
+      "rock": 1
     },
     "totalDefeatedCounts": {
-      "cobblemon:tauros": 1
+      "cobblemon:lechonk": 1,
+      "cobblemon:skiddo": 1,
+      "cobblemon:sentret": 1,
+      "cobblemon:tauros": 2
     },
     "aspectsCollected": {}
   }

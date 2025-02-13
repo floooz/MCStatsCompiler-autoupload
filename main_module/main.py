@@ -65,6 +65,6 @@ df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath
 if config['LEADERBOARD']['Enable'] == "true":
     getLeaderboard(df, config['LEADERBOARD']['Category'], config['LEADERBOARD']['Subcategory'])
 
-# First leaderboard testing
+# First bestandworst testing
 if config['BESTANDWORST']['Enable'] == "true":
     getBestAndWorst(df, config['BESTANDWORST']['Username'], config['BESTANDWORST']['Cleaning'], config['BESTANDWORST']['CleaningValue'])
