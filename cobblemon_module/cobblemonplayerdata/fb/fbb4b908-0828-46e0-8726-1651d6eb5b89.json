@@ -319,6 +319,12 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739321201621,
             "caughtTimestamp": 1739321201621
+          },
+          "roaming": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568848470,
+            "caughtTimestamp": 1739568848470
           }
         },
         "tandemaus": {
@@ -3004,6 +3010,54 @@
             "discoveredTimestamp": 1739548491774,
             "caughtTimestamp": 1739548491774
           }
+        },
+        "shiinotic": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739567438194,
+            "caughtTimestamp": 1739567438194
+          }
+        },
+        "mandibuzz": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568268266,
+            "caughtTimestamp": 1739568268266
+          }
+        },
+        "vullaby": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568496893,
+            "caughtTimestamp": 1739568496893
+          }
+        },
+        "veluza": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569112068,
+            "caughtTimestamp": 1739569112068
+          }
+        },
+        "binacle": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569234268,
+            "caughtTimestamp": 1739569234268
+          }
+        },
+        "fomantis": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569495520,
+            "caughtTimestamp": 1739569524022
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -3380,7 +3434,14 @@
         "367",
         "368",
         "369",
-        "370"
+        "370",
+        "371",
+        "372",
+        "373",
+        "374",
+        "375",
+        "376",
+        "377"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -3419,7 +3480,7 @@
         "pidgeot": 1,
         "rowlet": 1,
         "corvisquire": 1,
-        "gimmighoul": 1,
+        "gimmighoul": 2,
         "tandemaus": 2,
         "komala": 1,
         "kangaskhan": 1,
@@ -3578,7 +3639,7 @@
         "herdier": 1,
         "stoutland": 1,
         "arcanine": 1,
-        "kingler": 1,
+        "kingler": 2,
         "glalie": 1,
         "slowbro": 1,
         "piloswine": 1,
@@ -3753,7 +3814,13 @@
         "morelull": 1,
         "salandit": 1,
         "venipede": 1,
-        "durant": 1
+        "durant": 1,
+        "shiinotic": 1,
+        "mandibuzz": 1,
+        "vullaby": 1,
+        "veluza": 1,
+        "binacle": 1,
+        "fomantis": 1
       }
     },
     "yacb$boostManager": {
@@ -3767,8 +3834,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 1168
       }
     },
     "koStreak": {
@@ -3797,7 +3864,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "durant",
+      "species": "fomantis",
       "count": 1
     },
     "encounter": {
@@ -4175,7 +4242,13 @@
         "morelull": true,
         "salandit": true,
         "venipede": true,
-        "durant": true
+        "durant": true,
+        "shiinotic": true,
+        "mandibuzz": true,
+        "vullaby": true,
+        "veluza": true,
+        "binacle": true,
+        "fomantis": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -4207,7 +4280,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 254,
+    "totalCaptureCount": 261,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 141,
     "totalBattleVictoryCount": 76,
@@ -4215,19 +4288,19 @@
     "totalPvWBattleVictoryCount": 76,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 8,
-    "totalTradedCount": 1,
+    "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
-      "psychic": 15,
+      "psychic": 16,
       "normal": 53,
-      "water": 41,
-      "flying": 32,
-      "rock": 11,
+      "water": 43,
+      "flying": 34,
+      "rock": 12,
       "steel": 12,
-      "ghost": 18,
+      "ghost": 19,
       "bug": 33,
-      "fairy": 19,
-      "dark": 14,
-      "grass": 20,
+      "fairy": 20,
+      "dark": 16,
+      "grass": 22,
       "fighting": 6,
       "poison": 22,
       "fire": 19,

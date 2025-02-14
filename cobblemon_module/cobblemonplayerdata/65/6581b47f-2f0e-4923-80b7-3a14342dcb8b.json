@@ -1710,6 +1710,46 @@
             "discoveredTimestamp": 1739555037215,
             "caughtTimestamp": 1739555086368
           }
+        },
+        "joltik": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739565035884,
+            "caughtTimestamp": 1739565061512
+          }
+        },
+        "pidgey": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739565755116,
+            "caughtTimestamp": 1739565755116
+          }
+        },
+        "aron": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739567630179,
+            "caughtTimestamp": 1739567630179
+          }
+        },
+        "jigglypuff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568808962,
+            "caughtTimestamp": 1739568808962
+          }
+        },
+        "galvantula": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739570008026,
+            "caughtTimestamp": 1739570026864
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1925,7 +1965,12 @@
         "206",
         "207",
         "208",
-        "209"
+        "209",
+        "210",
+        "211",
+        "212",
+        "213",
+        "214"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2134,7 +2179,12 @@
         "hoothoot": 1,
         "gloom": 1,
         "whimsicott": 1,
-        "sawsbuck": 1
+        "sawsbuck": 1,
+        "joltik": 1,
+        "pidgey": 1,
+        "aron": 1,
+        "jigglypuff": 1,
+        "galvantula": 1
       }
     },
     "yacb$boostManager": {
@@ -2193,7 +2243,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "bunnelby",
+      "species": "galvantula",
       "count": 1
     },
     "encounter": {
@@ -2411,7 +2461,11 @@
         "hoothoot": true,
         "oinkologne": true,
         "gloom": true,
-        "whimsicott": true
+        "whimsicott": true,
+        "joltik": true,
+        "pidgey": true,
+        "aron": true,
+        "galvantula": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2420,7 +2474,7 @@
       "startDate": 1739302539574,
       "grantedBadges": [],
       "pokemonUsage": {
-        "cc495b6e-d3c2-4d18-885e-e7a40e1d8c99": 44,
+        "cc495b6e-d3c2-4d18-885e-e7a40e1d8c99": 46,
         "6b29e9d9-9274-4abe-b86c-7b79571e3bb2": 12,
         "e525f1a0-7fb4-4f8d-8852-9859ef4ea93d": 14,
         "0ee88af7-10ac-4c0e-9701-b95baf11e333": 4,
@@ -2432,28 +2486,31 @@
         "ee01bb6a-35bf-470e-b4fa-54eb69efddef": 3,
         "ef500744-9c3c-4361-b1a7-876c6f315da1": 14,
         "1ffaf584-987b-4f00-bb05-f9c672c068d4": 12,
-        "d0f030b6-b617-44a6-9603-66172ae76057": 146,
+        "d0f030b6-b617-44a6-9603-66172ae76057": 150,
         "ea923bf9-f6e5-46c1-a7c9-0855c99e6219": 15,
         "5d1a2a04-a0e7-43e2-8cda-f644705b8048": 5,
         "2c0dc078-4649-4db2-940e-4082132f3e3b": 3,
         "4c873ffe-35cc-4697-a144-738c409b6c2b": 6,
         "52f00e84-9c46-47ec-8c19-820639d2b649": 1,
         "ce54273c-c2cc-423d-a804-65bcc4aaa3d6": 10,
-        "9a8b5064-dd73-48c2-86d8-c72edd7df408": 91,
+        "9a8b5064-dd73-48c2-86d8-c72edd7df408": 95,
         "8cc1ade0-0dca-488e-9124-889a4381aac7": 8,
         "a390fadb-5a0e-4520-aad3-465c2a0b06be": 52,
         "7e476b3f-de7f-4f6c-b2f0-5e9a0c6db0f3": 25,
+        "55f203ba-bc66-4a67-8cfc-c3c772211072": 2,
+        "99aff9ef-f98d-4ebb-98ed-0038c47ed5ff": 1,
         "64dfa746-3910-437a-89aa-f6e2efd73684": 126,
         "054ecfcb-fecc-4f82-b662-738c0e7247bd": 21,
-        "1ace93f1-eb04-4bbe-9671-eced64c232f5": 150,
+        "1ace93f1-eb04-4bbe-9671-eced64c232f5": 154,
         "e4ffcda6-db8f-4594-bfb7-3dc718d90804": 3,
         "3042f88d-98a2-465e-af6b-339b63cb41a7": 4,
-        "197e70bd-f04b-4b08-8969-a69000c9e481": 71,
+        "197e70bd-f04b-4b08-8969-a69000c9e481": 73,
+        "8a287886-b86f-483c-a542-542cf0d3e032": 2,
         "2f9d7944-633e-4d74-9b90-c16cc7872a1b": 3,
         "3e98c90a-7193-49a1-b0c4-cdb353f008d3": 11,
         "cf3a520b-60cc-4d95-bdc9-ec76fa154ff5": 70,
         "059fe9c8-eca1-4371-afe6-3284e16cbb71": 2,
-        "197dc5bf-6275-4454-a94d-9630fd517936": 63,
+        "197dc5bf-6275-4454-a94d-9630fd517936": 66,
         "518746ca-e485-4cae-8efe-ace0b6c018c2": 29,
         "c54f6791-d83f-45b4-b448-42db78a26b1e": 2,
         "bc1f1681-9f70-4334-91ba-adccbe86fdd1": 20
@@ -2519,29 +2576,29 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 203,
+    "totalCaptureCount": 208,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 20,
-    "totalBattleVictoryCount": 170,
+    "totalBattleVictoryCount": 174,
     "totalPvPBattleVictoryCount": 2,
-    "totalPvWBattleVictoryCount": 168,
+    "totalPvWBattleVictoryCount": 172,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 7,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "bug": 24,
-      "fairy": 15,
-      "normal": 48,
-      "electric": 11,
+      "bug": 26,
+      "fairy": 16,
+      "normal": 50,
+      "electric": 13,
       "poison": 16,
       "grass": 13,
       "fire": 21,
       "fighting": 5,
       "water": 29,
-      "rock": 10,
-      "flying": 20,
+      "rock": 11,
+      "flying": 21,
       "ghost": 18,
-      "steel": 11,
+      "steel": 12,
       "dark": 15,
       "ground": 16,
       "ice": 7,

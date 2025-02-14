@@ -2101,6 +2101,22 @@
             "discoveredTimestamp": 1739517969877,
             "caughtTimestamp": 1739517969877
           }
+        },
+        "ledian": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569468974,
+            "caughtTimestamp": 1739569577450
+          }
+        },
+        "magmortar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569968421,
+            "caughtTimestamp": 1739570025768
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2369,7 +2385,9 @@
         "259",
         "260",
         "261",
-        "262"
+        "262",
+        "263",
+        "264"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2589,7 +2607,7 @@
         "moltres": 1,
         "popplio": 1,
         "oinkologne": 1,
-        "centiskorch": 1,
+        "centiskorch": 2,
         "ursaluna": 1,
         "dragalge": 1,
         "latios": 1,
@@ -2632,7 +2650,9 @@
         "skeledirge": 1,
         "bewear": 1,
         "riolu": 1,
-        "abra": 1
+        "abra": 1,
+        "ledian": 1,
+        "magmortar": 1
       }
     },
     "yacb$boostManager": {
@@ -2652,7 +2672,7 @@
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "beldum",
+      "species": "rapidash",
       "count": 1
     },
     "koCount": {
@@ -2678,12 +2698,13 @@
         "lechonk": 1,
         "wingull": 1,
         "gimmighoul": 1,
-        "beldum": 1
+        "beldum": 1,
+        "rapidash": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "tinkatink",
+      "species": "centiskorch",
       "count": 1
     },
     "encounter": {
@@ -2955,7 +2976,10 @@
         "bewear": true,
         "riolu": true,
         "abra": true,
-        "beldum": true
+        "beldum": true,
+        "ledian": true,
+        "magmortar": true,
+        "rapidash": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2965,16 +2989,16 @@
       "grantedBadges": [],
       "pokemonUsage": {
         "749ee70c-7dbc-4bdb-9f05-51904b1f0a7e": 2,
-        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 86,
+        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 90,
         "00139690-6faa-4030-9659-31180f0b54f6": 4,
         "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 83,
-        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 59,
-        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 114,
+        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 63,
+        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 118,
         "67a852ef-c143-4674-9405-36cf4bc12fb1": 4,
-        "4265ddc8-a174-4c59-a1e4-3d86720c7980": 23,
+        "4265ddc8-a174-4c59-a1e4-3d86720c7980": 27,
         "81ad53e8-0a48-46c7-84c9-179600720595": 3,
         "2a0f2eef-ab45-4ee1-a37e-877b5ad4f961": 4,
-        "863613b8-1836-4aa6-aa38-2b7bcf483623": 100,
+        "863613b8-1836-4aa6-aa38-2b7bcf483623": 104,
         "eb628627-d218-4f25-b392-b31da044a664": 14,
         "bb88021b-8f35-460f-8b35-2cc21b48c02f": 7,
         "0f4b2b31-2456-4324-ad4f-bb143a8816c1": 1,
@@ -2984,18 +3008,18 @@
         "cd5489bd-d7c6-4e55-9cf2-4afc3ac979c1": 3,
         "df21fb79-4308-4d95-806e-114966c0a77e": 5,
         "7673250e-135d-4702-8d49-749dffc97202": 31,
-        "c2977cc1-cea2-4fbc-bc17-8da21fc356e0": 10,
+        "c2977cc1-cea2-4fbc-bc17-8da21fc356e0": 14,
         "965c3e26-7a40-4264-90c7-98258f3663f5": 47
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 282,
+    "totalCaptureCount": 285,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 17,
-    "totalBattleVictoryCount": 107,
+    "totalBattleVictoryCount": 111,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 107,
+    "totalPvWBattleVictoryCount": 111,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 10,
     "totalTradedCount": 2,
@@ -3003,14 +3027,14 @@
       "grass": 37,
       "poison": 22,
       "normal": 51,
-      "fire": 23,
+      "fire": 25,
       "ghost": 18,
       "ground": 27,
       "water": 48,
       "dark": 19,
       "fairy": 18,
-      "bug": 35,
-      "flying": 33,
+      "bug": 37,
+      "flying": 34,
       "steel": 8,
       "electric": 13,
       "rock": 11,
@@ -3040,7 +3064,8 @@
       "cobblemon:lechonk": 1,
       "cobblemon:wingull": 1,
       "cobblemon:gimmighoul": 1,
-      "cobblemon:beldum": 1
+      "cobblemon:beldum": 1,
+      "cobblemon:rapidash": 1
     },
     "aspectsCollected": {}
   }

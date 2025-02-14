@@ -1350,6 +1350,38 @@
             "discoveredTimestamp": 1739555373568,
             "caughtTimestamp": 1739555373568
           }
+        },
+        "meowth": {
+          "galar": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739555469194,
+            "caughtTimestamp": 1739555469194
+          }
+        },
+        "yamper": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739555499345,
+            "caughtTimestamp": 1739555499345
+          }
+        },
+        "granbull": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739555683120,
+            "caughtTimestamp": 1739555683120
+          }
+        },
+        "squawkabilly": {
+          "blue": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739555737007,
+            "caughtTimestamp": 1739555737007
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1513,7 +1545,11 @@
         "154",
         "155",
         "156",
-        "157"
+        "157",
+        "158",
+        "159",
+        "160",
+        "161"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1673,7 +1709,11 @@
         "emolga": 1,
         "lopunny": 1,
         "staravia": 1,
-        "rookidee": 1
+        "rookidee": 1,
+        "meowth": 1,
+        "yamper": 1,
+        "granbull": 1,
+        "squawkabilly": 1
       }
     },
     "yacb$boostManager": {
@@ -1693,8 +1733,8 @@
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "basculin",
-      "count": 3
+      "species": "squawkabilly",
+      "count": 1
     },
     "koCount": {
       "name": "koCount",
@@ -1707,12 +1747,13 @@
         "drifloon": 1,
         "herdier": 1,
         "elekid": 1,
-        "basculin": 3
+        "basculin": 3,
+        "squawkabilly": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "rookidee",
+      "species": "squawkabilly",
       "count": 1
     },
     "encounter": {
@@ -1877,7 +1918,11 @@
         "emolga": true,
         "lopunny": true,
         "staravia": true,
-        "rookidee": true
+        "rookidee": true,
+        "meowth": true,
+        "yamper": true,
+        "squawkabilly": true,
+        "granbull": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1886,13 +1931,13 @@
       "startDate": 1739300794873,
       "grantedBadges": [],
       "pokemonUsage": {
-        "a9aef9f5-6197-44dc-b3ac-879547e1e5e8": 85,
+        "a9aef9f5-6197-44dc-b3ac-879547e1e5e8": 90,
         "058522c1-a8b8-43d0-b323-718a4db33c94": 17,
-        "d1acdfdb-57d5-41a2-b048-e33007be9564": 90,
+        "d1acdfdb-57d5-41a2-b048-e33007be9564": 95,
         "616ac118-4948-4ed7-8794-32643655dc6d": 8,
         "f9d826a1-7208-4759-947e-c95d2ee6cfcb": 6,
-        "6fa4f4a3-dd00-4309-92d2-9f96ca5664d5": 70,
-        "bb03665e-8f77-4b5e-b859-0d13cf2ab7bf": 109,
+        "6fa4f4a3-dd00-4309-92d2-9f96ca5664d5": 75,
+        "bb03665e-8f77-4b5e-b859-0d13cf2ab7bf": 114,
         "47b8058f-9736-42b7-b0af-d1888332226d": 18,
         "c80e912f-a2d6-46e5-b14c-d1609b4577f4": 7,
         "121703d9-3278-4cf8-a6c6-d7459db5b3f7": 10,
@@ -1900,34 +1945,34 @@
         "e1057821-f7d3-4844-ab83-9897217c9dc3": 11,
         "286f53a3-730f-452d-bcbf-761a0c9dc36e": 16,
         "d13e24d6-3aef-4cc5-8d9c-213a10ddf4e0": 13,
-        "ad96dafb-92d1-48f4-9c43-61e71fb9a2ce": 65,
-        "39fb81a0-ce97-48d8-913f-bdb27174cd31": 65,
+        "ad96dafb-92d1-48f4-9c43-61e71fb9a2ce": 70,
+        "39fb81a0-ce97-48d8-913f-bdb27174cd31": 70,
         "94a14983-445f-4b4c-8760-b8c41d046c8c": 15
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 157,
+    "totalCaptureCount": 161,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 12,
-    "totalBattleVictoryCount": 105,
+    "totalBattleVictoryCount": 110,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 105,
+    "totalPvWBattleVictoryCount": 110,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 4,
     "totalTypeCaptureCounts": {
-      "normal": 42,
-      "fairy": 12,
-      "flying": 23,
+      "normal": 43,
+      "fairy": 13,
+      "flying": 24,
       "bug": 26,
       "fighting": 7,
       "ground": 15,
       "rock": 5,
-      "electric": 11,
+      "electric": 12,
       "grass": 18,
       "poison": 14,
-      "steel": 4,
+      "steel": 5,
       "ghost": 8,
       "water": 18,
       "psychic": 6,
@@ -1944,7 +1989,8 @@
       "cobblemon:drifloon": 1,
       "cobblemon:herdier": 1,
       "cobblemon:elekid": 1,
-      "cobblemon:basculin": 3
+      "cobblemon:basculin": 3,
+      "cobblemon:squawkabilly": 1
     },
     "aspectsCollected": {}
   }

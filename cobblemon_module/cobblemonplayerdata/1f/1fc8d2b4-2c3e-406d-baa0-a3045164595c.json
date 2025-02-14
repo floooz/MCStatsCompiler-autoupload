@@ -534,8 +534,9 @@
         "sizzlipede": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739374094774
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739374094774,
+            "caughtTimestamp": 1739556216331
           }
         },
         "centiskorch": {
@@ -1642,6 +1643,38 @@
             "discoveredTimestamp": 1739554939316,
             "caughtTimestamp": 1739554939316
           }
+        },
+        "magmortar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739556288218,
+            "caughtTimestamp": 1739556288218
+          }
+        },
+        "houndoom": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739557131874,
+            "caughtTimestamp": 1739557131874
+          }
+        },
+        "dragapult": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566716076,
+            "caughtTimestamp": 1739566716076
+          }
+        },
+        "woobat": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739571267563,
+            "caughtTimestamp": 1739571267563
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1820,7 +1853,12 @@
         "169",
         "170",
         "171",
-        "172"
+        "172",
+        "173",
+        "174",
+        "175",
+        "176",
+        "177"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1997,7 +2035,12 @@
         "pyroar": 1,
         "drifblim": 1,
         "klefki": 1,
-        "ampharos": 1
+        "ampharos": 1,
+        "sizzlipede": 1,
+        "magmortar": 1,
+        "houndoom": 1,
+        "dragapult": 1,
+        "woobat": 1
       }
     },
     "yacb$boostManager": {
@@ -2011,8 +2054,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 924
       }
     },
     "koStreak": {
@@ -2033,7 +2076,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "ampharos",
+      "species": "woobat",
       "count": 1
     },
     "encounter": {
@@ -2215,7 +2258,12 @@
         "pyroar": true,
         "drifblim": true,
         "klefki": true,
-        "ampharos": true
+        "ampharos": true,
+        "sizzlipede": true,
+        "magmortar": true,
+        "houndoom": true,
+        "dragapult": true,
+        "woobat": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2245,9 +2293,9 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 186,
+    "totalCaptureCount": 190,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 12,
+    "totalEvolvedCount": 13,
     "totalBattleVictoryCount": 21,
     "totalPvPBattleVictoryCount": 0,
     "totalPvWBattleVictoryCount": 21,
@@ -2259,18 +2307,18 @@
       "steel": 9,
       "ghost": 18,
       "poison": 12,
-      "fire": 15,
-      "flying": 28,
-      "dark": 7,
+      "fire": 18,
+      "flying": 29,
+      "dark": 8,
       "water": 42,
       "electric": 19,
       "fairy": 12,
       "normal": 34,
       "rock": 10,
-      "bug": 19,
+      "bug": 20,
       "grass": 18,
       "fighting": 3,
-      "psychic": 14,
+      "psychic": 15,
       "dragon": 3
     },
     "totalDefeatedCounts": {

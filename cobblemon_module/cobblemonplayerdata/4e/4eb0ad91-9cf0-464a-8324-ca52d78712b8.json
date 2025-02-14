@@ -280,6 +280,141 @@
             "discoveredTimestamp": 1739479931833,
             "caughtTimestamp": 1739479931833
           }
+        },
+        "oddish": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739563549173
+          }
+        },
+        "machop": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739564096965,
+            "caughtTimestamp": 1739564096965
+          }
+        },
+        "shellder": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739564405260,
+            "caughtTimestamp": 1739564405260
+          }
+        },
+        "seel": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739564752565,
+            "caughtTimestamp": 1739564752565
+          }
+        },
+        "bellsprout": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739565499735,
+            "caughtTimestamp": 1739565499735
+          }
+        },
+        "heracross": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739565729514,
+            "caughtTimestamp": 1739565729514
+          }
+        },
+        "mankey": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739565810277,
+            "caughtTimestamp": 1739565810277
+          }
+        },
+        "golduck": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566011046,
+            "caughtTimestamp": 1739566023012
+          }
+        },
+        "rhyhorn": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566172545,
+            "caughtTimestamp": 1739566172545
+          }
+        },
+        "goldeen": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566210939,
+            "caughtTimestamp": 1739566210939
+          }
+        },
+        "doduo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566464270,
+            "caughtTimestamp": 1739566512467
+          }
+        },
+        "drowzee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739566937213,
+            "caughtTimestamp": 1739566937213
+          }
+        },
+        "horsea": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739567012764,
+            "caughtTimestamp": 1739567012764
+          }
+        },
+        "lickitung": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568303567,
+            "caughtTimestamp": 1739568303567
+          }
+        },
+        "eevee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568659616,
+            "caughtTimestamp": 1739568659616
+          }
+        },
+        "growlithe": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739568742016,
+            "caughtTimestamp": 1739568742016
+          }
+        },
+        "ponyta": {
+          "galar": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739569014964,
+            "caughtTimestamp": 1739569014964
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -320,7 +455,23 @@
         "31",
         "32",
         "33",
-        "34"
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -356,11 +507,27 @@
         "vulpix": 1,
         "diglett": 1,
         "krabby": 1,
-        "slowpoke": 1,
-        "geodude": 1,
-        "zubat": 1,
+        "slowpoke": 2,
+        "geodude": 2,
+        "zubat": 2,
         "fearow": 1,
-        "spearow": 1
+        "spearow": 1,
+        "machop": 1,
+        "shellder": 1,
+        "seel": 1,
+        "bellsprout": 1,
+        "heracross": 1,
+        "mankey": 1,
+        "golduck": 1,
+        "rhyhorn": 1,
+        "goldeen": 1,
+        "doduo": 1,
+        "drowzee": 1,
+        "horsea": 1,
+        "lickitung": 1,
+        "eevee": 1,
+        "growlithe": 1,
+        "ponyta": 1
       }
     },
     "yacb$boostManager": {
@@ -374,13 +541,13 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 677
       }
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "paras",
+      "species": "heracross",
       "count": 1
     },
     "koCount": {
@@ -402,12 +569,13 @@
         "growlithe": 1,
         "rapidash": 1,
         "cubone": 1,
-        "paras": 1
+        "paras": 1,
+        "heracross": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "spearow",
+      "species": "ponyta",
       "count": 1
     },
     "encounter": {
@@ -464,7 +632,21 @@
         "rapidash": true,
         "magmar": true,
         "cubone": true,
-        "paras": true
+        "paras": true,
+        "machop": true,
+        "shellder": true,
+        "seel": true,
+        "bellsprout": true,
+        "heracross": true,
+        "mankey": true,
+        "golduck": true,
+        "rhyhorn": true,
+        "goldeen": true,
+        "doduo": true,
+        "drowzee": true,
+        "horsea": true,
+        "lickitung": true,
+        "eevee": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -473,47 +655,48 @@
       "startDate": 1739300794872,
       "grantedBadges": [],
       "pokemonUsage": {
-        "e2c6e191-8eb0-4212-8424-07e11753ee00": 4,
+        "e2c6e191-8eb0-4212-8424-07e11753ee00": 9,
         "aad123be-6d40-4b6d-b986-b2335955eca9": 15,
-        "2b23a067-4c89-40bb-8c45-7808328aee1a": 4,
+        "2b23a067-4c89-40bb-8c45-7808328aee1a": 9,
         "997afab1-b42c-4fa5-b33d-ac7b267ab252": 9,
-        "91c4fa6d-d81c-4989-ae4c-5850e823028c": 40,
+        "91c4fa6d-d81c-4989-ae4c-5850e823028c": 45,
         "890d71f4-e769-4041-a3b3-654a8ca5cf9d": 6,
-        "9e3eb833-e560-4b22-8bab-5442b80f91ff": 42,
+        "9e3eb833-e560-4b22-8bab-5442b80f91ff": 47,
         "d6fd7c49-bf19-4577-be2d-c98117186cb8": 32,
         "77008bdc-70d6-4579-8d66-c6a4cba471ad": 7,
         "9c529fca-b844-4200-bcbc-93ee095f4a8b": 17,
         "71eee398-8665-4df6-b00a-b0ed16677af9": 24,
-        "bcb0d863-bb10-436f-8e72-0f91d64d8f1d": 11,
-        "8adfc75b-2557-4dcd-b9e9-ef89af85f544": 11
+        "bcb0d863-bb10-436f-8e72-0f91d64d8f1d": 16,
+        "8adfc75b-2557-4dcd-b9e9-ef89af85f544": 16
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 29,
+    "totalCaptureCount": 48,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 5,
-    "totalBattleVictoryCount": 35,
+    "totalBattleVictoryCount": 40,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 35,
+    "totalPvWBattleVictoryCount": 40,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
       "ghost": 1,
-      "poison": 2,
-      "normal": 12,
-      "bug": 4,
-      "flying": 6,
-      "grass": 3,
+      "poison": 4,
+      "normal": 15,
+      "bug": 5,
+      "flying": 8,
+      "grass": 4,
       "electric": 1,
       "steel": 1,
-      "water": 4,
+      "water": 10,
       "fairy": 1,
-      "ground": 3,
-      "fire": 1,
-      "psychic": 1,
-      "rock": 1
+      "ground": 5,
+      "fire": 2,
+      "psychic": 4,
+      "rock": 3,
+      "fighting": 3
     },
     "totalDefeatedCounts": {
       "cobblemon:ponyta": 1,
@@ -532,7 +715,8 @@
       "cobblemon:growlithe": 1,
       "cobblemon:rapidash": 1,
       "cobblemon:cubone": 1,
-      "cobblemon:paras": 1
+      "cobblemon:paras": 1,
+      "cobblemon:heracross": 1
     },
     "aspectsCollected": {}
   }

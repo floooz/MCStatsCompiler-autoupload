@@ -43,10 +43,11 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     return df
 
 
-def most_pokemons_leaderboard(df):
+def most_pokemons_leaderboard(df, config):
     # Load the Excel file
     file_path = "output.xlsx"
 
+    # This first leaderboard might be removed in the future
     sheet_name = "leaderboard1"
     wb = openpyxl.load_workbook(file_path)
     ws = wb[sheet_name]
@@ -61,12 +62,14 @@ def most_pokemons_leaderboard(df):
     sheet_name = "leaderboard2"
     ws = wb[sheet_name]
     i = 0
-    for index, row in df[0:40].iterrows():
-        ws.cell(row=(i%10)+3, column=3+math.floor(i/10)*3, value=index)
-        ws.cell(row=(i%10)+3, column=4+math.floor(i/10)*3, value=row[0])
+    ExcelRows = config['LEADERBOARD']['ExcelRows']
+    ExcelCols = config['LEADERBOARD']['ExcelColumns']
+    for index, row in df[0:ExcelRows*ExcelCols].iterrows():
+        ws.cell(row=(i%ExcelRows)+3, column=3+math.floor(i/ExcelRows)*3, value=index)
+        ws.cell(row=(i%ExcelRows)+3, column=4+math.floor(i/ExcelRows)*3, value=row[0])
         i += 1
     now = datetime.datetime.now()
-    ws.cell(row=13, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
+    ws.cell(row=ExcelRows+3, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
     wb.save(file_path)
 
 
@@ -92,7 +95,7 @@ player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
 player_sum['index'] = range(len(player_sum), 0, -1)
 player_sum = player_sum.iloc[::-1]
 print(player_sum)
-most_pokemons_leaderboard(player_sum.iloc)
+most_pokemons_leaderboard(player_sum.iloc, config)
 
 
 # Close the Connection
