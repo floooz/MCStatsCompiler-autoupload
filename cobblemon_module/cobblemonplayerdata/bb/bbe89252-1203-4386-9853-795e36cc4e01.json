@@ -824,6 +824,78 @@
             "discoveredTimestamp": 1739496952175,
             "caughtTimestamp": 1739496952175
           }
+        },
+        "petilil": {
+          "hisuibias": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739506427933,
+            "caughtTimestamp": 1739506427933
+          }
+        },
+        "lycanroc": {
+          "midnight": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739506634583,
+            "caughtTimestamp": 1739506634583
+          }
+        },
+        "cleffa": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739506693431,
+            "caughtTimestamp": 1739506693431
+          }
+        },
+        "rockruff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739506821180,
+            "caughtTimestamp": 1739506821180
+          }
+        },
+        "skiddo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739506959931,
+            "caughtTimestamp": 1739506959931
+          }
+        },
+        "hariyama": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739507041681,
+            "caughtTimestamp": 1739507041681
+          }
+        },
+        "makuhita": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739507172929,
+            "caughtTimestamp": 1739507172929
+          }
+        },
+        "weedle": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739507186333,
+            "caughtTimestamp": 1739507186333
+          }
+        },
+        "spinda": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739508124378,
+            "caughtTimestamp": 1739508124378
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -933,7 +1005,16 @@
         "100",
         "600",
         "101",
-        "102"
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1035,7 +1116,16 @@
         "klefki": 1,
         "klang": 1,
         "purugly": 1,
-        "skitty": 1
+        "skitty": 1,
+        "petilil": 1,
+        "lycanroc": 1,
+        "cleffa": 1,
+        "rockruff": 1,
+        "skiddo": 1,
+        "hariyama": 1,
+        "makuhita": 1,
+        "weedle": 1,
+        "spinda": 1
       }
     },
     "yacb$boostManager": {
@@ -1074,7 +1164,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "skitty",
+      "species": "spinda",
       "count": 1
     },
     "cobblenavPlayerStatsData": {
@@ -1215,7 +1305,15 @@
         "klefki": true,
         "klang": true,
         "purugly": true,
-        "skitty": true
+        "skitty": true,
+        "petilil": true,
+        "lycanroc": true,
+        "cleffa": true,
+        "rockruff": true,
+        "skiddo": true,
+        "hariyama": true,
+        "makuhita": true,
+        "spinda": true
       }
     },
     "cobblenavContactData": {
@@ -1225,7 +1323,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 93,
+    "totalCaptureCount": 102,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 14,
     "totalBattleVictoryCount": 13,
@@ -1235,23 +1333,23 @@
     "totalShinyCaptureCount": 3,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "normal": 20,
-      "fairy": 8,
+      "normal": 21,
+      "fairy": 9,
       "electric": 6,
-      "rock": 4,
+      "rock": 6,
       "ghost": 7,
       "ground": 7,
       "steel": 9,
-      "poison": 3,
+      "poison": 4,
       "flying": 10,
       "dragon": 2,
-      "grass": 5,
+      "grass": 7,
       "fire": 17,
-      "bug": 7,
+      "bug": 8,
       "ice": 8,
       "water": 8,
       "psychic": 7,
-      "fighting": 2,
+      "fighting": 4,
       "dark": 4
     },
     "totalDefeatedCounts": {

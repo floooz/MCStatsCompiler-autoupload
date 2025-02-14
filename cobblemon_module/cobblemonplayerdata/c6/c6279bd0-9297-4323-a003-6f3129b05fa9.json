@@ -628,8 +628,9 @@
         "blipbug": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739311184390
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739311184390,
+            "caughtTimestamp": 1739508819671
           }
         },
         "frillish": {
@@ -1163,8 +1164,9 @@
         "yamper": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739317052576
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739317052576,
+            "caughtTimestamp": 1739508412577
           }
         },
         "ditto": {
@@ -1845,8 +1847,9 @@
         "pawmo": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739432923725
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739432923725,
+            "caughtTimestamp": 1739509015634
           }
         },
         "banette": {
@@ -2014,8 +2017,9 @@
         "mewtwo": {
           "normal": {
             "isShiny": true,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739484978681
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739484978681,
+            "caughtTimestamp": 1739508864683
           }
         },
         "zekrom": {
@@ -2416,6 +2420,38 @@
             "discoveredTimestamp": 1739497212224,
             "caughtTimestamp": 1739497212224
           }
+        },
+        "gloom": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739508130432,
+            "caughtTimestamp": 1739508130432
+          }
+        },
+        "klang": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739508352233,
+            "caughtTimestamp": 1739508352233
+          }
+        },
+        "furret": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739508634026,
+            "caughtTimestamp": 1739508634026
+          }
+        },
+        "milotic": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739508924751,
+            "caughtTimestamp": 1739508924751
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2629,7 +2665,15 @@
         "204",
         "205",
         "206",
-        "207"
+        "207",
+        "208",
+        "209",
+        "210",
+        "211",
+        "212",
+        "213",
+        "214",
+        "215"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2685,7 +2729,7 @@
         "skrelp": 1,
         "tropius": 1,
         "avalugg": 1,
-        "feebas": 1,
+        "feebas": 2,
         "noibat": 1,
         "diglett": 2,
         "glimmet": 1,
@@ -2787,7 +2831,7 @@
         "crocalor": 1,
         "skeledirge": 1,
         "pignite": 1,
-        "emboar": 1,
+        "emboar": 2,
         "frogadier": 1,
         "greninja": 1,
         "jolteon": 1,
@@ -2836,7 +2880,15 @@
         "liepard": 1,
         "poochyena": 1,
         "drakloak": 1,
-        "dragapult": 1
+        "dragapult": 1,
+        "gloom": 1,
+        "klang": 1,
+        "yamper": 1,
+        "furret": 1,
+        "blipbug": 1,
+        "mewtwo": 1,
+        "milotic": 2,
+        "pawmo": 1
       }
     },
     "yacb$boostManager": {
@@ -2874,7 +2926,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "poochyena",
+      "species": "blipbug",
       "count": 1
     },
     "encounter": {
@@ -3083,7 +3135,15 @@
         "liepard": true,
         "poochyena": true,
         "drakloak": true,
-        "dragapult": true
+        "dragapult": true,
+        "gloom": true,
+        "klang": true,
+        "yamper": true,
+        "furret": true,
+        "blipbug": true,
+        "mewtwo": true,
+        "milotic": true,
+        "pawmo": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -3092,19 +3152,19 @@
       "startDate": 1739300674817,
       "grantedBadges": [],
       "pokemonUsage": {
-        "9f8b29b1-5cba-4fc7-934b-9c5cd10fb179": 137,
+        "9f8b29b1-5cba-4fc7-934b-9c5cd10fb179": 142,
         "76ae6e8f-418d-4431-942c-94081bf419ea": 20,
-        "50cf9713-d61a-4bc8-b3ef-3d78b4068838": 2,
+        "50cf9713-d61a-4bc8-b3ef-3d78b4068838": 7,
         "b0050181-b9ad-46f8-a9e3-995277020589": 1,
-        "e37e4255-727e-497e-9ea4-7cd81e8c5d90": 107,
+        "e37e4255-727e-497e-9ea4-7cd81e8c5d90": 112,
         "e4e2ec10-ada5-429a-92db-62bf788f4e8a": 5,
         "342cb179-c230-409d-a1a7-fa50ab741976": 3,
         "78b3e7ff-590f-4dad-972e-9aa65cb9138f": 141,
         "9967114b-c1ee-42e3-88f7-699058a4dcd0": 10,
-        "a64fe3f6-cb94-4832-8c28-443ce223f15a": 122,
-        "b4a35ec3-4b92-4cee-8fcb-1f894d503edb": 136,
+        "a64fe3f6-cb94-4832-8c28-443ce223f15a": 127,
+        "b4a35ec3-4b92-4cee-8fcb-1f894d503edb": 141,
         "d31d03eb-1551-4ddd-b844-fff73361139e": 8,
-        "bcd6a97b-cfac-49ba-a4fe-24f79f0caf06": 130,
+        "bcd6a97b-cfac-49ba-a4fe-24f79f0caf06": 135,
         "a009d707-34b0-4aca-9120-a8bbcea62df4": 3,
         "0e49102a-fe8f-4f70-8406-63de32eee7d4": 1
       }
@@ -3147,32 +3207,32 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 166,
+    "totalCaptureCount": 171,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 53,
-    "totalBattleVictoryCount": 123,
+    "totalEvolvedCount": 54,
+    "totalBattleVictoryCount": 128,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 123,
+    "totalPvWBattleVictoryCount": 128,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 11,
-    "totalTradedCount": 1,
+    "totalTradedCount": 6,
     "totalTypeCaptureCounts": {
       "ground": 11,
       "fighting": 5,
-      "normal": 39,
+      "normal": 40,
       "ghost": 11,
-      "poison": 12,
+      "poison": 13,
       "dark": 9,
       "rock": 10,
-      "steel": 5,
+      "steel": 6,
       "flying": 18,
-      "bug": 15,
-      "electric": 10,
+      "bug": 16,
+      "electric": 11,
       "water": 28,
       "ice": 5,
       "fire": 21,
       "fairy": 10,
-      "grass": 15,
+      "grass": 16,
       "psychic": 4,
       "dragon": 3
     },

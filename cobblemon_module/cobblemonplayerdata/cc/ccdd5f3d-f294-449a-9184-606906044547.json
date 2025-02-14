@@ -980,6 +980,14 @@
             "discoveredTimestamp": 1739504839286,
             "caughtTimestamp": 1739504839286
           }
+        },
+        "glameow": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739505986693,
+            "caughtTimestamp": 1739505986693
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1107,7 +1115,8 @@
         "117",
         "118",
         "119",
-        "120"
+        "120",
+        "122"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1135,7 +1144,7 @@
         "ribombee": 1,
         "vulpix": 1,
         "zigzagoon": 2,
-        "pawmi": 2,
+        "pawmi": 3,
         "gastly": 1,
         "galvantula": 1,
         "crobat": 1,
@@ -1229,7 +1238,8 @@
         "blipbug": 1,
         "bonsly": 1,
         "tandemaus": 1,
-        "snorunt": 1
+        "snorunt": 1,
+        "glameow": 1
       }
     },
     "yacb$boostManager": {
@@ -1243,8 +1253,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 665
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
@@ -1417,7 +1427,8 @@
         "blipbug": true,
         "bonsly": true,
         "tandemaus": true,
-        "snorunt": true
+        "snorunt": true,
+        "glameow": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1455,7 +1466,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 125,
+    "totalCaptureCount": 127,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 6,
     "totalBattleVictoryCount": 69,
@@ -1465,11 +1476,11 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
-      "normal": 28,
+      "normal": 29,
       "grass": 10,
       "flying": 16,
       "poison": 13,
-      "electric": 11,
+      "electric": 12,
       "fairy": 7,
       "bug": 12,
       "psychic": 8,

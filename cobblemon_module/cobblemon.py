@@ -5,9 +5,10 @@ import numpy as np
 import configparser
 import openpyxl
 import datetime
+import ftplib
 
 
-def loadData(csvtoggle, csvpath):
+def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
     i = -1
@@ -61,9 +62,15 @@ def most_pokemons_leaderboard(df):
 config = configparser.ConfigParser()
 config.read('cobblemon_config.ini')
 
+# Connect to FTP if activated
+ftp_server = None
+if config['FTP']['UseFTP'] == "true":
+    ftp_server = ftplib.FTP(config['FTP']['Host'], open("../username.txt", "r").read(), open("../password.txt", "r").read())
+    ftp_server.encoding = "utf-8"
+
 # Load the data
 # To get: table with columns for players and rows for pokemons
-df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'])
+df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['FTP']['UseFTP'], ftp_server, config['FTP']['UseFTP'])
 count_df = df.drop(['caughtTimestamp', 'discoveredTimestamp', 'isShiny'], level=2)
 print(count_df)
 count_df['times_caught'] = count_df.apply(lambda row: (row == "CAUGHT").sum(), axis=1)
@@ -74,3 +81,8 @@ player_sum['index'] = range(39, 0, -1)
 player_sum = player_sum.iloc[::-1]
 print(player_sum)
 most_pokemons_leaderboard(player_sum.iloc[0:10])
+
+
+# Close the Connection
+if config['FTP']['UseFTP'] == "true":
+    ftp_server.quit()

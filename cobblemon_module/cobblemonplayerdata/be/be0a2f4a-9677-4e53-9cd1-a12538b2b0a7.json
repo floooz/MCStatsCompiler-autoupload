@@ -1999,6 +1999,38 @@
             "discoveredTimestamp": 1739504599845,
             "caughtTimestamp": 1739504599845
           }
+        },
+        "duskull": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739505533381,
+            "caughtTimestamp": 1739505533381
+          }
+        },
+        "dreepy": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739505694587,
+            "caughtTimestamp": 1739505694587
+          }
+        },
+        "gastrodon": {
+          "west": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739505768989,
+            "caughtTimestamp": 1739505768989
+          }
+        },
+        "eevee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739509025076,
+            "caughtTimestamp": 1739509025076
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2254,7 +2286,11 @@
         "246",
         "247",
         "248",
-        "249"
+        "249",
+        "250",
+        "251",
+        "252",
+        "253"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2505,7 +2541,11 @@
         "banette": 1,
         "darkrai": 1,
         "roggenrola": 1,
-        "necrozma": 1
+        "necrozma": 1,
+        "duskull": 1,
+        "dreepy": 1,
+        "gastrodon": 1,
+        "eevee": 1
       }
     },
     "yacb$boostManager": {
@@ -2519,13 +2559,13 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 691
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "boltund",
+      "species": "lechonk",
       "count": 1
     },
     "koCount": {
@@ -2547,12 +2587,13 @@
         "nosepass": 1,
         "moltres": 1,
         "victini": 1,
-        "boltund": 1
+        "boltund": 1,
+        "lechonk": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "necrozma",
+      "species": "eevee",
       "count": 1
     },
     "encounter": {
@@ -2811,7 +2852,11 @@
         "banette": true,
         "darkrai": true,
         "roggenrola": true,
-        "necrozma": true
+        "necrozma": true,
+        "duskull": true,
+        "dreepy": true,
+        "gastrodon": true,
+        "eevee": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2821,16 +2866,17 @@
       "grantedBadges": [],
       "pokemonUsage": {
         "749ee70c-7dbc-4bdb-9f05-51904b1f0a7e": 2,
-        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 72,
+        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 74,
         "00139690-6faa-4030-9659-31180f0b54f6": 4,
-        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 79,
-        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 46,
-        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 100,
+        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 81,
+        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 47,
+        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 102,
         "67a852ef-c143-4674-9405-36cf4bc12fb1": 4,
         "4265ddc8-a174-4c59-a1e4-3d86720c7980": 13,
+        "81ad53e8-0a48-46c7-84c9-179600720595": 2,
         "2a0f2eef-ab45-4ee1-a37e-877b5ad4f961": 4,
-        "863613b8-1836-4aa6-aa38-2b7bcf483623": 86,
-        "eb628627-d218-4f25-b392-b31da044a664": 13,
+        "863613b8-1836-4aa6-aa38-2b7bcf483623": 88,
+        "eb628627-d218-4f25-b392-b31da044a664": 14,
         "bb88021b-8f35-460f-8b35-2cc21b48c02f": 7,
         "0f4b2b31-2456-4324-ad4f-bb143a8816c1": 1,
         "0496167f-d484-48e6-8610-1dfcdd740a68": 7,
@@ -2844,23 +2890,23 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 267,
+    "totalCaptureCount": 271,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 14,
-    "totalBattleVictoryCount": 94,
+    "totalBattleVictoryCount": 96,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 94,
+    "totalPvWBattleVictoryCount": 96,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 4,
     "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
       "grass": 36,
       "poison": 22,
-      "normal": 48,
+      "normal": 49,
       "fire": 22,
-      "ghost": 16,
-      "ground": 26,
-      "water": 45,
+      "ghost": 18,
+      "ground": 27,
+      "water": 46,
       "dark": 19,
       "fairy": 17,
       "bug": 33,
@@ -2871,7 +2917,7 @@
       "fighting": 11,
       "psychic": 21,
       "ice": 3,
-      "dragon": 5
+      "dragon": 6
     },
     "totalDefeatedCounts": {
       "cobblemon:zigzagoon": 1,
@@ -2890,7 +2936,8 @@
       "cobblemon:nosepass": 1,
       "cobblemon:moltres": 1,
       "cobblemon:victini": 1,
-      "cobblemon:boltund": 1
+      "cobblemon:boltund": 1,
+      "cobblemon:lechonk": 1
     },
     "aspectsCollected": {}
   }
