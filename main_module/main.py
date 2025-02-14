@@ -23,6 +23,10 @@ def loadData(csvtoggle, csvpath):
         temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
         # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
         temp_df.index = temp_df.index.str.split('.', expand=True)
+        if len(temp_df.index.levshape) > 3:
+            temp_df.index = temp_df.index.droplevel(3)
+        print(temp_df)
+        temp_df.to_csv('temp.csv')
         if df.empty:
             df = temp_df
         else:
@@ -51,7 +55,6 @@ def getBestAndWorst(df, username, cleaning, cleaningvalue):
     ranks['value'] = df[username]
     output = ranks[[username, 'value', 'non_zero_values']].sort_values(username, ascending=False).rename(columns={username:"rank_"+username, "value":"value_"+username})
     print(output) # add .to_string() for the whole output
-    #ranks.to_csv('temp.csv')
 
 
 # Read config
