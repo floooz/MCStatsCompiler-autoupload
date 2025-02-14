@@ -688,6 +688,102 @@
             "discoveredTimestamp": 1739381830340,
             "caughtTimestamp": 1739381830340
           }
+        },
+        "magmar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739386502122,
+            "caughtTimestamp": 1739386502122
+          }
+        },
+        "numel": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739386521228,
+            "caughtTimestamp": 1739386521228
+          }
+        },
+        "camerupt": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739386644316,
+            "caughtTimestamp": 1739386644316
+          }
+        },
+        "haunter": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739387590353,
+            "caughtTimestamp": 1739387590353
+          }
+        },
+        "drifloon": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739387886991,
+            "caughtTimestamp": 1739387886991
+          }
+        },
+        "kricketot": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739387924391,
+            "caughtTimestamp": 1739387924391
+          }
+        },
+        "salandit": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739406722693,
+            "caughtTimestamp": 1739406722693
+          }
+        },
+        "gligar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739408313093,
+            "caughtTimestamp": 1739408313093
+          }
+        },
+        "heatmor": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739408927087,
+            "caughtTimestamp": 1739408927087
+          }
+        },
+        "torkoal": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739409433289,
+            "caughtTimestamp": 1739409433289
+          }
+        },
+        "magcargo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739409470634,
+            "caughtTimestamp": 1739409470634
+          }
+        },
+        "gengar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739418802179,
+            "caughtTimestamp": 1739418802179
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -779,7 +875,19 @@
         "82",
         "83",
         "84",
-        "85"
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -870,7 +978,19 @@
         "mrmime": 1,
         "klink": 1,
         "mimikyu": 1,
-        "furret": 1
+        "furret": 1,
+        "magmar": 1,
+        "numel": 1,
+        "camerupt": 1,
+        "haunter": 1,
+        "drifloon": 1,
+        "kricketot": 1,
+        "salandit": 1,
+        "gligar": 2,
+        "heatmor": 1,
+        "torkoal": 1,
+        "magcargo": 1,
+        "gengar": 1
       }
     },
     "yacb$boostManager": {
@@ -890,7 +1010,7 @@
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "gimmighoul",
+      "species": "darmanitan",
       "count": 1
     },
     "koCount": {
@@ -902,12 +1022,14 @@
         "growlithe": 1,
         "sentret": 1,
         "slowpoke": 1,
-        "gimmighoul": 1
+        "gimmighoul": 1,
+        "heatmor": 1,
+        "darmanitan": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "furret",
+      "species": "gengar",
       "count": 1
     },
     "encounter": {
@@ -1006,7 +1128,20 @@
         "mrmime": true,
         "klink": true,
         "mimikyu": true,
-        "furret": true
+        "furret": true,
+        "magmar": true,
+        "numel": true,
+        "camerupt": true,
+        "haunter": true,
+        "drifloon": true,
+        "kricketot": true,
+        "salandit": true,
+        "gligar": true,
+        "heatmor": true,
+        "torkoal": true,
+        "magcargo": true,
+        "darmanitan": true,
+        "gengar": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1015,13 +1150,14 @@
       "startDate": 1739300674822,
       "grantedBadges": [],
       "pokemonUsage": {
-        "06870d20-f8eb-4c7a-a59b-31eaa8b8966c": 5,
-        "39f834e4-73df-40da-8b1e-f73b17dffb17": 42,
-        "0f29d312-ae38-4c3a-beab-4f1fcf71a0aa": 45,
+        "06870d20-f8eb-4c7a-a59b-31eaa8b8966c": 10,
+        "4ae5a83d-949d-45ef-8f5f-cd2c9193e669": 5,
+        "39f834e4-73df-40da-8b1e-f73b17dffb17": 47,
+        "0f29d312-ae38-4c3a-beab-4f1fcf71a0aa": 50,
         "ec82b928-ee14-4892-bb54-f672d9e4b576": 31,
         "75b2e7d4-3146-43ea-b036-cf60486c4d99": 5,
-        "11a704d2-0f61-4902-9c0f-136cbe398e66": 36,
-        "2e6425fe-6103-41e3-9df7-3b30669efa7e": 44,
+        "11a704d2-0f61-4902-9c0f-136cbe398e66": 41,
+        "2e6425fe-6103-41e3-9df7-3b30669efa7e": 49,
         "c9fa5de0-f703-4196-8f5e-4187252452df": 23,
         "4bbeec32-d886-46a3-a9eb-03a6060c1326": 3,
         "3e02dc76-1323-4cf4-bb63-4ec152208fae": 16
@@ -1029,29 +1165,29 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 80,
+    "totalCaptureCount": 93,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 6,
-    "totalBattleVictoryCount": 40,
+    "totalBattleVictoryCount": 45,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 40,
+    "totalPvWBattleVictoryCount": 45,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 1,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
       "normal": 20,
-      "flying": 12,
+      "flying": 15,
       "water": 10,
-      "fire": 6,
-      "bug": 8,
-      "poison": 10,
+      "fire": 13,
+      "bug": 9,
+      "poison": 13,
       "fairy": 5,
       "grass": 6,
       "psychic": 7,
-      "ground": 6,
-      "rock": 2,
+      "ground": 10,
+      "rock": 3,
       "electric": 9,
-      "ghost": 3,
+      "ghost": 6,
       "dark": 1,
       "ice": 4,
       "fighting": 1,
@@ -1064,7 +1200,9 @@
       "cobblemon:growlithe": 1,
       "cobblemon:sentret": 1,
       "cobblemon:slowpoke": 1,
-      "cobblemon:gimmighoul": 1
+      "cobblemon:gimmighoul": 1,
+      "cobblemon:heatmor": 1,
+      "cobblemon:darmanitan": 1
     },
     "aspectsCollected": {}
   }

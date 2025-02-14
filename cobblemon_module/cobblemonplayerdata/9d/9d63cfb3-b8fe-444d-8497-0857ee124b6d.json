@@ -1,0 +1,336 @@
+{
+  "uuid": "9d63cfb3-b8fe-444d-8497-0857ee124b6d",
+  "starterPrompted": true,
+  "starterLocked": false,
+  "starterSelected": true,
+  "starterUUID": "769cb5a5-eeea-4041-bc8a-a0b9aaf26e3f",
+  "keyItems": [],
+  "battleTheme": "cobblemon:battle.pvp.default",
+  "extraData": {
+    "cobbledex_discovery": {
+      "registers": {
+        "grookey": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739450446846,
+            "caughtTimestamp": 1739450446846
+          }
+        },
+        "gastly": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739452899891,
+            "caughtTimestamp": 1739452899891
+          }
+        },
+        "diglett": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739453062995,
+            "caughtTimestamp": 1739453062995
+          }
+        },
+        "taillow": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739453389296,
+            "caughtTimestamp": 1739453389296
+          }
+        },
+        "joltik": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739453706737,
+            "caughtTimestamp": 1739453706737
+          }
+        },
+        "zubat": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739454433451,
+            "caughtTimestamp": 1739454433451
+          }
+        },
+        "rattata": {
+          "alola": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739455105996,
+            "caughtTimestamp": 1739455105996
+          }
+        },
+        "roggenrola": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739455908072,
+            "caughtTimestamp": 1739455908072
+          }
+        },
+        "whismur": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739456583673,
+            "caughtTimestamp": 1739456583673
+          }
+        },
+        "boldore": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739457683661,
+            "caughtTimestamp": 1739457683661
+          }
+        },
+        "blipbug": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739459472297,
+            "caughtTimestamp": 1739459472297
+          }
+        },
+        "spiritomb": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739461570372,
+            "caughtTimestamp": 1739461570372
+          }
+        },
+        "rookidee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739470120171,
+            "caughtTimestamp": 1739470120171
+          }
+        },
+        "machop": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739470902921,
+            "caughtTimestamp": 1739470902921
+          }
+        },
+        "corvisquire": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739470997334,
+            "caughtTimestamp": 1739470997334
+          }
+        },
+        "corviknight": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739471007036,
+            "caughtTimestamp": 1739471007036
+          }
+        },
+        "drowzee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739474353250,
+            "caughtTimestamp": 1739474353250
+          }
+        }
+      },
+      "name": "cobbledex_discovery"
+    },
+    "Cobbledex_RewardHistory": {
+      "received": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "name": "Cobbledex_RewardHistory"
+    },
+    "captureCount": {
+      "name": "captureCount",
+      "defeats": {
+        "grookey": 1,
+        "gastly": 2,
+        "diglett": 1,
+        "taillow": 1,
+        "joltik": 1,
+        "zubat": 1,
+        "rattata": 1,
+        "roggenrola": 1,
+        "whismur": 1,
+        "boldore": 1,
+        "blipbug": 1,
+        "spiritomb": 1,
+        "rookidee": 1,
+        "machop": 1,
+        "corvisquire": 1,
+        "corviknight": 1,
+        "drowzee": 1
+      }
+    },
+    "yacb$boostManager": {
+      "name": "yacb$boostManager",
+      "manager": {
+        "shinyBoost": {
+          "active": false,
+          "amplifier": 0.0,
+          "ticksRemain": 0
+        },
+        "speciesWeightBoosts": {},
+        "labelWeightBoosts": {},
+        "endedBoosts": [],
+        "shouldSave": false,
+        "saveTimer": 1057
+      }
+    },
+    "koStreak": {
+      "name": "koStreak",
+      "species": "sentret",
+      "count": 1
+    },
+    "koCount": {
+      "name": "koCount",
+      "defeats": {
+        "sentret": 1
+      }
+    },
+    "captureStreak": {
+      "name": "captureStreak",
+      "species": "drowzee",
+      "count": 1
+    },
+    "encounter": {
+      "name": "encounter",
+      "encounters": {
+        "grookey": true,
+        "cottonee": true,
+        "sentret": true,
+        "gastly": true,
+        "diglett": true,
+        "spinarak": true,
+        "taillow": true,
+        "joltik": true,
+        "zubat": true,
+        "geodude": true,
+        "rattata": true,
+        "roggenrola": true,
+        "gengar": true,
+        "whismur": true,
+        "boldore": true,
+        "blipbug": true,
+        "spiritomb": true,
+        "sneasel": true,
+        "rookidee": true,
+        "machop": true,
+        "corvisquire": true,
+        "corviknight": true,
+        "drowzee": true
+      }
+    },
+    "cobblenavPlayerStatsData": {
+      "name": "cobblenavPlayerStatsData",
+      "totalPvpCount": 1,
+      "startDate": 1739450446846,
+      "grantedBadges": [],
+      "pokemonUsage": {
+        "8d4a0bd6-ba01-435f-b7bd-f50c4420b7f0": 6,
+        "8a405c52-15fe-494a-a521-a7b4bf78d49c": 7,
+        "f81a4934-a70f-4d91-b82d-7f320a3d9965": 1,
+        "e17e3930-0548-48d3-a5cf-09502ed19a13": 6,
+        "ee57d13a-d2cb-4244-a778-be00a0229a30": 2,
+        "86ec0eb1-4b56-4702-a799-db442de28f2d": 9,
+        "769cb5a5-eeea-4041-bc8a-a0b9aaf26e3f": 11,
+        "c0011323-45c4-42e2-91ea-7ac42caa476c": 2,
+        "e7041e7b-8e2b-4bcd-8c7b-68f60bd80802": 6
+      }
+    },
+    "cobblenavContactData": {
+      "name": "cobblenavContactData",
+      "contacts": [
+        {
+          "key": "773f1a25-6861-42d8-8cba-8b16fa037c0d",
+          "profile": {
+            "id": "773f1a25-6861-42d8-8cba-8b16fa037c0d",
+            "name": "Grimkujow"
+          },
+          "name": "Grimkujow",
+          "title": "",
+          "winnings": 0,
+          "losses": 1,
+          "team": [
+            {
+              "name": "sharpedo",
+              "level": 99
+            },
+            {
+              "name": "riolu",
+              "level": 61
+            },
+            {
+              "name": "corviknight",
+              "level": 58
+            },
+            {
+              "name": "doublade",
+              "level": 73
+            }
+          ],
+          "trainer": false
+        }
+      ],
+      "title": ""
+    }
+  },
+  "advancementData": {
+    "totalCaptureCount": 15,
+    "totalEggsHatched": 0,
+    "totalEvolvedCount": 2,
+    "totalBattleVictoryCount": 6,
+    "totalPvPBattleVictoryCount": 0,
+    "totalPvWBattleVictoryCount": 6,
+    "totalPvNBattleVictoryCount": 0,
+    "totalShinyCaptureCount": 0,
+    "totalTradedCount": 0,
+    "totalTypeCaptureCounts": {
+      "ghost": 3,
+      "poison": 3,
+      "ground": 1,
+      "normal": 3,
+      "flying": 3,
+      "bug": 2,
+      "electric": 1,
+      "dark": 2,
+      "rock": 2,
+      "fighting": 1,
+      "psychic": 1
+    },
+    "totalDefeatedCounts": {
+      "cobblemon:sentret": 1
+    },
+    "aspectsCollected": {}
+  }
+}

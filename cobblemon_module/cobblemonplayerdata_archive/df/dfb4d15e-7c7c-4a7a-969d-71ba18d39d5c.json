@@ -1,0 +1,282 @@
+{
+  "uuid": "dfb4d15e-7c7c-4a7a-969d-71ba18d39d5c",
+  "starterPrompted": true,
+  "starterLocked": false,
+  "starterSelected": true,
+  "starterUUID": "5e2335de-b63d-4578-9925-8d7b60f55523",
+  "keyItems": [],
+  "battleTheme": "cobblemon:battle.pvp.default",
+  "extraData": {
+    "cobbledex_discovery": {
+      "registers": {
+        "totodile": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739300674834,
+            "caughtTimestamp": 1739300674834
+          }
+        },
+        "bulbasaur": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739302142642
+          }
+        },
+        "oshawott": {
+          "hisuibias": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739302146641
+          }
+        },
+        "bunnelby": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739302375848,
+            "caughtTimestamp": 1739302375848
+          }
+        },
+        "ponyta": {
+          "galar": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739302859540,
+            "caughtTimestamp": 1739302859540
+          }
+        },
+        "magikarp": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739303223524,
+            "caughtTimestamp": 1739303223524
+          }
+        },
+        "haunter": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739304164485,
+            "caughtTimestamp": 1739304164485
+          }
+        },
+        "gyarados": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739304261820,
+            "caughtTimestamp": 1739304261820
+          }
+        },
+        "shedinja": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739305050193,
+            "caughtTimestamp": 1739305050193
+          }
+        },
+        "gastly": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739305178493,
+            "caughtTimestamp": 1739305178493
+          }
+        },
+        "croconaw": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739309035529,
+            "caughtTimestamp": 1739309035529
+          }
+        },
+        "feraligatr": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739309043378,
+            "caughtTimestamp": 1739309043378
+          }
+        },
+        "zubat": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739311487066
+          }
+        },
+        "shuppet": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739311504462
+          }
+        },
+        "gengar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739312105135,
+            "caughtTimestamp": 1739312105135
+          }
+        }
+      },
+      "name": "cobbledex_discovery"
+    },
+    "Cobbledex_RewardHistory": {
+      "received": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "name": "Cobbledex_RewardHistory"
+    },
+    "captureCount": {
+      "name": "captureCount",
+      "defeats": {
+        "totodile": 1,
+        "bunnelby": 2,
+        "ponyta": 1,
+        "magikarp": 1,
+        "haunter": 2,
+        "gyarados": 1,
+        "shedinja": 1,
+        "gastly": 1,
+        "croconaw": 1,
+        "feraligatr": 1,
+        "gengar": 1
+      }
+    },
+    "yacb$boostManager": {
+      "name": "yacb$boostManager",
+      "manager": {
+        "shinyBoost": {
+          "active": false,
+          "amplifier": 0.0,
+          "ticksRemain": 0
+        },
+        "speciesWeightBoosts": {},
+        "labelWeightBoosts": {},
+        "endedBoosts": [],
+        "shouldSave": false,
+        "saveTimer": 1199
+      }
+    },
+    "koStreak": {
+      "name": "koStreak",
+      "species": "gastly",
+      "count": 1
+    },
+    "koCount": {
+      "name": "koCount",
+      "defeats": {
+        "gastly": 1
+      }
+    },
+    "captureStreak": {
+      "name": "captureStreak",
+      "species": "gastly",
+      "count": 1
+    },
+    "encounter": {
+      "name": "encounter",
+      "encounters": {
+        "totodile": true,
+        "bunnelby": true,
+        "wooloo": true,
+        "ponyta": true,
+        "magikarp": true,
+        "haunter": true,
+        "gyarados": true,
+        "shedinja": true,
+        "gastly": true,
+        "gimmighoul": true,
+        "croconaw": true,
+        "feraligatr": true,
+        "gengar": true
+      }
+    },
+    "cobblenavPlayerStatsData": {
+      "name": "cobblenavPlayerStatsData",
+      "totalPvpCount": 1,
+      "startDate": 1739300674834,
+      "grantedBadges": [],
+      "pokemonUsage": {
+        "5e2335de-b63d-4578-9925-8d7b60f55523": 6,
+        "45fc8361-9ec4-46ea-803c-e35cec4c432f": 4,
+        "51635c8d-7638-46c9-8b71-0832c880cd2c": 2,
+        "0890506a-49e4-4e8d-9d3c-1ef61b156cde": 1,
+        "f802a4e6-22f0-4761-9b16-cea0211083f6": 5,
+        "c5f933f1-365f-4ea9-a6ed-57b4f86883c2": 2
+      }
+    },
+    "cobblenavContactData": {
+      "name": "cobblenavContactData",
+      "contacts": [
+        {
+          "key": "6581b47f-2f0e-4923-80b7-3a14342dcb8b",
+          "profile": {
+            "id": "6581b47f-2f0e-4923-80b7-3a14342dcb8b",
+            "name": "NakaStream"
+          },
+          "name": "NakaStream",
+          "title": "",
+          "winnings": 0,
+          "losses": 1,
+          "team": [
+            {
+              "name": "dartrix",
+              "level": 26
+            },
+            {
+              "name": "raboot",
+              "level": 2
+            },
+            {
+              "name": "mareep",
+              "level": 10
+            }
+          ],
+          "trainer": false
+        }
+      ],
+      "title": ""
+    }
+  },
+  "advancementData": {
+    "totalCaptureCount": 5,
+    "totalEggsHatched": 0,
+    "totalEvolvedCount": 5,
+    "totalBattleVictoryCount": 2,
+    "totalPvPBattleVictoryCount": 0,
+    "totalPvWBattleVictoryCount": 2,
+    "totalPvNBattleVictoryCount": 0,
+    "totalShinyCaptureCount": 0,
+    "totalTradedCount": 2,
+    "totalTypeCaptureCounts": {
+      "normal": 1,
+      "psychic": 1,
+      "water": 1,
+      "bug": 1,
+      "ghost": 2,
+      "poison": 1
+    },
+    "totalDefeatedCounts": {
+      "cobblemon:gastly": 1
+    },
+    "aspectsCollected": {}
+  }
+}

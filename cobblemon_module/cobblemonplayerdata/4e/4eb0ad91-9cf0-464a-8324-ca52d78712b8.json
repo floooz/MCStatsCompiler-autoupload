@@ -200,6 +200,86 @@
             "discoveredTimestamp": 1739314931241,
             "caughtTimestamp": 1739314931241
           }
+        },
+        "drilbur": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739395426113,
+            "caughtTimestamp": 1739395426113
+          }
+        },
+        "skitty": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739397691168,
+            "caughtTimestamp": 1739397691168
+          }
+        },
+        "vulpix": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739397879651,
+            "caughtTimestamp": 1739397879651
+          }
+        },
+        "diglett": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739476191226,
+            "caughtTimestamp": 1739476191226
+          }
+        },
+        "krabby": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739476293943,
+            "caughtTimestamp": 1739476293943
+          }
+        },
+        "slowpoke": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739476335672,
+            "caughtTimestamp": 1739476335672
+          }
+        },
+        "geodude": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739476998074,
+            "caughtTimestamp": 1739476998074
+          }
+        },
+        "zubat": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739479047980,
+            "caughtTimestamp": 1739479047980
+          }
+        },
+        "fearow": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739479887491,
+            "caughtTimestamp": 1739479887491
+          }
+        },
+        "spearow": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739479931833,
+            "caughtTimestamp": 1739479931833
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -230,7 +310,17 @@
         "121",
         "22",
         "23",
-        "24"
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -260,7 +350,17 @@
         "gyarados": 1,
         "meowth": 1,
         "pidgeotto": 1,
-        "pidgeot": 1
+        "pidgeot": 1,
+        "drilbur": 1,
+        "skitty": 1,
+        "vulpix": 1,
+        "diglett": 1,
+        "krabby": 1,
+        "slowpoke": 1,
+        "geodude": 1,
+        "zubat": 1,
+        "fearow": 1,
+        "spearow": 1
       }
     },
     "yacb$boostManager": {
@@ -274,13 +374,13 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 1181
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "honedge",
+      "species": "paras",
       "count": 1
     },
     "koCount": {
@@ -295,12 +395,19 @@
         "pawmi": 1,
         "tandemaus": 1,
         "bouffalant": 1,
-        "honedge": 1
+        "honedge": 1,
+        "voltorb": 1,
+        "fearow": 1,
+        "dugtrio": 1,
+        "growlithe": 1,
+        "rapidash": 1,
+        "cubone": 1,
+        "paras": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "meowth",
+      "species": "spearow",
       "count": 1
     },
     "encounter": {
@@ -340,7 +447,24 @@
         "gyarados": true,
         "meowth": true,
         "pidgeotto": true,
-        "pidgeot": true
+        "pidgeot": true,
+        "drilbur": true,
+        "skitty": true,
+        "vulpix": true,
+        "voltorb": true,
+        "fearow": true,
+        "diglett": true,
+        "krabby": true,
+        "slowpoke": true,
+        "geodude": true,
+        "zubat": true,
+        "dugtrio": true,
+        "growlithe": true,
+        "spearow": true,
+        "rapidash": true,
+        "magmar": true,
+        "cubone": true,
+        "paras": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -349,39 +473,47 @@
       "startDate": 1739300794872,
       "grantedBadges": [],
       "pokemonUsage": {
+        "e2c6e191-8eb0-4212-8424-07e11753ee00": 4,
+        "aad123be-6d40-4b6d-b986-b2335955eca9": 15,
+        "2b23a067-4c89-40bb-8c45-7808328aee1a": 4,
+        "997afab1-b42c-4fa5-b33d-ac7b267ab252": 9,
+        "91c4fa6d-d81c-4989-ae4c-5850e823028c": 40,
         "890d71f4-e769-4041-a3b3-654a8ca5cf9d": 6,
-        "9e3eb833-e560-4b22-8bab-5442b80f91ff": 31,
-        "d6fd7c49-bf19-4577-be2d-c98117186cb8": 25,
+        "9e3eb833-e560-4b22-8bab-5442b80f91ff": 42,
+        "d6fd7c49-bf19-4577-be2d-c98117186cb8": 32,
         "77008bdc-70d6-4579-8d66-c6a4cba471ad": 7,
         "9c529fca-b844-4200-bcbc-93ee095f4a8b": 17,
-        "aad123be-6d40-4b6d-b986-b2335955eca9": 15,
-        "997afab1-b42c-4fa5-b33d-ac7b267ab252": 9,
-        "71eee398-8665-4df6-b00a-b0ed16677af9": 17,
-        "91c4fa6d-d81c-4989-ae4c-5850e823028c": 29
+        "71eee398-8665-4df6-b00a-b0ed16677af9": 24,
+        "bcb0d863-bb10-436f-8e72-0f91d64d8f1d": 11,
+        "8adfc75b-2557-4dcd-b9e9-ef89af85f544": 11
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 19,
+    "totalCaptureCount": 29,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 5,
-    "totalBattleVictoryCount": 26,
+    "totalBattleVictoryCount": 35,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 26,
+    "totalPvWBattleVictoryCount": 35,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
       "ghost": 1,
-      "poison": 1,
-      "normal": 9,
+      "poison": 2,
+      "normal": 12,
       "bug": 4,
-      "flying": 3,
+      "flying": 6,
       "grass": 3,
       "electric": 1,
       "steel": 1,
-      "water": 2,
-      "fairy": 1
+      "water": 4,
+      "fairy": 1,
+      "ground": 3,
+      "fire": 1,
+      "psychic": 1,
+      "rock": 1
     },
     "totalDefeatedCounts": {
       "cobblemon:ponyta": 1,
@@ -393,7 +525,14 @@
       "cobblemon:pawmi": 1,
       "cobblemon:tandemaus": 1,
       "cobblemon:bouffalant": 1,
-      "cobblemon:honedge": 1
+      "cobblemon:honedge": 1,
+      "cobblemon:voltorb": 1,
+      "cobblemon:fearow": 1,
+      "cobblemon:dugtrio": 1,
+      "cobblemon:growlithe": 1,
+      "cobblemon:rapidash": 1,
+      "cobblemon:cubone": 1,
+      "cobblemon:paras": 1
     },
     "aspectsCollected": {}
   }
