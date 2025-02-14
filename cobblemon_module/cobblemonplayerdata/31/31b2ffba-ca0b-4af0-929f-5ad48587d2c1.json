@@ -2416,6 +2416,14 @@
             "discoveredTimestamp": 1739502432371,
             "caughtTimestamp": 1739502432371
           }
+        },
+        "noibat": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503168175,
+            "caughtTimestamp": 1739503168175
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2725,7 +2733,8 @@
         "300",
         "301",
         "302",
-        "303"
+        "303",
+        "304"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -3026,7 +3035,8 @@
         "honchkrow": 1,
         "graveler": 1,
         "golem": 1,
-        "onix": 1
+        "onix": 1,
+        "noibat": 1
       }
     },
     "yacb$boostManager": {
@@ -3106,7 +3116,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "onix",
+      "species": "noibat",
       "count": 1
     },
     "encounter": {
@@ -3430,7 +3440,8 @@
         "dusclops": true,
         "honchkrow": true,
         "golem": true,
-        "onix": true
+        "onix": true,
+        "noibat": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -3439,10 +3450,10 @@
       "startDate": 1739300554770,
       "grantedBadges": [],
       "pokemonUsage": {
-        "7cc38110-5487-43be-bd17-9deb0a5dc908": 282,
+        "7cc38110-5487-43be-bd17-9deb0a5dc908": 283,
         "023851e6-c72e-4c29-ae38-db7f6587f7fa": 28,
         "bda28410-ca59-4360-b606-1a2f6b1c5d9a": 2,
-        "9d9bc841-1058-43ec-a3c1-6de8624a9888": 154,
+        "9d9bc841-1058-43ec-a3c1-6de8624a9888": 155,
         "28eb66f5-5bb9-4e3c-8310-a0e33d08aa29": 22,
         "1726376b-ff0a-4448-951a-9d49f6363ce3": 9,
         "77e9dddc-8d98-4831-84a5-95b6751ab75f": 187,
@@ -3450,10 +3461,10 @@
         "a9d23816-d6a1-4aef-ba4e-6a90ff8baaef": 93,
         "82b4a51c-f986-4d09-92fc-2a50cdee1611": 49,
         "65e87fc6-450e-4a41-8f55-56f8ded2d168": 25,
-        "4896f1fb-ec4e-4af3-8f0b-b52adf524558": 195,
-        "3836a3f4-d0ee-42e1-9c1f-de3f6a4a951b": 247,
-        "98a7557b-b445-4a1c-a8c7-0aea54947c80": 90,
-        "dce04e87-d54e-4f2c-8de0-cef926600ba3": 280,
+        "4896f1fb-ec4e-4af3-8f0b-b52adf524558": 196,
+        "3836a3f4-d0ee-42e1-9c1f-de3f6a4a951b": 248,
+        "98a7557b-b445-4a1c-a8c7-0aea54947c80": 91,
+        "dce04e87-d54e-4f2c-8de0-cef926600ba3": 281,
         "1d2967bc-aaeb-416a-b323-2bab2fa7f6a4": 10
       }
     },
@@ -3464,7 +3475,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 264,
+    "totalCaptureCount": 265,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 76,
     "totalBattleVictoryCount": 267,
@@ -3476,7 +3487,7 @@
     "totalTypeCaptureCounts": {
       "normal": 59,
       "grass": 31,
-      "flying": 31,
+      "flying": 32,
       "electric": 18,
       "ground": 21,
       "fire": 17,
@@ -3491,7 +3502,7 @@
       "dark": 19,
       "ice": 6,
       "fighting": 8,
-      "dragon": 4
+      "dragon": 5
     },
     "totalDefeatedCounts": {
       "cobblemon:fomantis": 1,

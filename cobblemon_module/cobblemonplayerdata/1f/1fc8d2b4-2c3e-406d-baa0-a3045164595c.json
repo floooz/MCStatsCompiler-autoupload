@@ -1504,6 +1504,30 @@
             "discoveredTimestamp": 1739501118103,
             "caughtTimestamp": 1739501118103
           }
+        },
+        "abra": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504709647,
+            "caughtTimestamp": 1739504709647
+          }
+        },
+        "ironvaliant": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504867692,
+            "caughtTimestamp": 1739504867692
+          }
+        },
+        "camerupt": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739505268043,
+            "caughtTimestamp": 1739505268043
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1663,7 +1687,10 @@
         "150",
         "151",
         "152",
-        "153"
+        "153",
+        "154",
+        "155",
+        "156"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1821,7 +1848,10 @@
         "nincada": 1,
         "wooper": 1,
         "shuckle": 1,
-        "gible": 1
+        "gible": 1,
+        "abra": 1,
+        "ironvaliant": 1,
+        "camerupt": 1
       }
     },
     "yacb$boostManager": {
@@ -1836,7 +1866,7 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 948
+        "saveTimer": 960
       }
     },
     "koStreak": {
@@ -1857,7 +1887,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "gible",
+      "species": "camerupt",
       "count": 1
     },
     "encounter": {
@@ -2020,7 +2050,10 @@
         "nincada": true,
         "wooper": true,
         "shuckle": true,
-        "gible": true
+        "gible": true,
+        "abra": true,
+        "ironvaliant": true,
+        "camerupt": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2050,7 +2083,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 165,
+    "totalCaptureCount": 168,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 12,
     "totalBattleVictoryCount": 21,
@@ -2060,22 +2093,22 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "ground": 16,
+      "ground": 17,
       "steel": 5,
       "ghost": 15,
       "poison": 12,
-      "fire": 12,
+      "fire": 13,
       "flying": 27,
       "dark": 6,
       "water": 42,
       "electric": 18,
-      "fairy": 8,
+      "fairy": 9,
       "normal": 31,
       "rock": 9,
       "bug": 17,
       "grass": 15,
-      "fighting": 2,
-      "psychic": 12,
+      "fighting": 3,
+      "psychic": 13,
       "dragon": 3
     },
     "totalDefeatedCounts": {

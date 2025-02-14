@@ -181,6 +181,12 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739400859690,
             "caughtTimestamp": 1739400859690
+          },
+          "galar": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503948993,
+            "caughtTimestamp": 1739503948993
           }
         },
         "pawmi": {
@@ -429,6 +435,12 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739418620972,
             "caughtTimestamp": 1739418620972
+          },
+          "paldea": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502949283,
+            "caughtTimestamp": 1739502949283
           }
         },
         "luxio": {
@@ -872,6 +884,102 @@
             "discoveredTimestamp": 1739502142871,
             "caughtTimestamp": 1739502142871
           }
+        },
+        "electabuzz": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502884666,
+            "caughtTimestamp": 1739502884666
+          }
+        },
+        "watchog": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503190377,
+            "caughtTimestamp": 1739503190377
+          }
+        },
+        "bibarel": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503361907,
+            "caughtTimestamp": 1739503361907
+          }
+        },
+        "wimpod": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503608053,
+            "caughtTimestamp": 1739503608053
+          }
+        },
+        "slowbro": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503671596,
+            "caughtTimestamp": 1739503671596
+          }
+        },
+        "golduck": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503851798,
+            "caughtTimestamp": 1739503851798
+          }
+        },
+        "linoone": {
+          "galar": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503951493,
+            "caughtTimestamp": 1739503951493
+          }
+        },
+        "fletchinder": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503985698,
+            "caughtTimestamp": 1739503985698
+          }
+        },
+        "blipbug": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504292347,
+            "caughtTimestamp": 1739504292347
+          }
+        },
+        "bonsly": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504371100,
+            "caughtTimestamp": 1739504371100
+          }
+        },
+        "tandemaus": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504398548,
+            "caughtTimestamp": 1739504398548
+          }
+        },
+        "snorunt": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504839286,
+            "caughtTimestamp": 1739504839286
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -986,7 +1094,20 @@
         "104",
         "105",
         "106",
-        "107"
+        "107",
+        "108",
+        "109",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115",
+        "116",
+        "117",
+        "118",
+        "119",
+        "120"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1013,8 +1134,8 @@
         "roselia": 2,
         "ribombee": 1,
         "vulpix": 1,
-        "zigzagoon": 1,
-        "pawmi": 1,
+        "zigzagoon": 2,
+        "pawmi": 2,
         "gastly": 1,
         "galvantula": 1,
         "crobat": 1,
@@ -1044,7 +1165,7 @@
         "jigglypuff": 2,
         "fearow": 2,
         "sandshrew": 1,
-        "wooper": 2,
+        "wooper": 3,
         "luxio": 1,
         "nidorina": 1,
         "magikarp": 1,
@@ -1096,7 +1217,19 @@
         "farfetchd": 1,
         "slowpoke": 1,
         "squawkabilly": 1,
-        "kricketot": 1
+        "kricketot": 1,
+        "electabuzz": 1,
+        "watchog": 1,
+        "bibarel": 1,
+        "wimpod": 1,
+        "slowbro": 1,
+        "golduck": 1,
+        "linoone": 1,
+        "fletchinder": 1,
+        "blipbug": 1,
+        "bonsly": 1,
+        "tandemaus": 1,
+        "snorunt": 1
       }
     },
     "yacb$boostManager": {
@@ -1111,12 +1244,12 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 844
+        "saveTimer": 665
       }
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "spiritomb",
+      "species": "drifblim",
       "count": 1
     },
     "koCount": {
@@ -1141,12 +1274,13 @@
         "growlithe": 1,
         "gimmighoul": 3,
         "gabite": 1,
-        "spiritomb": 1
+        "spiritomb": 1,
+        "drifblim": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "kricketot",
+      "species": "pawmi",
       "count": 1
     },
     "encounter": {
@@ -1270,7 +1404,20 @@
         "farfetchd": true,
         "slowpoke": true,
         "squawkabilly": true,
-        "kricketot": true
+        "kricketot": true,
+        "electabuzz": true,
+        "watchog": true,
+        "bibarel": true,
+        "wimpod": true,
+        "slowbro": true,
+        "golduck": true,
+        "linoone": true,
+        "fletchinder": true,
+        "drifblim": true,
+        "blipbug": true,
+        "bonsly": true,
+        "tandemaus": true,
+        "snorunt": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1283,22 +1430,22 @@
         "bba93d6c-742c-4b4e-ba6d-b7b62e071c1f": 5,
         "531d9b5b-cfb7-442b-adde-18f5702716d0": 2,
         "05caa91c-6f43-4ae5-94d6-fdfb7bb0920a": 48,
-        "86b9c9be-427a-45f8-90a5-bddae8442597": 4,
+        "86b9c9be-427a-45f8-90a5-bddae8442597": 6,
         "8503d283-2736-4fdb-bb30-bce5572f213c": 49,
-        "767798c0-1449-45fb-9776-b572e3aa4300": 15,
-        "5f495e9c-60ee-4ea2-8637-032c3b54f59b": 62,
-        "778937ab-eb25-4a68-9f9a-7796f265f549": 43,
+        "767798c0-1449-45fb-9776-b572e3aa4300": 17,
+        "5f495e9c-60ee-4ea2-8637-032c3b54f59b": 64,
+        "778937ab-eb25-4a68-9f9a-7796f265f549": 45,
         "5d580cf2-b9cd-4110-9dd1-06ddf6c9d1e2": 9,
         "522140d5-0deb-47d6-9c9c-4889ea346e19": 7,
         "a149e883-ef09-406a-8b89-ed23d136e686": 67,
-        "795e5a6f-8320-438a-8180-cb1c396ae499": 15,
+        "795e5a6f-8320-438a-8180-cb1c396ae499": 17,
         "1a86d0ab-3d12-4144-9181-aa70d32669b9": 8,
         "d313d352-6029-4dfc-af9e-beda4a143831": 31,
         "f0843143-da2b-444a-b76a-063b0ced9cad": 12,
         "ae43c76b-caad-4343-837e-68b1666eaffd": 3,
         "890d281d-4661-4b1a-ae9b-61ed882a998a": 4,
         "ff0addb2-1559-45e4-b2ec-bc6bfc14efe8": 19,
-        "2b1c8ee2-8754-44ff-aa3b-56c067f82508": 10
+        "2b1c8ee2-8754-44ff-aa3b-56c067f82508": 12
       }
     },
     "cobblenavContactData": {
@@ -1308,33 +1455,34 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 110,
+    "totalCaptureCount": 125,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 6,
-    "totalBattleVictoryCount": 67,
+    "totalBattleVictoryCount": 69,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 67,
+    "totalPvWBattleVictoryCount": 69,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
-      "normal": 23,
+      "normal": 28,
       "grass": 10,
-      "flying": 15,
-      "poison": 12,
-      "electric": 9,
+      "flying": 16,
+      "poison": 13,
+      "electric": 11,
       "fairy": 7,
-      "bug": 10,
-      "psychic": 7,
-      "water": 9,
-      "fire": 21,
+      "bug": 12,
+      "psychic": 8,
+      "water": 13,
+      "fire": 22,
       "ghost": 5,
       "dragon": 3,
-      "rock": 4,
-      "ground": 10,
+      "rock": 5,
+      "ground": 11,
       "steel": 6,
       "fighting": 2,
-      "dark": 5
+      "dark": 7,
+      "ice": 1
     },
     "totalDefeatedCounts": {
       "cobblemon:butterfree": 1,
@@ -1356,7 +1504,8 @@
       "cobblemon:growlithe": 1,
       "cobblemon:gimmighoul": 3,
       "cobblemon:gabite": 1,
-      "cobblemon:spiritomb": 1
+      "cobblemon:spiritomb": 1,
+      "cobblemon:drifblim": 1
     },
     "aspectsCollected": {}
   }

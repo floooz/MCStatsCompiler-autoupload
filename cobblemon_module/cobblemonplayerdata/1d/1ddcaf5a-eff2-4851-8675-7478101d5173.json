@@ -2588,6 +2588,46 @@
             "discoveredTimestamp": 1739502672811,
             "caughtTimestamp": 1739502672811
           }
+        },
+        "dachsbun": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502878576,
+            "caughtTimestamp": 1739502878576
+          }
+        },
+        "tangela": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502968875,
+            "caughtTimestamp": 1739502968875
+          }
+        },
+        "muk": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502988283,
+            "caughtTimestamp": 1739502988283
+          }
+        },
+        "gengar": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503044329,
+            "caughtTimestamp": 1739503044329
+          }
+        },
+        "aggron": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503139959,
+            "caughtTimestamp": 1739503139959
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2919,7 +2959,12 @@
         "322",
         "323",
         "324",
-        "325"
+        "325",
+        "326",
+        "327",
+        "328",
+        "329",
+        "330"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -3240,7 +3285,12 @@
         "ninetales": 1,
         "scovillain": 1,
         "chatot": 1,
-        "milcery": 1
+        "milcery": 1,
+        "dachsbun": 1,
+        "tangela": 1,
+        "muk": 1,
+        "gengar": 1,
+        "aggron": 1
       }
     },
     "yacb$boostManager": {
@@ -3329,7 +3379,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "milcery",
+      "species": "tangela",
       "count": 1
     },
     "encounter": {
@@ -3661,7 +3711,11 @@
         "ninetales": true,
         "scovillain": true,
         "chatot": true,
-        "milcery": true
+        "milcery": true,
+        "dachsbun": true,
+        "tangela": true,
+        "muk": true,
+        "aggron": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -3670,16 +3724,16 @@
       "startDate": 1739301034968,
       "grantedBadges": [],
       "pokemonUsage": {
-        "d92ef849-6634-4476-9b00-28067aa8ad0b": 267,
-        "b9f0bfc7-6044-426c-b00f-9860cc4d96f9": 336,
+        "d92ef849-6634-4476-9b00-28067aa8ad0b": 269,
+        "b9f0bfc7-6044-426c-b00f-9860cc4d96f9": 338,
         "4d3fd2fc-c806-4424-a891-1bec0bc6a79c": 4,
-        "dc7beacc-0bb3-41a8-ad6d-b44bc245bb07": 56,
+        "dc7beacc-0bb3-41a8-ad6d-b44bc245bb07": 58,
         "6a3ce428-5537-4a93-8ad6-27c98f8c76eb": 23,
         "916b8ad3-9aa5-41ca-a55e-e007bbcfb80b": 30,
         "6c8de45f-22f1-4f4d-b7b4-1b2586c647b7": 194,
         "d54d0619-df0e-4f01-a22a-ceade56aac78": 74,
         "aa016cd8-c31c-4c84-851d-f11435a1caa6": 10,
-        "0a2677a6-1a4b-4cd5-ba54-fd2a381abfae": 66,
+        "0a2677a6-1a4b-4cd5-ba54-fd2a381abfae": 68,
         "95b95479-2f18-4e30-b6b8-85046b9f411e": 12,
         "bd7dc0bf-5db3-4880-8d7d-49ae05faa70e": 27,
         "b9cef9ce-e823-4a06-8315-742050dece59": 40,
@@ -3692,7 +3746,7 @@
         "9c9e972e-49bb-4564-9e80-e3b1ce9505a3": 9,
         "d90ce754-f9bb-4f47-8196-b0d703ec56a1": 126,
         "ffe2aae9-c490-4635-b9ae-7fbe27ba032c": 9,
-        "14fa6699-945b-484b-a0b1-70bb4db457e5": 25,
+        "14fa6699-945b-484b-a0b1-70bb4db457e5": 27,
         "256ab72e-ba23-4f9a-9b0f-5c07aadf2b07": 178,
         "9c7de840-799b-4ff7-aa37-e05987c69309": 3,
         "f66b83b8-fbba-4afc-bafe-6bac4bffc8c9": 1,
@@ -3705,7 +3759,7 @@
         "147b6e5c-870e-4780-a254-cd956ca6e9f2": 162,
         "1b919c3b-3dfe-488c-8b7a-bc97ecc1bc88": 15,
         "8c017d31-8156-4177-b910-449ee0df803c": 38,
-        "95b4d6c0-a22b-42db-a7f3-118daac7b683": 1
+        "95b4d6c0-a22b-42db-a7f3-118daac7b683": 3
       }
     },
     "cobblenavContactData": {
@@ -3715,12 +3769,12 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 261,
+    "totalCaptureCount": 263,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 88,
-    "totalBattleVictoryCount": 356,
+    "totalEvolvedCount": 91,
+    "totalBattleVictoryCount": 358,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 356,
+    "totalPvWBattleVictoryCount": 358,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 1,
     "totalTradedCount": 2,
@@ -3730,9 +3784,9 @@
       "ghost": 19,
       "flying": 26,
       "bug": 29,
-      "grass": 28,
+      "grass": 29,
       "fire": 20,
-      "fairy": 18,
+      "fairy": 19,
       "steel": 15,
       "poison": 24,
       "rock": 13,

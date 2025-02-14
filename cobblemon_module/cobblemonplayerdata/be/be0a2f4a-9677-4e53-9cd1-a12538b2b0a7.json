@@ -1967,6 +1967,38 @@
             "discoveredTimestamp": 1739501840695,
             "caughtTimestamp": 1739501870457
           }
+        },
+        "banette": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739503123366,
+            "caughtTimestamp": 1739503123366
+          }
+        },
+        "darkrai": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504016997,
+            "caughtTimestamp": 1739504016997
+          }
+        },
+        "roggenrola": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504116557,
+            "caughtTimestamp": 1739504116557
+          }
+        },
+        "necrozma": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739504599845,
+            "caughtTimestamp": 1739504599845
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -2218,7 +2250,11 @@
         "242",
         "243",
         "244",
-        "245"
+        "245",
+        "246",
+        "247",
+        "248",
+        "249"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2414,7 +2450,7 @@
         "mankey": 1,
         "corvisquire": 3,
         "corviknight": 3,
-        "shuppet": 1,
+        "shuppet": 2,
         "dugtrio": 1,
         "vulpix": 1,
         "stufful": 1,
@@ -2465,7 +2501,11 @@
         "bouffalant": 1,
         "timburr": 1,
         "phanpy": 1,
-        "poochyena": 1
+        "poochyena": 1,
+        "banette": 1,
+        "darkrai": 1,
+        "roggenrola": 1,
+        "necrozma": 1
       }
     },
     "yacb$boostManager": {
@@ -2479,8 +2519,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 691
       }
     },
     "koStreak": {
@@ -2512,7 +2552,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "poochyena",
+      "species": "necrozma",
       "count": 1
     },
     "encounter": {
@@ -2767,7 +2807,11 @@
         "mabosstiff": true,
         "timburr": true,
         "phanpy": true,
-        "poochyena": true
+        "poochyena": true,
+        "banette": true,
+        "darkrai": true,
+        "roggenrola": true,
+        "necrozma": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2777,15 +2821,15 @@
       "grantedBadges": [],
       "pokemonUsage": {
         "749ee70c-7dbc-4bdb-9f05-51904b1f0a7e": 2,
-        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 69,
+        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 72,
         "00139690-6faa-4030-9659-31180f0b54f6": 4,
-        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 76,
+        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 79,
         "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 46,
-        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 97,
+        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 100,
         "67a852ef-c143-4674-9405-36cf4bc12fb1": 4,
-        "4265ddc8-a174-4c59-a1e4-3d86720c7980": 10,
+        "4265ddc8-a174-4c59-a1e4-3d86720c7980": 13,
         "2a0f2eef-ab45-4ee1-a37e-877b5ad4f961": 4,
-        "863613b8-1836-4aa6-aa38-2b7bcf483623": 83,
+        "863613b8-1836-4aa6-aa38-2b7bcf483623": 86,
         "eb628627-d218-4f25-b392-b31da044a664": 13,
         "bb88021b-8f35-460f-8b35-2cc21b48c02f": 7,
         "0f4b2b31-2456-4324-ad4f-bb143a8816c1": 1,
@@ -2794,18 +2838,18 @@
         "6496ad48-f109-46b2-aaf7-1e0a9daff9cb": 11,
         "cd5489bd-d7c6-4e55-9cf2-4afc3ac979c1": 3,
         "df21fb79-4308-4d95-806e-114966c0a77e": 5,
-        "7673250e-135d-4702-8d49-749dffc97202": 28,
+        "7673250e-135d-4702-8d49-749dffc97202": 31,
         "965c3e26-7a40-4264-90c7-98258f3663f5": 46
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 262,
+    "totalCaptureCount": 267,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 14,
-    "totalBattleVictoryCount": 91,
+    "totalBattleVictoryCount": 94,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 91,
+    "totalPvWBattleVictoryCount": 94,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 4,
     "totalTradedCount": 2,
@@ -2814,18 +2858,18 @@
       "poison": 22,
       "normal": 48,
       "fire": 22,
-      "ghost": 14,
+      "ghost": 16,
       "ground": 26,
       "water": 45,
-      "dark": 18,
+      "dark": 19,
       "fairy": 17,
       "bug": 33,
       "flying": 32,
       "steel": 7,
       "electric": 13,
-      "rock": 10,
+      "rock": 11,
       "fighting": 11,
-      "psychic": 20,
+      "psychic": 21,
       "ice": 3,
       "dragon": 5
     },
