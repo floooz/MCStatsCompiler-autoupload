@@ -222,6 +222,14 @@
             "discoveredTimestamp": 1739481812625,
             "caughtTimestamp": 1739481812625
           }
+        },
+        "hippowdon": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739548138399,
+            "caughtTimestamp": 1739548138399
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -255,7 +263,8 @@
         "24",
         "25",
         "26",
-        "27"
+        "27",
+        "28"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -287,7 +296,8 @@
         "staraptor": 1,
         "bergmite": 1,
         "avalugg": 1,
-        "tauros": 1
+        "tauros": 1,
+        "hippowdon": 1
       }
     },
     "yacb$boostManager": {
@@ -302,7 +312,7 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 585
+        "saveTimer": 747
       }
     },
     "koStreak": {
@@ -336,7 +346,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "tauros",
+      "species": "hippowdon",
       "count": 1
     },
     "encounter": {
@@ -391,7 +401,9 @@
         "staraptor": true,
         "voltorb": true,
         "bergmite": true,
-        "avalugg": true
+        "avalugg": true,
+        "thievul": true,
+        "hippowdon": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -460,7 +472,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 17,
+    "totalCaptureCount": 18,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 9,
     "totalBattleVictoryCount": 28,
@@ -475,7 +487,7 @@
       "rock": 2,
       "steel": 1,
       "fighting": 3,
-      "ground": 2,
+      "ground": 3,
       "poison": 2,
       "water": 1,
       "psychic": 1,

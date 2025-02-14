@@ -6,6 +6,7 @@ import configparser
 import openpyxl
 import datetime
 import ftplib
+import math
 
 
 def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
@@ -45,13 +46,24 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
 def most_pokemons_leaderboard(df):
     # Load the Excel file
     file_path = "output.xlsx"
+
     sheet_name = "leaderboard1"
     wb = openpyxl.load_workbook(file_path)
     ws = wb[sheet_name]
     i = 0
-    for index, row in df.iterrows():
+    for index, row in df[0:10].iterrows():
         ws.cell(row=i+3, column=3, value=index)
         ws.cell(row=i+3, column=4, value=row[0])
+        i += 1
+    now = datetime.datetime.now()
+    ws.cell(row=13, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
+    
+    sheet_name = "leaderboard2"
+    ws = wb[sheet_name]
+    i = 0
+    for index, row in df[0:40].iterrows():
+        ws.cell(row=(i%10)+3, column=3+math.floor(i/10)*3, value=index)
+        ws.cell(row=(i%10)+3, column=4+math.floor(i/10)*3, value=row[0])
         i += 1
     now = datetime.datetime.now()
     ws.cell(row=13, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
@@ -77,10 +89,10 @@ count_df['times_caught'] = count_df.apply(lambda row: (row == "CAUGHT").sum(), a
 print(count_df['times_caught'].sort_values().to_string())
 count_df.drop('times_caught', axis=1, inplace=True)
 player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
-player_sum['index'] = range(39, 0, -1)
+player_sum['index'] = range(len(player_sum), 0, -1)
 player_sum = player_sum.iloc[::-1]
 print(player_sum)
-most_pokemons_leaderboard(player_sum.iloc[0:10])
+most_pokemons_leaderboard(player_sum.iloc)
 
 
 # Close the Connection

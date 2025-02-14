@@ -854,6 +854,78 @@
             "discoveredTimestamp": 1739489049823,
             "caughtTimestamp": 1739489049823
           }
+        },
+        "rhyhorn": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739534810073,
+            "caughtTimestamp": 1739534810073
+          }
+        },
+        "grimer": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739534969993,
+            "caughtTimestamp": 1739534969993
+          }
+        },
+        "doduo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739535246132,
+            "caughtTimestamp": 1739535246132
+          }
+        },
+        "slowpoke": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739535322078,
+            "caughtTimestamp": 1739535322078
+          }
+        },
+        "applin": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739535546494,
+            "caughtTimestamp": 1739535546494
+          }
+        },
+        "sandslash": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739535662293,
+            "caughtTimestamp": 1739535662293
+          }
+        },
+        "machoke": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739535960596,
+            "caughtTimestamp": 1739535960596
+          }
+        },
+        "minun": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739536745079,
+            "caughtTimestamp": 1739536745079
+          }
+        },
+        "buizel": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739538902007,
+            "caughtTimestamp": 1739538902007
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -967,7 +1039,16 @@
         "103",
         "104",
         "105",
-        "106"
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1011,7 +1092,7 @@
         "happiny": 1,
         "magnemite": 1,
         "lickitung": 1,
-        "spearow": 1,
+        "spearow": 2,
         "gloom": 1,
         "ledyba": 1,
         "tauros": 1,
@@ -1078,7 +1159,16 @@
         "darmanitan": 1,
         "charcadet": 1,
         "cubone": 1,
-        "shedinja": 1
+        "shedinja": 1,
+        "rhyhorn": 1,
+        "grimer": 1,
+        "doduo": 1,
+        "slowpoke": 1,
+        "applin": 1,
+        "sandslash": 1,
+        "machoke": 1,
+        "minun": 1,
+        "buizel": 1
       }
     },
     "yacb$boostManager": {
@@ -1093,7 +1183,7 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 100
+        "saveTimer": 798
       }
     },
     "koStreak": {
@@ -1118,7 +1208,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "shedinja",
+      "species": "buizel",
       "count": 1
     },
     "encounter": {
@@ -1235,7 +1325,16 @@
         "shiinotic": true,
         "camerupt": true,
         "darmanitan": true,
-        "charcadet": true
+        "charcadet": true,
+        "rhyhorn": true,
+        "grimer": true,
+        "doduo": true,
+        "slowpoke": true,
+        "applin": true,
+        "sandslash": true,
+        "machoke": true,
+        "minun": true,
+        "buizel": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1312,7 +1411,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 102,
+    "totalCaptureCount": 112,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 3,
     "totalBattleVictoryCount": 43,
@@ -1322,22 +1421,23 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 1,
     "totalTypeCaptureCounts": {
-      "normal": 16,
+      "normal": 18,
       "bug": 16,
-      "poison": 15,
+      "poison": 16,
       "fairy": 7,
       "ghost": 10,
-      "water": 15,
+      "water": 17,
       "fire": 12,
-      "ground": 10,
-      "grass": 13,
-      "flying": 10,
-      "electric": 6,
+      "ground": 12,
+      "grass": 14,
+      "flying": 12,
+      "electric": 7,
       "steel": 6,
-      "fighting": 4,
-      "rock": 2,
+      "fighting": 5,
+      "rock": 3,
       "dark": 4,
-      "psychic": 3
+      "psychic": 4,
+      "dragon": 1
     },
     "totalDefeatedCounts": {
       "cobblemon:spinarak": 1,

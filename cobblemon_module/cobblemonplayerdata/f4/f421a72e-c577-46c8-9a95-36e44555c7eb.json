@@ -304,6 +304,22 @@
             "discoveredTimestamp": 1739486169441,
             "caughtTimestamp": 1739486169441
           }
+        },
+        "plusle": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739546898066,
+            "caughtTimestamp": 1739546898066
+          }
+        },
+        "squirtle": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739548031096,
+            "caughtTimestamp": 1739548031096
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -347,7 +363,9 @@
         "34",
         "35",
         "36",
-        "37"
+        "37",
+        "38",
+        "39"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -390,7 +408,9 @@
         "abra": 1,
         "jolteon": 2,
         "leafeon": 1,
-        "gallade": 1
+        "gallade": 1,
+        "plusle": 1,
+        "squirtle": 1
       }
     },
     "yacb$boostManager": {
@@ -425,7 +445,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "abra",
+      "species": "squirtle",
       "count": 1
     },
     "encounter": {
@@ -472,32 +492,82 @@
         "abra": true,
         "jolteon": true,
         "leafeon": true,
-        "gallade": true
+        "gallade": true,
+        "plusle": true,
+        "squirtle": true
       }
     },
     "cobblenavPlayerStatsData": {
       "name": "cobblenavPlayerStatsData",
-      "totalPvpCount": 0,
+      "totalPvpCount": 1,
       "startDate": 1739380088299,
       "grantedBadges": [],
       "pokemonUsage": {
-        "411ceb20-6744-4680-9a26-8de5d6c88461": 16,
+        "411ceb20-6744-4680-9a26-8de5d6c88461": 19,
+        "98ffff1e-5705-49ff-9908-09bd609c8b11": 3,
+        "9319e001-cc0e-40eb-895f-5647e1bd81ae": 3,
+        "50899c76-e986-4eb5-b940-bc6df86c2bfa": 3,
         "3f980a91-1247-4a76-82ac-545649823c88": 5,
         "74a9a9fa-6ceb-4634-8850-468ffc8f5ec5": 4,
         "0088e532-382c-4c3c-91c2-c54dab503a3f": 5,
         "faf8e269-d886-4682-8318-f4c387f33f47": 3,
-        "8f909475-b1aa-4c22-8398-14769ed77e49": 19,
-        "a1e18e7a-49dc-4dab-9117-7b7f3b3e7eb5": 19
+        "8f909475-b1aa-4c22-8398-14769ed77e49": 22,
+        "a1e18e7a-49dc-4dab-9117-7b7f3b3e7eb5": 19,
+        "f0c546e0-aafc-4afe-ad70-4a271087abf8": 3
       }
+    },
+    "cobblenavContactData": {
+      "name": "cobblenavContactData",
+      "contacts": [
+        {
+          "key": "5c3576a4-b76b-414f-94c9-6d8c3b0f8816",
+          "profile": {
+            "id": "5c3576a4-b76b-414f-94c9-6d8c3b0f8816",
+            "name": "MoMaN_uS"
+          },
+          "name": "MoMaN_uS",
+          "title": "",
+          "winnings": 0,
+          "losses": 1,
+          "team": [
+            {
+              "name": "cinderace",
+              "level": 92
+            },
+            {
+              "name": "gastly",
+              "level": 31
+            },
+            {
+              "name": "blipbug",
+              "level": 11
+            },
+            {
+              "name": "rattata",
+              "level": 1
+            },
+            {
+              "name": "nickit",
+              "level": 9
+            },
+            {
+              "name": "nymble",
+              "level": 8
+            }
+          ],
+          "trainer": false
+        }
+      ],
+      "title": ""
     }
   },
   "advancementData": {
-    "totalCaptureCount": 28,
+    "totalCaptureCount": 30,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 6,
-    "totalBattleVictoryCount": 28,
+    "totalBattleVictoryCount": 30,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 28,
+    "totalPvWBattleVictoryCount": 30,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 16,
@@ -508,7 +578,7 @@
       "steel": 1,
       "ghost": 3,
       "poison": 4,
-      "electric": 5,
+      "electric": 6,
       "flying": 2,
       "psychic": 4,
       "fire": 4,
@@ -516,7 +586,7 @@
       "grass": 2,
       "dragon": 1,
       "bug": 1,
-      "water": 3,
+      "water": 4,
       "fighting": 1,
       "fairy": 1
     },

@@ -288,8 +288,9 @@
         "pyroar": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739320058421
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739320058421,
+            "caughtTimestamp": 1739544856968
           }
         },
         "capsakid": {
@@ -1593,6 +1594,54 @@
             "discoveredTimestamp": 1739506139234,
             "caughtTimestamp": 1739506139234
           }
+        },
+        "herdier": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739544158220,
+            "caughtTimestamp": 1739544158220
+          }
+        },
+        "mabosstiff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739544202474,
+            "caughtTimestamp": 1739544202474
+          }
+        },
+        "sandshrew": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739544852173,
+            "caughtTimestamp": 1739544852173
+          }
+        },
+        "drifblim": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739546883216,
+            "caughtTimestamp": 1739546883216
+          }
+        },
+        "klefki": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739548985202,
+            "caughtTimestamp": 1739548985202
+          }
+        },
+        "ampharos": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739554939316,
+            "caughtTimestamp": 1739554939316
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1764,7 +1813,14 @@
         "162",
         "163",
         "164",
-        "165"
+        "165",
+        "166",
+        "167",
+        "168",
+        "169",
+        "170",
+        "171",
+        "172"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1905,7 +1961,7 @@
         "magneton": 1,
         "bibarel": 1,
         "vespiquen": 1,
-        "eevee": 1,
+        "eevee": 2,
         "ditto": 1,
         "shroomish": 2,
         "magnezone": 1,
@@ -1934,7 +1990,14 @@
         "probopass": 1,
         "cufant": 1,
         "heatmor": 1,
-        "durant": 1
+        "durant": 1,
+        "herdier": 1,
+        "mabosstiff": 1,
+        "sandshrew": 1,
+        "pyroar": 1,
+        "drifblim": 1,
+        "klefki": 1,
+        "ampharos": 1
       }
     },
     "yacb$boostManager": {
@@ -1948,8 +2011,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 961
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
@@ -1970,7 +2033,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "durant",
+      "species": "ampharos",
       "count": 1
     },
     "encounter": {
@@ -2145,7 +2208,14 @@
         "probopass": true,
         "cufant": true,
         "heatmor": true,
-        "durant": true
+        "durant": true,
+        "herdier": true,
+        "mabosstiff": true,
+        "sandshrew": true,
+        "pyroar": true,
+        "drifblim": true,
+        "klefki": true,
+        "ampharos": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2175,7 +2245,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 178,
+    "totalCaptureCount": 186,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 12,
     "totalBattleVictoryCount": 21,
@@ -2185,17 +2255,17 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "ground": 17,
-      "steel": 8,
-      "ghost": 17,
+      "ground": 18,
+      "steel": 9,
+      "ghost": 18,
       "poison": 12,
-      "fire": 14,
-      "flying": 27,
-      "dark": 6,
+      "fire": 15,
+      "flying": 28,
+      "dark": 7,
       "water": 42,
-      "electric": 18,
-      "fairy": 11,
-      "normal": 31,
+      "electric": 19,
+      "fairy": 12,
+      "normal": 34,
       "rock": 10,
       "bug": 19,
       "grass": 18,
