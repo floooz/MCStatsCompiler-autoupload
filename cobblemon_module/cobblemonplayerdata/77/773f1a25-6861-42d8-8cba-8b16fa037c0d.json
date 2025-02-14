@@ -938,6 +938,43 @@
             "status": "SEEN",
             "discoveredTimestamp": 1739497338494
           }
+        },
+        "abra": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739498461867,
+            "caughtTimestamp": 1739498461867
+          }
+        },
+        "tinkatuff": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739498549975
+          }
+        },
+        "lycanroc": {
+          "midnight": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501003098,
+            "caughtTimestamp": 1739501052314
+          }
+        },
+        "hippopotas": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739501498874
+          }
+        },
+        "solrock": {
+          "normal": {
+            "isShiny": false,
+            "status": "SEEN",
+            "discoveredTimestamp": 1739501990475
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1036,7 +1073,9 @@
         "89",
         "90",
         "91",
-        "92"
+        "92",
+        "93",
+        "94"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1134,7 +1173,9 @@
         "sneasel": 1,
         "onix": 1,
         "glimmet": 1,
-        "glimmora": 1
+        "glimmora": 1,
+        "abra": 1,
+        "lycanroc": 1
       }
     },
     "yacb$boostManager": {
@@ -1148,8 +1189,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 375
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
@@ -1236,7 +1277,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "glimmet",
+      "species": "lycanroc",
       "count": 1
     },
     "encounter": {
@@ -1390,7 +1431,9 @@
         "spinarak": true,
         "glimmet": true,
         "glimmora": true,
-        "dugtrio": true
+        "dugtrio": true,
+        "abra": true,
+        "lycanroc": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1400,12 +1443,12 @@
       "grantedBadges": [],
       "pokemonUsage": {
         "aa28b605-57fc-4ff2-b80d-d020d082cf8c": 5,
-        "75d48519-2e6f-40c0-a4e0-3abf6e450739": 39,
+        "75d48519-2e6f-40c0-a4e0-3abf6e450739": 40,
         "95ecdcf2-7ada-4ef4-a31a-b874ae604aba": 1,
         "a606278f-7ba3-4903-8ff3-6f5246d5fbdb": 2,
         "217216c3-79a3-45a5-9011-45d429af241a": 1,
         "7aa1a551-06a9-40dd-9337-6f6de2bad7e3": 23,
-        "628de83b-177c-47f5-975a-63b7704775d2": 59,
+        "628de83b-177c-47f5-975a-63b7704775d2": 60,
         "4e18aefd-9ce8-4d72-ac01-5abe5bc6e24f": 48,
         "6621c399-644f-4467-bbe6-67661e41c718": 16,
         "1d2af65c-4792-436c-97b3-c2292a354bec": 18,
@@ -1422,22 +1465,23 @@
         "9a1d7fc8-0de5-4da2-a769-62bd4db941a2": 18,
         "b67d9291-2179-4777-b8d8-982be5d3acdd": 17,
         "4007b7b8-b59d-444d-a27d-23e0ff3881ab": 31,
-        "6ad8dfd0-b64e-4d67-9afd-b7b87d418b04": 43,
+        "6ad8dfd0-b64e-4d67-9afd-b7b87d418b04": 44,
         "27cb1b0c-ae79-4198-9626-9cb410d09446": 7,
         "c0a86dc7-e3e4-4b73-bcb9-eb5ef0dd6aa6": 4,
         "147666e6-d3c6-42dc-a092-b978ef6915ed": 4,
         "ac40c07e-430c-439a-bead-2a1dc479ee46": 1,
         "293b6e6b-8f5e-4e72-9704-3733b46ffc8d": 2,
         "14a3bad2-f70a-43fd-966e-083a055b2667": 3,
+        "9574c25c-2019-48dd-b8aa-92c65a73d31c": 1,
         "e6572e4f-f7cd-4d32-9f4b-48c11759f844": 5,
-        "78a6ee55-41ac-40f8-94b2-ffc6331b1239": 71,
+        "78a6ee55-41ac-40f8-94b2-ffc6331b1239": 72,
         "75dd8b2a-3133-4b49-ac7d-ba7345d0fa62": 1,
         "7dabf79a-27c6-4641-9679-689050fc1bd1": 4,
         "01944cd2-2047-4126-b7ae-e29dda982f7f": 8,
         "95e797ed-7f53-4f78-96cb-d30e2dbf39ec": 4,
         "804eaae0-d6d6-4e69-a831-7fe6751f6922": 1,
         "7ff25fc6-1a49-4176-ad7f-0d3747bdff05": 1,
-        "35a6fe9f-334b-40e1-8f35-29d495abc365": 74,
+        "35a6fe9f-334b-40e1-8f35-29d495abc365": 75,
         "b6bc8b70-300b-4e43-85c8-66a2a6c1ee92": 4,
         "2e6e1f67-f994-4d23-b6c4-8cfbdb91bc6d": 2,
         "f303129b-7b33-45ec-82ce-16cb050b4076": 6
@@ -1507,12 +1551,12 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 71,
+    "totalCaptureCount": 73,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 43,
-    "totalBattleVictoryCount": 161,
+    "totalBattleVictoryCount": 162,
     "totalPvPBattleVictoryCount": 2,
-    "totalPvWBattleVictoryCount": 159,
+    "totalPvWBattleVictoryCount": 160,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 4,
@@ -1521,7 +1565,7 @@
       "normal": 6,
       "ghost": 8,
       "water": 9,
-      "rock": 4,
+      "rock": 5,
       "electric": 4,
       "fairy": 1,
       "steel": 4,
@@ -1532,7 +1576,7 @@
       "flying": 9,
       "fighting": 9,
       "grass": 4,
-      "psychic": 2,
+      "psychic": 3,
       "poison": 7,
       "dragon": 2
     },

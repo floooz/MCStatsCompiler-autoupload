@@ -856,6 +856,22 @@
             "discoveredTimestamp": 1739496792626,
             "caughtTimestamp": 1739496792626
           }
+        },
+        "squawkabilly": {
+          "blue": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501686613,
+            "caughtTimestamp": 1739501686613
+          }
+        },
+        "kricketot": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502142871,
+            "caughtTimestamp": 1739502142871
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -968,7 +984,9 @@
         "102",
         "103",
         "104",
-        "105"
+        "105",
+        "106",
+        "107"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1023,7 +1041,7 @@
         "numel": 1,
         "magnemite": 1,
         "ekans": 1,
-        "jigglypuff": 1,
+        "jigglypuff": 2,
         "fearow": 2,
         "sandshrew": 1,
         "wooper": 2,
@@ -1076,7 +1094,9 @@
         "sableye": 1,
         "banette": 1,
         "farfetchd": 1,
-        "slowpoke": 1
+        "slowpoke": 1,
+        "squawkabilly": 1,
+        "kricketot": 1
       }
     },
     "yacb$boostManager": {
@@ -1091,7 +1111,7 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 1152
+        "saveTimer": 844
       }
     },
     "koStreak": {
@@ -1126,7 +1146,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "kadabra",
+      "species": "kricketot",
       "count": 1
     },
     "encounter": {
@@ -1248,7 +1268,9 @@
         "sableye": true,
         "banette": true,
         "farfetchd": true,
-        "slowpoke": true
+        "slowpoke": true,
+        "squawkabilly": true,
+        "kricketot": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1286,7 +1308,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 107,
+    "totalCaptureCount": 110,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 6,
     "totalBattleVictoryCount": 67,
@@ -1296,13 +1318,13 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
-      "normal": 21,
+      "normal": 23,
       "grass": 10,
-      "flying": 14,
+      "flying": 15,
       "poison": 12,
       "electric": 9,
-      "fairy": 6,
-      "bug": 9,
+      "fairy": 7,
+      "bug": 10,
       "psychic": 7,
       "water": 9,
       "fire": 21,

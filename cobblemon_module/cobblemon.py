@@ -7,9 +7,6 @@ import openpyxl
 import datetime
 
 
-# To get: table with columns for players and rows for pokemons
-
-
 def loadData(csvtoggle, csvpath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
@@ -65,6 +62,7 @@ config = configparser.ConfigParser()
 config.read('cobblemon_config.ini')
 
 # Load the data
+# To get: table with columns for players and rows for pokemons
 df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'])
 count_df = df.drop(['caughtTimestamp', 'discoveredTimestamp', 'isShiny'], level=2)
 print(count_df)

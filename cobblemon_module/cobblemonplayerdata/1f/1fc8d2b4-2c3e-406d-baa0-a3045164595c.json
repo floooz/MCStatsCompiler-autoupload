@@ -1472,6 +1472,38 @@
             "discoveredTimestamp": 1739491976383,
             "caughtTimestamp": 1739491976383
           }
+        },
+        "nincada": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500602502,
+            "caughtTimestamp": 1739500602502
+          }
+        },
+        "wooper": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500940608,
+            "caughtTimestamp": 1739500940608
+          }
+        },
+        "shuckle": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501021556,
+            "caughtTimestamp": 1739501021556
+          }
+        },
+        "gible": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501118103,
+            "caughtTimestamp": 1739501118103
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -1627,7 +1659,11 @@
         "146",
         "147",
         "148",
-        "149"
+        "149",
+        "150",
+        "151",
+        "152",
+        "153"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -1677,7 +1713,7 @@
         "mankey": 1,
         "bellsprout": 1,
         "aipom": 1,
-        "frillish": 2,
+        "frillish": 3,
         "jellicent": 1,
         "arrokuda": 1,
         "pyukumuku": 1,
@@ -1694,7 +1730,7 @@
         "veluza": 1,
         "starmie": 1,
         "barraskewda": 1,
-        "qwilfish": 1,
+        "qwilfish": 2,
         "binacle": 1,
         "krabby": 1,
         "wingull": 2,
@@ -1781,7 +1817,11 @@
         "roselia": 1,
         "minun": 1,
         "hoppip": 1,
-        "numel": 1
+        "numel": 1,
+        "nincada": 1,
+        "wooper": 1,
+        "shuckle": 1,
+        "gible": 1
       }
     },
     "yacb$boostManager": {
@@ -1795,8 +1835,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 948
       }
     },
     "koStreak": {
@@ -1817,7 +1857,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "ribombee",
+      "species": "gible",
       "count": 1
     },
     "encounter": {
@@ -1976,7 +2016,11 @@
         "roselia": true,
         "minun": true,
         "hoppip": true,
-        "numel": true
+        "numel": true,
+        "nincada": true,
+        "wooper": true,
+        "shuckle": true,
+        "gible": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2006,7 +2050,7 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 159,
+    "totalCaptureCount": 165,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 12,
     "totalBattleVictoryCount": 21,
@@ -2016,23 +2060,23 @@
     "totalShinyCaptureCount": 0,
     "totalTradedCount": 0,
     "totalTypeCaptureCounts": {
-      "ground": 13,
+      "ground": 16,
       "steel": 5,
-      "ghost": 14,
-      "poison": 11,
+      "ghost": 15,
+      "poison": 12,
       "fire": 12,
       "flying": 27,
       "dark": 6,
-      "water": 39,
+      "water": 42,
       "electric": 18,
       "fairy": 8,
       "normal": 31,
-      "rock": 8,
-      "bug": 15,
+      "rock": 9,
+      "bug": 17,
       "grass": 15,
       "fighting": 2,
       "psychic": 12,
-      "dragon": 2
+      "dragon": 3
     },
     "totalDefeatedCounts": {
       "cobblemon:bunnelby": 1,

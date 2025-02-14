@@ -109,6 +109,12 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739315083235,
             "caughtTimestamp": 1739315083235
+          },
+          "paldeablaze": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501240127,
+            "caughtTimestamp": 1739501278023
           }
         },
         "camerupt": {
@@ -1627,6 +1633,12 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739477282687,
             "caughtTimestamp": 1739477282687
+          },
+          "alolabias": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739498986121,
+            "caughtTimestamp": 1739499013499
           }
         },
         "galvantula": {
@@ -1695,8 +1707,9 @@
         "shroodle": {
           "normal": {
             "isShiny": false,
-            "status": "SEEN",
-            "discoveredTimestamp": 1739485277982
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739485277982,
+            "caughtTimestamp": 1739499927258
           }
         },
         "tyrogue": {
@@ -1769,6 +1782,190 @@
             "status": "CAUGHT",
             "discoveredTimestamp": 1739497534701,
             "caughtTimestamp": 1739497534701
+          }
+        },
+        "raichu": {
+          "alola": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739498388201,
+            "caughtTimestamp": 1739498388201
+          }
+        },
+        "barraskewda": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739498625407,
+            "caughtTimestamp": 1739498693980
+          }
+        },
+        "steenee": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739498743776,
+            "caughtTimestamp": 1739498743776
+          }
+        },
+        "solgaleo": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739499421944,
+            "caughtTimestamp": 1739499421944
+          }
+        },
+        "sandslash": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739499654647,
+            "caughtTimestamp": 1739499654647
+          }
+        },
+        "onix": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739499850164,
+            "caughtTimestamp": 1739499850164
+          }
+        },
+        "pelipper": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500039465,
+            "caughtTimestamp": 1739500039465
+          }
+        },
+        "ambipom": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500065006,
+            "caughtTimestamp": 1739500096508
+          }
+        },
+        "buizel": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500113199,
+            "caughtTimestamp": 1739500139596
+          }
+        },
+        "exeggutor": {
+          "alola": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500553661,
+            "caughtTimestamp": 1739500553661
+          }
+        },
+        "hypno": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500770549,
+            "caughtTimestamp": 1739500770549
+          }
+        },
+        "yamper": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500871524,
+            "caughtTimestamp": 1739500894721
+          }
+        },
+        "electrode": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739500904957,
+            "caughtTimestamp": 1739500925311
+          }
+        },
+        "greattusk": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501098265,
+            "caughtTimestamp": 1739501098265
+          }
+        },
+        "mudsdale": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501167929,
+            "caughtTimestamp": 1739501167929
+          }
+        },
+        "lillipup": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501212431,
+            "caughtTimestamp": 1739501239078
+          }
+        },
+        "capsakid": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501289572,
+            "caughtTimestamp": 1739501314699
+          }
+        },
+        "ledyba": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501431831,
+            "caughtTimestamp": 1739501466774
+          }
+        },
+        "mabosstiff": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501554427,
+            "caughtTimestamp": 1739501600274
+          }
+        },
+        "bouffalant": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501653662,
+            "caughtTimestamp": 1739501731676
+          }
+        },
+        "timburr": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501748321,
+            "caughtTimestamp": 1739501773920
+          }
+        },
+        "phanpy": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501788525,
+            "caughtTimestamp": 1739501831861
+          }
+        },
+        "poochyena": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739501840695,
+            "caughtTimestamp": 1739501870457
           }
         }
       },
@@ -1995,7 +2192,33 @@
         "216",
         "217",
         "218",
-        "219"
+        "219",
+        "220",
+        "221",
+        "222",
+        "223",
+        "224",
+        "225",
+        "226",
+        "227",
+        "228",
+        "229",
+        "230",
+        "231",
+        "232",
+        "233",
+        "234",
+        "235",
+        "236",
+        "237",
+        "238",
+        "239",
+        "240",
+        "241",
+        "242",
+        "243",
+        "244",
+        "245"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -2013,7 +2236,7 @@
         "golurk": 1,
         "magikarp": 11,
         "kangaskhan": 1,
-        "tauros": 1,
+        "tauros": 2,
         "camerupt": 1,
         "gastly": 2,
         "magby": 1,
@@ -2057,7 +2280,7 @@
         "noctowl": 3,
         "buneary": 1,
         "pachirisu": 2,
-        "rookidee": 1,
+        "rookidee": 3,
         "squawkabilly": 2,
         "donphan": 1,
         "mudbray": 1,
@@ -2189,8 +2412,8 @@
         "murkrow": 1,
         "barbaracle": 1,
         "mankey": 1,
-        "corvisquire": 1,
-        "corviknight": 1,
+        "corvisquire": 3,
+        "corviknight": 3,
         "shuppet": 1,
         "dugtrio": 1,
         "vulpix": 1,
@@ -2202,7 +2425,7 @@
         "grovyle": 1,
         "magmar": 1,
         "morelull": 1,
-        "exeggcute": 1,
+        "exeggcute": 2,
         "galvantula": 1,
         "tangrowth": 1,
         "chingling": 1,
@@ -2218,7 +2441,31 @@
         "centiskorch": 1,
         "ursaluna": 1,
         "dragalge": 1,
-        "latios": 1
+        "latios": 1,
+        "raichu": 1,
+        "barraskewda": 1,
+        "steenee": 1,
+        "solgaleo": 1,
+        "sandslash": 1,
+        "onix": 1,
+        "shroodle": 1,
+        "pelipper": 1,
+        "ambipom": 1,
+        "buizel": 1,
+        "exeggutor": 1,
+        "hypno": 1,
+        "yamper": 1,
+        "electrode": 1,
+        "greattusk": 1,
+        "mudsdale": 1,
+        "lillipup": 1,
+        "capsakid": 1,
+        "ledyba": 1,
+        "mabosstiff": 1,
+        "bouffalant": 1,
+        "timburr": 1,
+        "phanpy": 1,
+        "poochyena": 1
       }
     },
     "yacb$boostManager": {
@@ -2232,13 +2479,13 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": false,
-        "saveTimer": 1172
+        "shouldSave": true,
+        "saveTimer": 1200
       }
     },
     "koStreak": {
       "name": "koStreak",
-      "species": "moltres",
+      "species": "boltund",
       "count": 1
     },
     "koCount": {
@@ -2258,12 +2505,14 @@
         "regice": 1,
         "impidimp": 1,
         "nosepass": 1,
-        "moltres": 1
+        "moltres": 1,
+        "victini": 1,
+        "boltund": 1
       }
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "latios",
+      "species": "poochyena",
       "count": 1
     },
     "encounter": {
@@ -2494,7 +2743,31 @@
         "centiskorch": true,
         "ursaluna": true,
         "dragalge": true,
-        "latios": true
+        "latios": true,
+        "raichu": true,
+        "barraskewda": true,
+        "steenee": true,
+        "solgaleo": true,
+        "sandslash": true,
+        "onix": true,
+        "shroodle": true,
+        "pelipper": true,
+        "ambipom": true,
+        "buizel": true,
+        "exeggutor": true,
+        "victini": true,
+        "hypno": true,
+        "yamper": true,
+        "electrode": true,
+        "greattusk": true,
+        "mudsdale": true,
+        "lillipup": true,
+        "capsakid": true,
+        "ledyba": true,
+        "mabosstiff": true,
+        "timburr": true,
+        "phanpy": true,
+        "poochyena": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -2504,13 +2777,16 @@
       "grantedBadges": [],
       "pokemonUsage": {
         "749ee70c-7dbc-4bdb-9f05-51904b1f0a7e": 2,
-        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 39,
+        "eb11fd3b-d07c-4f77-951e-b45d226840ce": 69,
         "00139690-6faa-4030-9659-31180f0b54f6": 4,
-        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 46,
-        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 44,
-        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 67,
+        "a0d1d861-1fe6-45b2-af49-da6103bd2ff6": 76,
+        "4d451d0d-afb2-40ff-a36b-2892c7a109b5": 46,
+        "ad46f476-1447-4d5a-a1d3-877b0a1f5e70": 97,
+        "67a852ef-c143-4674-9405-36cf4bc12fb1": 4,
+        "4265ddc8-a174-4c59-a1e4-3d86720c7980": 10,
         "2a0f2eef-ab45-4ee1-a37e-877b5ad4f961": 4,
-        "863613b8-1836-4aa6-aa38-2b7bcf483623": 53,
+        "863613b8-1836-4aa6-aa38-2b7bcf483623": 83,
+        "eb628627-d218-4f25-b392-b31da044a664": 13,
         "bb88021b-8f35-460f-8b35-2cc21b48c02f": 7,
         "0f4b2b31-2456-4324-ad4f-bb143a8816c1": 1,
         "0496167f-d484-48e6-8610-1dfcdd740a68": 7,
@@ -2518,39 +2794,40 @@
         "6496ad48-f109-46b2-aaf7-1e0a9daff9cb": 11,
         "cd5489bd-d7c6-4e55-9cf2-4afc3ac979c1": 3,
         "df21fb79-4308-4d95-806e-114966c0a77e": 5,
-        "965c3e26-7a40-4264-90c7-98258f3663f5": 44
+        "7673250e-135d-4702-8d49-749dffc97202": 28,
+        "965c3e26-7a40-4264-90c7-98258f3663f5": 46
       }
     }
   },
   "advancementData": {
-    "totalCaptureCount": 234,
+    "totalCaptureCount": 262,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 10,
-    "totalBattleVictoryCount": 61,
+    "totalEvolvedCount": 14,
+    "totalBattleVictoryCount": 91,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 61,
+    "totalPvWBattleVictoryCount": 91,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 4,
     "totalTradedCount": 2,
     "totalTypeCaptureCounts": {
-      "grass": 32,
-      "poison": 21,
-      "normal": 44,
-      "fire": 21,
+      "grass": 36,
+      "poison": 22,
+      "normal": 48,
+      "fire": 22,
       "ghost": 14,
-      "ground": 21,
-      "water": 42,
-      "dark": 16,
+      "ground": 26,
+      "water": 45,
+      "dark": 18,
       "fairy": 17,
-      "bug": 32,
-      "flying": 28,
-      "steel": 6,
-      "electric": 10,
-      "rock": 9,
-      "fighting": 8,
-      "psychic": 16,
+      "bug": 33,
+      "flying": 32,
+      "steel": 7,
+      "electric": 13,
+      "rock": 10,
+      "fighting": 11,
+      "psychic": 20,
       "ice": 3,
-      "dragon": 4
+      "dragon": 5
     },
     "totalDefeatedCounts": {
       "cobblemon:zigzagoon": 1,
@@ -2567,7 +2844,9 @@
       "cobblemon:regice": 1,
       "cobblemon:impidimp": 1,
       "cobblemon:nosepass": 1,
-      "cobblemon:moltres": 1
+      "cobblemon:moltres": 1,
+      "cobblemon:victini": 1,
+      "cobblemon:boltund": 1
     },
     "aspectsCollected": {}
   }

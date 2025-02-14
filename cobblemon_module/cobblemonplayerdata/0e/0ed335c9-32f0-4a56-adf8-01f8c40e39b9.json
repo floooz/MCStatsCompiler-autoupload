@@ -612,6 +612,14 @@
             "discoveredTimestamp": 1739496519027,
             "caughtTimestamp": 1739496519027
           }
+        },
+        "zacian": {
+          "normal": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739502330630,
+            "caughtTimestamp": 1739502330630
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -692,7 +700,8 @@
         "71",
         "72",
         "73",
-        "74"
+        "74",
+        "75"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -770,7 +779,8 @@
         "slowking": 1,
         "geodude": 1,
         "golisopod": 1,
-        "kyogre": 2
+        "kyogre": 2,
+        "zacian": 1
       }
     },
     "yacb$boostManager": {
@@ -784,8 +794,8 @@
         "speciesWeightBoosts": {},
         "labelWeightBoosts": {},
         "endedBoosts": [],
-        "shouldSave": true,
-        "saveTimer": 1200
+        "shouldSave": false,
+        "saveTimer": 517
       }
     },
     "koStreak": {
@@ -810,7 +820,7 @@
     },
     "captureStreak": {
       "name": "captureStreak",
-      "species": "kyogre",
+      "species": "zacian",
       "count": 1
     },
     "encounter": {
@@ -895,7 +905,8 @@
         "slowking": true,
         "geodude": true,
         "golisopod": true,
-        "kyogre": true
+        "kyogre": true,
+        "zacian": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -904,18 +915,19 @@
       "startDate": 1739300434724,
       "grantedBadges": [],
       "pokemonUsage": {
-        "6bc5a289-e2e7-4327-85cf-41307076ade4": 1,
+        "6bc5a289-e2e7-4327-85cf-41307076ade4": 2,
         "a4749c3c-95c2-48f6-894a-46da26eee1e1": 1,
         "7c5c6181-ecef-4c85-aa74-71a123833105": 4,
         "1c6870e0-7379-4888-8730-43ac4be77da6": 30,
         "316505b6-0d32-4cad-b175-8a5008e0856c": 9,
-        "9c8cf354-a32f-48d6-9898-afeaa6e9169f": 6,
+        "9c8cf354-a32f-48d6-9898-afeaa6e9169f": 7,
         "94f16f36-494f-4be5-bd24-dd888b6d47eb": 4,
         "2b76e9aa-39f0-49e0-8d5d-76dbc11d0dde": 26,
+        "587baac7-ffcf-48b7-98ba-50c6d9326c20": 1,
         "88edce2f-769c-4405-88e8-cac297f3f149": 27,
-        "64cf3a4f-7010-4ffe-8945-f1ce2fce6146": 15,
-        "eb221b90-100e-49f0-a9d6-c37887b2945e": 1,
-        "bbfe83bb-e982-44e6-8928-e34498c8d855": 7,
+        "64cf3a4f-7010-4ffe-8945-f1ce2fce6146": 16,
+        "eb221b90-100e-49f0-a9d6-c37887b2945e": 2,
+        "bbfe83bb-e982-44e6-8928-e34498c8d855": 8,
         "847c34ef-58d0-4dcd-8359-6f11bec926de": 20,
         "93d9965c-cb78-4987-bb96-a072b9a350ac": 1,
         "3dd2ead8-0a6e-4bc5-bb2d-03197a5dd61a": 21,
@@ -935,12 +947,12 @@
     }
   },
   "advancementData": {
-    "totalCaptureCount": 55,
+    "totalCaptureCount": 56,
     "totalEggsHatched": 0,
     "totalEvolvedCount": 18,
-    "totalBattleVictoryCount": 39,
+    "totalBattleVictoryCount": 40,
     "totalPvPBattleVictoryCount": 0,
-    "totalPvWBattleVictoryCount": 39,
+    "totalPvWBattleVictoryCount": 40,
     "totalPvNBattleVictoryCount": 0,
     "totalShinyCaptureCount": 2,
     "totalTradedCount": 2,
@@ -950,7 +962,7 @@
       "grass": 3,
       "normal": 7,
       "ghost": 7,
-      "fairy": 2,
+      "fairy": 3,
       "flying": 6,
       "fire": 3,
       "bug": 2,

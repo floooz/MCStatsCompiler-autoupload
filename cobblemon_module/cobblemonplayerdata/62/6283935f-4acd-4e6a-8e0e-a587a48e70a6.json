@@ -676,6 +676,14 @@
             "discoveredTimestamp": 1739497352729,
             "caughtTimestamp": 1739497352729
           }
+        },
+        "arcanine": {
+          "hisui": {
+            "isShiny": false,
+            "status": "CAUGHT",
+            "discoveredTimestamp": 1739497708311,
+            "caughtTimestamp": 1739497708311
+          }
         }
       },
       "name": "cobbledex_discovery"
@@ -766,7 +774,8 @@
         "81",
         "82",
         "83",
-        "84"
+        "84",
+        "85"
       ],
       "name": "Cobbledex_RewardHistory"
     },
@@ -854,7 +863,8 @@
         "skitty": 1,
         "granbull": 1,
         "blipbug": 1,
-        "growlithe": 1
+        "growlithe": 1,
+        "arcanine": 1
       }
     },
     "yacb$boostManager": {
@@ -869,7 +879,7 @@
         "labelWeightBoosts": {},
         "endedBoosts": [],
         "shouldSave": false,
-        "saveTimer": 803
+        "saveTimer": 812
       }
     },
     "koStreak": {
@@ -991,7 +1001,8 @@
         "skitty": true,
         "granbull": true,
         "blipbug": true,
-        "growlithe": true
+        "growlithe": true,
+        "arcanine": true
       }
     },
     "cobblenavPlayerStatsData": {
@@ -1019,7 +1030,7 @@
   "advancementData": {
     "totalCaptureCount": 75,
     "totalEggsHatched": 0,
-    "totalEvolvedCount": 6,
+    "totalEvolvedCount": 7,
     "totalBattleVictoryCount": 56,
     "totalPvPBattleVictoryCount": 0,
     "totalPvWBattleVictoryCount": 56,
