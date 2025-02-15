@@ -138,6 +138,7 @@ count_df.drop('times_caught', axis=1, inplace=True)
 player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
 player_sum['index'] = range(len(player_sum), 0, -1)
 player_sum = player_sum.iloc[::-1]
+player_sum.drop(config['LEADERBOARD']['IgnoreNames'].split(","), inplace=True)
 print(player_sum)
 most_pokemons_leaderboard(player_sum.iloc, config)
 
