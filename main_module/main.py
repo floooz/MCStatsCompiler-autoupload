@@ -14,6 +14,8 @@ def loadData(csvtoggle, csvpath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
     for filename in os.listdir('stats'):
+        if filename == ".gitignore":
+            continue
         print("Now processing", filename)
         file = open('stats/' + filename)
         data = json.load(file)
