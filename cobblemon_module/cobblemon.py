@@ -62,8 +62,8 @@ def most_pokemons_leaderboard(df, config):
     sheet_name = "leaderboard2"
     ws = wb[sheet_name]
     i = 0
-    ExcelRows = config['LEADERBOARD']['ExcelRows']
-    ExcelCols = config['LEADERBOARD']['ExcelColumns']
+    ExcelRows = int(config['LEADERBOARD']['ExcelRows'])
+    ExcelCols = int(config['LEADERBOARD']['ExcelColumns'])
     for index, row in df[0:ExcelRows*ExcelCols].iterrows():
         ws.cell(row=(i%ExcelRows)+3, column=3+math.floor(i/ExcelRows)*3, value=index)
         ws.cell(row=(i%ExcelRows)+3, column=4+math.floor(i/ExcelRows)*3, value=row[0])
