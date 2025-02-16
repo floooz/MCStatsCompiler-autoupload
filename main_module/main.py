@@ -2,6 +2,7 @@ import json
 import os
 import pandas as pd
 import configparser
+import ftplib
 
 
 # 1. Import each json file and store it
@@ -10,29 +11,62 @@ import configparser
 # 4. Bestandworst feature: Based on a username, return their position in each leaderboard of each stat, ranked from their best stat to their worst stat
 
 
-def loadData(csvtoggle, csvpath):
+def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
-    for filename in os.listdir('stats'):
-        if filename == ".gitignore":
-            continue
-        print("Now processing", filename)
-        file = open('stats/' + filename)
-        data = json.load(file)
-        # Import the JSON to a Pandas DF
-        temp_df = pd.json_normalize(data, meta_prefix=True)
-        temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-        temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
-        # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
-        temp_df.index = temp_df.index.str.split('.', expand=True)
-        if len(temp_df.index.levshape) > 3:
-            temp_df.index = temp_df.index.droplevel(3)
-        print(temp_df)
-        temp_df.to_csv('temp.csv')
-        if df.empty:
-            df = temp_df
-        else:
-            df = df.join(temp_df, how="outer")
+    if useftp == "true":
+        # Get files
+        filenames = ftpserver.nlst(ftppath)
+        ftpserver.cwd(ftppath)
+
+        for filename in filenames:
+            if filename[-1] == ".":
+                continue
+            print("Now processing", filename)
+            # Download the file to process
+            local_file = f"temp_{filename}"
+            with open(local_file, "wb") as file:
+                ftpserver.retrbinary(f"RETR {filename}", file.write)
+            with open(local_file, "r") as file:
+                data = json.load(file)
+            os.remove(local_file)
+            
+            # Import the JSON to a Pandas DF
+            temp_df = pd.json_normalize(data, meta_prefix=True)
+            temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+            temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
+            # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
+            temp_df.index = temp_df.index.str.split('.', expand=True)
+            if len(temp_df.index.levshape) > 3:
+                temp_df.index = temp_df.index.droplevel(3)
+            print(temp_df)
+            temp_df.to_csv('temp.csv')
+            if df.empty:
+                df = temp_df
+            else:
+                df = df.join(temp_df, how="outer")
+        
+    else:
+        for filename in os.listdir('stats'):
+            if filename == ".gitignore":
+                continue
+            print("Now processing", filename)
+            file = open('stats/' + filename)
+            data = json.load(file)
+            # Import the JSON to a Pandas DF
+            temp_df = pd.json_normalize(data, meta_prefix=True)
+            temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+            temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
+            # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
+            temp_df.index = temp_df.index.str.split('.', expand=True)
+            if len(temp_df.index.levshape) > 3:
+                temp_df.index = temp_df.index.droplevel(3)
+            print(temp_df)
+            temp_df.to_csv('temp.csv')
+            if df.empty:
+                df = temp_df
+            else:
+                df = df.join(temp_df, how="outer")
     # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
     df = df.fillna(0)
     if csvtoggle == "true":
@@ -63,8 +97,15 @@ def getBestAndWorst(df, username, cleaning, cleaningvalue):
 config = configparser.ConfigParser()
 config.read('main_config.ini')
 
+# Connect to FTP if activated
+ftp_server = None
+if config['FTP']['UseFTP'] == "true":
+    ftp_server = ftplib.FTP(config['FTP']['Host'], open("../username.txt", "r").read(), open("../password.txt", "r").read())
+    ftp_server.encoding = "utf-8"
+
+
 # Load the data
-df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath'])
+df = loadData(config['LEADERBOARD']['CreateCSV'], config['LEADERBOARD']['CSVPath'], config['FTP']['UseFTP'], ftp_server, config['FTP']['Path'])
 
 # First leaderboard testing
 if config['LEADERBOARD']['Enable'] == "true":
@@ -73,3 +114,8 @@ if config['LEADERBOARD']['Enable'] == "true":
 # First bestandworst testing
 if config['BESTANDWORST']['Enable'] == "true":
     getBestAndWorst(df, config['BESTANDWORST']['Username'], config['BESTANDWORST']['Cleaning'], config['BESTANDWORST']['CleaningValue'])
+
+
+# Close the Connection
+if config['FTP']['UseFTP'] == "true":
+    ftp_server.quit()

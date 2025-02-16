@@ -12,10 +12,9 @@ import math
 def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
-    path = 'cobblemonplayerdata'
     root_dirnames = []
     if useftp == "true":
-        # Get directories (assuming they are player directories)
+        # Get directories
         root_dirnames = ftpserver.nlst(ftppath)
         ftpserver.cwd(ftppath)
         
@@ -57,6 +56,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
             ftpserver.cwd("../")  # Move back to the parent directory
     else:
         i = -1
+        path = 'cobblemonplayerdata'
         for dirpath, dirnames, filenames in os.walk(path):
             if len(dirnames) > 0:
                 root_dirnames = dirnames
@@ -80,10 +80,10 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 else:
                     df[temp_name] = np.nan
             i += 1
-        # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
-        df = df.fillna(0)
-        if csvtoggle == "true":
-            df.to_csv(csvpath)
+    # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
+    df = df.fillna(0)
+    if csvtoggle == "true":
+        df.to_csv(csvpath)
     return df
 
 
