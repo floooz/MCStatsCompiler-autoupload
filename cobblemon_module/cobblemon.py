@@ -90,18 +90,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
 def most_pokemons_leaderboard(df, config):
     # Load the Excel file
     file_path = "output.xlsx"
-
-    # This first leaderboard might be removed in the future
-    sheet_name = "leaderboard1"
     wb = openpyxl.load_workbook(file_path)
-    ws = wb[sheet_name]
-    i = 0
-    for index, row in df[0:10].iterrows():
-        ws.cell(row=i+3, column=3, value=index)
-        ws.cell(row=i+3, column=4, value=row[0])
-        i += 1
-    now = datetime.datetime.now()
-    ws.cell(row=13, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
     
     sheet_name = "leaderboard2"
     ws = wb[sheet_name]
@@ -109,6 +98,7 @@ def most_pokemons_leaderboard(df, config):
     ExcelRows = int(config['LEADERBOARD']['ExcelRows'])
     ExcelCols = int(config['LEADERBOARD']['ExcelColumns'])
     for index, row in df[0:ExcelRows*ExcelCols].iterrows():
+        ws.cell(row=(i%ExcelRows)+3, column=2+math.floor(i/ExcelRows)*3, value=str(i+1)+".")
         ws.cell(row=(i%ExcelRows)+3, column=3+math.floor(i/ExcelRows)*3, value=index)
         ws.cell(row=(i%ExcelRows)+3, column=4+math.floor(i/ExcelRows)*3, value=row[0])
         i += 1
@@ -131,17 +121,21 @@ if config['FTP']['UseFTP'] == "true":
 # Load the data
 # To get: table with columns for players and rows for pokemons
 df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['FTP']['UseFTP'], ftp_server, config['FTP']['Path'])
+
+# Small feature to count the times each cobblemon has been caught, not officially supported yet
 count_df = df.drop(['caughtTimestamp', 'discoveredTimestamp', 'isShiny'], level=2)
-print(count_df)
 count_df['times_caught'] = count_df.apply(lambda row: (row == "CAUGHT").sum(), axis=1)
-print(count_df['times_caught'].sort_values().to_string())
+#print(count_df['times_caught'].sort_values().to_string())
 count_df.drop('times_caught', axis=1, inplace=True)
-player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
-player_sum['index'] = range(len(player_sum), 0, -1)
-player_sum = player_sum.iloc[::-1]
-player_sum.drop(config['LEADERBOARD']['IgnoreNames'].split(","), inplace=True)
-print(player_sum)
-most_pokemons_leaderboard(player_sum.iloc, config)
+
+# Leaderboard feature
+if config['LEADERBOARD']['Enable'] == "true":
+    player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
+    player_sum['index'] = range(len(player_sum), 0, -1)
+    player_sum = player_sum.iloc[::-1]
+    player_sum.drop(config['LEADERBOARD']['IgnoreNames'].split(","), inplace=True)
+    print(player_sum)
+    most_pokemons_leaderboard(player_sum.iloc, config)
 
 
 # Close the Connection
