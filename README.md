@@ -41,7 +41,7 @@ If you intend on using the leaderboard feature of the Cobblemon module, you need
 
 Don't forget to adapt the config file to your changes, especially the number of rows and columns if you have changed them! The subtitles of the table can also be configured there.
 
-![Alt text](images/cobblemon_example.png)
+![Cobblemon example](images/cobblemon_example.PNG)
 
 ### 6. Run the script
 You can now run the script of the module with your Python installation.
