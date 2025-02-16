@@ -12,7 +12,6 @@ import math
 def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     df = pd.DataFrame()
     names = pd.read_csv('../data/names.csv')
-    i = -1
     path = 'cobblemonplayerdata'
     root_dirnames = []
     if useftp == "true":
@@ -57,6 +56,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 
             ftpserver.cwd("../")  # Move back to the parent directory
     else:
+        i = -1
         for dirpath, dirnames, filenames in os.walk(path):
             if len(dirnames) > 0:
                 root_dirnames = dirnames
@@ -79,11 +79,11 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                         df = df.join(temp_df, how="outer")
                 else:
                     df[temp_name] = np.nan
+            i += 1
         # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
         df = df.fillna(0)
         if csvtoggle == "true":
             df.to_csv(csvpath)
-        i += 1
     return df
 
 
@@ -114,6 +114,7 @@ def most_pokemons_leaderboard(df, config):
         i += 1
     now = datetime.datetime.now()
     ws.cell(row=ExcelRows+3, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
+    ws.cell(row=ExcelRows+4, column=2, value=config['LEADERBOARD']['Subtitle'])
     wb.save(file_path)
 
 
