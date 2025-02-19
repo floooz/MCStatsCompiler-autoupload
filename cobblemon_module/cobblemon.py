@@ -45,7 +45,9 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 if temp_name.empty:
                     print("No username found for UUID", filename[:-5], " in names.csv, using UUID for this player instead.")
                     temp_name = filename[:-5]
-                temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
+                    temp_df = temp_df.rename({0: temp_name}, axis=1)
+                else:
+                    temp_df = temp_df.rename({0: temp_name.iloc[0]}, axis=1)
                 
                 if not temp_df.empty:
                     temp_df.index = temp_df.index.str.split('.', expand=True)
@@ -72,7 +74,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 # Import the JSON to a Pandas DF
                 temp_df = pd.json_normalize(data, meta_prefix=True)
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-                temp_df = temp_df.transpose().iloc[1:]
+                temp_df = temp_df.transpose().iloc[:]
                 if temp_name.empty:
                     print("No username found for UUID", filename[:-5], " in names.csv, using UUID for this player instead.")
                     temp_name = filename[:-5]
