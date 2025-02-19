@@ -42,6 +42,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 
                 temp_df = pd.json_normalize(data, meta_prefix=True)
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+                temp_df = temp_df.transpose().iloc[:]
                 if temp_name.empty:
                     print("No username found for UUID", filename[:-5], " in names.csv, using UUID for this player instead.")
                     temp_name = filename[:-5]
