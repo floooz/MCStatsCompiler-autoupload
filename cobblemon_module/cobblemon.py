@@ -133,7 +133,8 @@ if config['LEADERBOARD']['Enable'] == "true":
     player_sum = pd.DataFrame((count_df == "CAUGHT").sum().sort_values())
     player_sum['index'] = range(len(player_sum), 0, -1)
     player_sum = player_sum.iloc[::-1]
-    player_sum.drop(config['LEADERBOARD']['IgnoreNames'].split(","), inplace=True)
+    ignore_names = [name.strip() for name in config['LEADERBOARD']['IgnoreNames'].split(",") if name.strip()]
+    player_sum.drop(ignore_names, inplace=True, errors='ignore')
     print(player_sum)
     most_pokemons_leaderboard(player_sum.iloc, config)
 
