@@ -131,8 +131,10 @@ if config['FTP']['UseFTP'] == "true":
     ftp_server.encoding = "utf-8"
 
 # Load the data
-# To get: table with columns for players and rows for pokemons
-df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['FTP']['UseFTP'], ftp_server, config['FTP']['Path'])
+if config['GLOBALMATRIX']['UseCSV'] == "false":
+    df = loadData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['FTP']['UseFTP'], ftp_server, config['FTP']['Path'])
+else:
+    df = pd.read_csv(config['GLOBALMATRIX']['CSVPath'], index_col=[0,1,2], skipinitialspace=True)
 
 # Small feature to count the times each cobblemon has been caught, not officially supported yet
 count_df = df.drop(['caughtTimestamp', 'discoveredTimestamp', 'isShiny'], level=2)
