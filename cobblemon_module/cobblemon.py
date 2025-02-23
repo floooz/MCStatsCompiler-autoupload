@@ -7,6 +7,7 @@ import openpyxl
 import datetime
 import ftplib
 import math
+import warnings
 
 
 def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
@@ -181,7 +182,9 @@ if config['SHINYLEADERBOARD']['Enable'] == "true":
 if config['LEGLEADERBOARD']['Enable'] == "true":
     legs = legendary_list['Cobblemon'].tolist()
     leg_count_df = count_df.loc[count_df.index.get_level_values(0).isin(legs)]
-    leg_count_df = leg_count_df.groupby(level=0).agg(lambda x: "CAUGHT" if "CAUGHT" in x.values else 0)
+    with warnings.catch_warnings():
+        warnings.simplefilter(action='ignore', category=FutureWarning)
+        leg_count_df = leg_count_df.groupby(level=0).agg(lambda x: "CAUGHT" if "CAUGHT" in x.values else 0)
     #leg_count_df.to_csv("temp.csv")
     player_sum = pd.DataFrame((leg_count_df == "CAUGHT").sum().sort_values())
     player_sum['index'] = range(len(player_sum), 0, -1)
