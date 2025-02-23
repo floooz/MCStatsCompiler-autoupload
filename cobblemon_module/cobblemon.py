@@ -11,9 +11,14 @@ import math
 
 def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     df = pd.DataFrame()
-    names = pd.read_csv('../data/names.csv')
     root_dirnames = []
     if useftp == "true":
+        ftpserver.cwd("Minecraft")
+        with open("usercache.json", "wb") as file:
+            ftpserver.retrbinary(f"RETR ../data/usercache.json", file.write)
+        names = pd.DataFrame(json.load(open("../data/usercache.json", "r")))
+        ftpserver.cwd("../")
+
         # Get directories
         root_dirnames = ftpserver.nlst(ftppath)
         ftpserver.cwd(ftppath)
@@ -61,6 +66,8 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 
             ftpserver.cwd("../")  # Move back to the parent directory
     else:
+        names_file = open('../data/usercache.json', 'r')
+        names = pd.DataFrame(json.load(names_file))
         i = -1
         path = 'cobblemonplayerdata'
         for dirpath, dirnames, filenames in os.walk(path):
@@ -99,16 +106,21 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     return df
 
 
-def most_pokemons_leaderboard(df, config):
+def most_pokemons_leaderboard(df, config, type):
     # Load the Excel file
     file_path = "output.xlsx"
     wb = openpyxl.load_workbook(file_path)
     
-    sheet_name = "leaderboard2"
+    if type == "standard":
+        sheet_name = "leaderboard2"
+    elif type == "shiny":
+        sheet_name = "leaderboard3"
+    elif type == "legendary":
+        sheet_name = "leaderboard4"
     ws = wb[sheet_name]
     i = 0
-    ExcelRows = int(config['LEADERBOARD']['ExcelRows'])
-    ExcelCols = int(config['LEADERBOARD']['ExcelColumns'])
+    ExcelRows = int(config['ExcelRows'])
+    ExcelCols = int(config['ExcelColumns'])
     for index, row in df[0:ExcelRows*ExcelCols].iterrows():
         ws.cell(row=(i%ExcelRows)+3, column=2+math.floor(i/ExcelRows)*3, value=str(i+1)+".")
         ws.cell(row=(i%ExcelRows)+3, column=3+math.floor(i/ExcelRows)*3, value=index)
@@ -116,27 +128,7 @@ def most_pokemons_leaderboard(df, config):
         i += 1
     now = datetime.datetime.now()
     ws.cell(row=ExcelRows+3, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
-    ws.cell(row=ExcelRows+4, column=2, value=config['LEADERBOARD']['Subtitle'])
-    wb.save(file_path)
-
-def shiny_pokemons_leaderboard(df, config):
-    # Load the Excel file
-    file_path = "output.xlsx"
-    wb = openpyxl.load_workbook(file_path)
-    
-    sheet_name = "leaderboard3"
-    ws = wb[sheet_name]
-    i = 0
-    ExcelRows = int(config['SHINYLEADERBOARD']['ExcelRows'])
-    ExcelCols = int(config['SHINYLEADERBOARD']['ExcelColumns'])
-    for index, row in df[0:ExcelRows*ExcelCols].iterrows():
-        ws.cell(row=(i%ExcelRows)+3, column=2+math.floor(i/ExcelRows)*3, value=str(i+1)+".")
-        ws.cell(row=(i%ExcelRows)+3, column=3+math.floor(i/ExcelRows)*3, value=index)
-        ws.cell(row=(i%ExcelRows)+3, column=4+math.floor(i/ExcelRows)*3, value=row[0])
-        i += 1
-    now = datetime.datetime.now()
-    ws.cell(row=ExcelRows+3, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
-    ws.cell(row=ExcelRows+4, column=2, value=config['SHINYLEADERBOARD']['Subtitle'])
+    ws.cell(row=ExcelRows+4, column=2, value=config['Subtitle'])
     wb.save(file_path)
 
 
@@ -147,7 +139,7 @@ config.read('cobblemon_config.ini')
 # Connect to FTP if activated
 ftp_server = None
 if config['FTP']['UseFTP'] == "true":
-    ftp_server = ftplib.FTP(config['FTP']['Host'], open("../username.txt", "r").read(), open("../password.txt", "r").read())
+    ftp_server = ftplib.FTP(config['FTP']['Host'], open("username.txt", "r").read(), open("password.txt", "r").read())
     ftp_server.encoding = "utf-8"
 
 # Load the data
@@ -162,9 +154,8 @@ if config['FTP']['UseFTP'] == "true":
 
 # Prepare the counting DF
 count_df = df.drop(['caughtTimestamp', 'discoveredTimestamp', 'isShiny'], level=2)
-count_df['times_caught'] = count_df.apply(lambda row: (row == "CAUGHT").sum(), axis=1)
-#print(count_df['times_caught'].sort_values().to_string())
-count_df.drop('times_caught', axis=1, inplace=True)
+pokemons_db = pd.read_csv('Pokemon.csv')
+legendary_list = pokemons_db.loc[pokemons_db['Legendary'] == True]
 
 # Leaderboard feature
 if config['LEADERBOARD']['Enable'] == "true":
@@ -174,7 +165,7 @@ if config['LEADERBOARD']['Enable'] == "true":
     ignore_names = [name.strip() for name in config['LEADERBOARD']['IgnoreNames'].split(",") if name.strip()]
     player_sum.drop(ignore_names, inplace=True, errors='ignore')
     #print(player_sum)
-    most_pokemons_leaderboard(player_sum.iloc, config)
+    most_pokemons_leaderboard(player_sum, config['LEADERBOARD'], "standard")
 
 # Shiny leaderboard feature
 if config['SHINYLEADERBOARD']['Enable'] == "true":
@@ -184,4 +175,18 @@ if config['SHINYLEADERBOARD']['Enable'] == "true":
     ignore_names = [name.strip() for name in config['SHINYLEADERBOARD']['IgnoreNames'].split(",") if name.strip()]
     player_sum.drop(ignore_names, inplace=True, errors='ignore')
     #print(player_sum)
-    shiny_pokemons_leaderboard(player_sum.iloc, config)
+    most_pokemons_leaderboard(player_sum, config['SHINYLEADERBOARD'], "shiny")
+    
+# Legendary leaderboard feature
+if config['LEGLEADERBOARD']['Enable'] == "true":
+    legs = legendary_list['Cobblemon'].tolist()
+    leg_count_df = count_df.loc[count_df.index.get_level_values(0).isin(legs)]
+    leg_count_df = leg_count_df.groupby(level=0).agg(lambda x: "CAUGHT" if "CAUGHT" in x.values else 0)
+    #leg_count_df.to_csv("temp.csv")
+    player_sum = pd.DataFrame((leg_count_df == "CAUGHT").sum().sort_values())
+    player_sum['index'] = range(len(player_sum), 0, -1)
+    player_sum = player_sum.iloc[::-1]
+    ignore_names = [name.strip() for name in config['LEGLEADERBOARD']['IgnoreNames'].split(",") if name.strip()]
+    player_sum.drop(ignore_names, inplace=True, errors='ignore')
+    #print(player_sum)
+    most_pokemons_leaderboard(player_sum, config['LEGLEADERBOARD'], "legendary")
