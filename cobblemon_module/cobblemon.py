@@ -50,7 +50,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
                 temp_df = temp_df.transpose().iloc[:]
                 if temp_name.empty:
-                    print("No username found for UUID", filename[:-5], " in names.csv, using UUID for this player instead.")
+                    print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
                     temp_name = filename[:-5]
                     temp_df = temp_df.rename({0: temp_name}, axis=1)
                 else:
@@ -85,7 +85,7 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
                 temp_df = temp_df.transpose().iloc[:]
                 if temp_name.empty:
-                    print("No username found for UUID", filename[:-5], " in names.csv, using UUID for this player instead.")
+                    print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
                     temp_name = filename[:-5]
                     temp_df = temp_df.rename({0: temp_name}, axis=1)
                 else:
@@ -128,14 +128,14 @@ def most_pokemons_leaderboard(df, config, type):
         ws.cell(row=(i%ExcelRows)+3, column=4+math.floor(i/ExcelRows)*3, value=row[0])
         i += 1
     now = datetime.datetime.now()
-    ws.cell(row=ExcelRows+3, column=2, value="Dernière update le "+now.strftime("%d.%m.%y à %H:%M"))
+    ws.cell(row=ExcelRows+3, column=2, value=now.strftime(config['LastUpdated']))
     ws.cell(row=ExcelRows+4, column=2, value=config['Subtitle'])
     wb.save(file_path)
 
 
 # Read config
 config = configparser.ConfigParser()
-config.read('cobblemon_config.ini')
+config.read('cobblemon_config.ini', encoding='utf8')
 
 # Connect to FTP if activated
 ftp_server = None
