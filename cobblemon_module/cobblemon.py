@@ -193,3 +193,5 @@ if config['LEGLEADERBOARD']['Enable'] == "true":
     player_sum.drop(ignore_names, inplace=True, errors='ignore')
     #print(player_sum)
     most_pokemons_leaderboard(player_sum, config['LEGLEADERBOARD'], "legendary")
+
+print("Done!")
