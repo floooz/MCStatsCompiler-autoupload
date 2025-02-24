@@ -15,8 +15,8 @@ def loadData(csvtoggle, csvpath, useftp, ftpserver, ftppath):
     root_dirnames = []
     if useftp == "true":
         ftpserver.cwd("Minecraft")
-        with open("usercache.json", "wb") as file:
-            ftpserver.retrbinary(f"RETR ../data/usercache.json", file.write)
+        with open("../data/usercache.json", "wb") as file:
+            ftpserver.retrbinary(f"RETR usercache.json", file.write)
         names = pd.DataFrame(json.load(open("../data/usercache.json", "r")))
         ftpserver.cwd("../")
 
@@ -140,7 +140,7 @@ config.read('cobblemon_config.ini', encoding='utf8')
 # Connect to FTP if activated
 ftp_server = None
 if config['FTP']['UseFTP'] == "true":
-    ftp_server = ftplib.FTP(config['FTP']['Host'], open("username.txt", "r").read(), open("password.txt", "r").read())
+    ftp_server = ftplib.FTP(config['FTP']['Host'], open("../username.txt", "r").read(), open("../password.txt", "r").read())
     ftp_server.encoding = "utf-8"
 
 # Load the data
