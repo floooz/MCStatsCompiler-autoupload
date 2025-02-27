@@ -15,26 +15,33 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
     if inputmode == "ftp" or inputmode == "sftp":
         if ftppath == "":
-            ftppath = "world/stats"
+            ftppath_complete = "world/stats"
         else:
-            ftppath = ftppath + "/world/stats"
+            ftppath_complete = ftppath + "/world/stats"
         if inputmode == "ftp":
             ftpserver.cwd(ftppath)
             with open("data/usercache/usercache.json", "wb") as file:
                 ftpserver.retrbinary(f"RETR usercache.json", file.write)
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+            # Go back to root
+            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
             # Get directories
-            filenames = ftpserver.nlst(ftppath)
+            filenames = ftpserver.nlst(ftppath_complete)
+            ftpserver.cwd(ftppath_complete)
         else:
+            ftpserver.chdir(ftppath)
             ftpserver.get("usercache.json", "data/usercache/usercache.json")
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+            # Go back to root
+            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
             # Get directories
-            filenames = ftpserver.listdir(ftppath)
-            ftpserver.chdir(ftppath)
+            filenames = ftpserver.listdir(ftppath_complete)
+            ftpserver.chdir(ftppath_complete)
 
         for filename in filenames:
             if filename[-1] == ".":
                 continue
+            filename = filename.split("/")[-1]
             print("Now processing", filename)
             # Download the file to process
             local_file = "data/stats"+filename
@@ -53,8 +60,10 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
             temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
             # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
             temp_df.index = temp_df.index.str.split('.', expand=True)
+            # If a stat name has a dot in it, remove the part after the dot
             if len(temp_df.index.levshape) > 3:
                 temp_df.index = temp_df.index.droplevel(3)
+                temp_df = temp_df.groupby(level=[0,1,2]).sum()
             #print(temp_df)
             #temp_df.to_csv('temp.csv')
             if df.empty:
@@ -62,6 +71,11 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
             else:
                 df = df.join(temp_df, how="outer")
         
+        # Go back to root
+        if inputmode == "ftp":
+            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+        else:
+            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
     else:
         names_file = open('data/usercache/usercache.json', 'r')
         names = pd.DataFrame(json.load(names_file))
@@ -87,6 +101,7 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                 df = temp_df
             else:
                 df = df.join(temp_df, how="outer")
+    
     # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
     df = df.fillna(0)
     if csvtoggle == "true":
@@ -98,24 +113,28 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     root_dirnames = []
     if inputmode == "ftp" or inputmode == "sftp":
         if ftppath == "":
-            ftppath = "world/cobblemonplayerdata"
+            ftppath_complete = "world/cobblemonplayerdata"
         else:
-            ftppath = ftppath + "/world/cobblemonplayerdata"
+            ftppath_complete = ftppath + "/world/cobblemonplayerdata"
         if inputmode == "ftp":
-            ftpserver.cwd("Minecraft")
+            ftpserver.cwd(ftppath)
             with open("data/usercache/usercache.json", "wb") as file:
                 ftpserver.retrbinary(f"RETR usercache.json", file.write)
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            ftpserver.cwd("../")
+            # Go back to root
+            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
             # Get directories
-            root_dirnames = ftpserver.nlst(ftppath)
-            ftpserver.cwd(ftppath)
+            root_dirnames = ftpserver.nlst(ftppath_complete)
+            ftpserver.cwd(ftppath_complete)
         else:
+            ftpserver.chdir(ftppath)
             ftpserver.get("usercache.json", "data/usercache/usercache.json")
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+            # Go back to root
+            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
             # Get directories
-            root_dirnames = ftpserver.listdir(ftppath)
-            ftpserver.chdir(ftppath)
+            root_dirnames = ftpserver.listdir(ftppath_complete)
+            ftpserver.chdir(ftppath_complete)
             
         for dirname in root_dirnames:
             if dirname[-1] == ".":
@@ -167,6 +186,11 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                 ftpserver.cwd("../")  # Move back to the parent directory
             else:
                 ftpserver.chdir("..")
+        # Go back to root
+        if inputmode == "ftp":
+            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+        else:
+            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
     else:
         names_file = open('data/usercache/usercache.json', 'r')
         names = pd.DataFrame(json.load(names_file))
