@@ -151,6 +151,8 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
 def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
     root_dirnames = []
+    player_count = {}  # To handle duplicate player names
+        
     if inputmode == "ftp" or inputmode == "sftp":
         if ftppath == "root":
             ftppath_complete = "world/cobblemonplayerdata"
@@ -229,9 +231,18 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                 if temp_name.empty:
                     print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
                     temp_name = filename[:-5]
-                    temp_df = temp_df.rename({0: temp_name}, axis=1)
+                    player_name = temp_name
                 else:
-                    temp_df = temp_df.rename({0: temp_name.iloc[0]}, axis=1)
+                    player_name = temp_name.iloc[0]
+                
+                # Manage duplicates
+                if player_name in player_count:
+                    player_count[player_name] += 1
+                    player_name = f"{player_name}_{player_count[player_name]}"
+                else:
+                    player_count[player_name] = 1
+                
+                temp_df = temp_df.rename({0: player_name}, axis=1)
                 
                 if not temp_df.empty:
                     temp_df.index = temp_df.index.str.split('.', expand=True)
@@ -240,7 +251,7 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                     else:
                         df = df.join(temp_df, how="outer")
                 else:
-                    df[temp_name] = np.nan
+                    df[player_name] = np.nan
                 
             if inputmode == "ftp":
                 ftpserver.cwd("../")  # Move back to the parent directory
@@ -272,13 +283,23 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                 temp_df = pd.json_normalize(data, meta_prefix=True)
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
                 temp_df = temp_df.transpose().iloc[:]
+                
                 if temp_name.empty:
                     print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
                     temp_name = filename[:-5]
-                    temp_df = temp_df.rename({0: temp_name}, axis=1)
+                    player_name = temp_name
                 else:
-                    temp_df = temp_df.rename({0: temp_name.iloc[0]}, axis=1)
-                # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
+                    player_name = temp_name.iloc[0]
+                
+                # Manage duplicates
+                if player_name in player_count:
+                    player_count[player_name] += 1
+                    player_name = f"{player_name}_{player_count[player_name]}"
+                else:
+                    player_count[player_name] = 1
+                
+                temp_df = temp_df.rename({0: player_name}, axis=1)
+                
                 if not temp_df.empty:
                     temp_df.index = temp_df.index.str.split('.', expand=True)
                     if df.empty:
@@ -286,7 +307,7 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
                     else:
                         df = df.join(temp_df, how="outer")
                 else:
-                    df[temp_name] = np.nan
+                    df[player_name] = np.nan
             i += 1
     # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
     df = df.fillna(0)
@@ -352,7 +373,7 @@ def export_excel_to_image(config):
     """Convert Excel sheets to images"""
     
     file_path = "output.xlsx"
-    # Définir la zone à capturer (A1:N15)
+    # Selection of the area to export
     selection = "A1:N15"
     
     try:
