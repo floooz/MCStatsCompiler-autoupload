@@ -1,15 +1,32 @@
 import json
 import os
-import pandas as pd
-import numpy as np
+import pandas as pd # type: ignore
+import numpy as np # type: ignore
 import configparser
-import openpyxl
+import openpyxl # type: ignore
 import datetime
 import ftplib
 import math
 import warnings
-import paramiko
+import paramiko # type: ignore
+import excel2img # type: ignore
+import requests # type: ignore
+import base64
+import stat
 
+def list_sftp_directory(sftp, path="."):
+    """List contents of directory and parent directory for debugging"""
+    try:
+        print(f"\nContents of current directory '{path}':")
+        for entry in sftp.listdir_attr(path):
+            print(f"{entry.filename:30} {'<DIR>' if stat.S_ISDIR(entry.st_mode) else '<FILE>'}")
+        
+        parent = os.path.dirname(path) if path != "/" else "/"
+        print(f"\nContents of parent directory '{parent}':")
+        for entry in sftp.listdir_attr(parent):
+            print(f"{entry.filename:30} {'<DIR>' if stat.S_ISDIR(entry.st_mode) else '<FILE>'}")
+    except Exception as e:
+        print(f"Error listing directory: {e}")
 
 def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
@@ -29,14 +46,34 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
             filenames = ftpserver.nlst(ftppath_complete)
             ftpserver.cwd(ftppath_complete)
         else:
-            ftpserver.chdir(ftppath)
-            ftpserver.get("usercache.json", "data/usercache/usercache.json")
+            try:
+                ftpserver.chdir(ftppath)
+            except IOError:
+                print(f"Failed to change to directory {ftppath}")
+                list_sftp_directory(ftpserver)
+                raise
+            
+            try:
+                ftpserver.get("usercache.json", "data/usercache/usercache.json")
+            except IOError:
+                print("Failed to get usercache.json")
+                list_sftp_directory(ftpserver)
+                raise
+
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            # Go back to root
-            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
-            # Get directories
-            filenames = ftpserver.listdir(ftppath_complete)
-            ftpserver.chdir(ftppath_complete)
+            
+            try:
+                current_path = ftpserver.getcwd()
+                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                if depth > 0:
+                    ftpserver.chdir("../" * depth)  # Return to root
+                print(f"Trying to access {ftppath_complete}")
+                filenames = ftpserver.listdir(ftppath_complete)
+                ftpserver.chdir(ftppath_complete)
+            except IOError:
+                print(f"Failed to access {ftppath_complete}")
+                list_sftp_directory(ftpserver)
+                raise
 
         for filename in filenames:
             if filename[-1] == ".":
@@ -75,7 +112,10 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
         if inputmode == "ftp":
             ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
         else:
-            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
+            current_path = ftpserver.getcwd()
+            depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+            if depth > 0:
+                ftpserver.chdir("../" * depth)
     else:
         names_file = open('data/usercache/usercache.json', 'r')
         names = pd.DataFrame(json.load(names_file))
@@ -112,7 +152,7 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
     root_dirnames = []
     if inputmode == "ftp" or inputmode == "sftp":
-        if ftppath == "":
+        if ftppath == "root":
             ftppath_complete = "world/cobblemonplayerdata"
         else:
             ftppath_complete = ftppath + "/world/cobblemonplayerdata"
@@ -127,14 +167,34 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
             root_dirnames = ftpserver.nlst(ftppath_complete)
             ftpserver.cwd(ftppath_complete)
         else:
-            ftpserver.chdir(ftppath)
-            ftpserver.get("usercache.json", "data/usercache/usercache.json")
+            try:
+                ftpserver.chdir(ftppath)
+            except IOError:
+                print(f"Failed to change to directory {ftppath}")
+                list_sftp_directory(ftpserver)
+                raise
+            
+            try:
+                ftpserver.get("usercache.json", "data/usercache/usercache.json")
+            except IOError:
+                print("Failed to get usercache.json")
+                list_sftp_directory(ftpserver)
+                raise
+
             names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            # Go back to root
-            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
-            # Get directories
-            root_dirnames = ftpserver.listdir(ftppath_complete)
-            ftpserver.chdir(ftppath_complete)
+            
+            try:
+                current_path = ftpserver.getcwd()
+                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                if depth > 0:
+                    ftpserver.chdir("../" * depth)  # Return to root
+                print(f"Trying to access {ftppath_complete}")
+                root_dirnames = ftpserver.listdir(ftppath_complete)
+                ftpserver.chdir(ftppath_complete)
+            except IOError:
+                print(f"Failed to access {ftppath_complete}")
+                list_sftp_directory(ftpserver)
+                raise
             
         for dirname in root_dirnames:
             if dirname[-1] == ".":
@@ -190,7 +250,10 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
         if inputmode == "ftp":
             ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
         else:
-            ftpserver.chdir("../" * (len(ftpserver.pwd().split("/"))-1))
+            current_path = ftpserver.getcwd()
+            depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+            if depth > 0:
+                ftpserver.chdir("../" * depth)
     else:
         names_file = open('data/usercache/usercache.json', 'r')
         names = pd.DataFrame(json.load(names_file))
@@ -238,6 +301,15 @@ def getVanillaLeaderboard(df, cat, subcat):
     print(row)
 
 def getVanillaBestAndWorst(df, username, cleaning, cleaningvalue):
+    if username == "null" or not username:
+        print("Erreur: Aucun nom d'utilisateur spécifié dans la configuration")
+        return
+        
+    if username not in df.columns:
+        print(f"Erreur: L'utilisateur '{username}' n'existe pas dans les données")
+        print("Utilisateurs disponibles:", ", ".join(df.columns))
+        return
+        
     nb_players = df.shape[1]
     if cleaning == "true":
         before_value = df.shape[0]
@@ -276,6 +348,63 @@ def most_pokemons_leaderboard(df, config, type):
     ws.cell(row=ExcelRows+4, column=2, value=config['COBBLEMONLEADERBOARDS']['Subtitle'])
     wb.save(file_path)
 
+def export_excel_to_image(config):
+    """Convert Excel sheets to images"""
+    
+    file_path = "output.xlsx"
+    # Définir la zone à capturer (A1:N15)
+    selection = "A1:N15"
+    
+    try:
+        if config['COBBLEMONLEADERBOARDS']['TotalEnable'] == "true":
+        
+            excel2img.export_img(
+                file_path,
+                "leaderboard2.png",
+                "leaderboard2",
+                selection
+            )
+    
+        if config['COBBLEMONLEADERBOARDS']['ShinyEnable']== "true":
+            excel2img.export_img(
+                file_path,
+                "leaderboard3.png",
+                "leaderboard3",
+                selection
+            )
+        
+        if config['COBBLEMONLEADERBOARDS']['LegEnable'] == "true":
+            excel2img.export_img(
+                file_path,
+                "leaderboard4.png",
+                "leaderboard4",
+                selection
+            )
+        
+    except Exception as e:
+        print("Erreur lors de l'exportation des images.")
+        print(e)
+
+def check_file_exists(api_url, headers):
+    response = requests.get(api_url, headers=headers)
+    return response.status_code == 200, response.json().get("sha") if response.status_code == 200 else None
+
+def upload_image(api_url, headers, image_data):
+    data = {
+        "message": "Upload initial de l'image",
+        "content": image_data,
+        "branch": BRANCH
+    }
+    return requests.put(api_url, headers=headers, json=data)
+
+def update_image(api_url, headers, image_data, sha):
+    data = {
+        "message": "Mise à jour de l'image",
+        "content": image_data,
+        "branch": BRANCH,
+        "sha": sha
+    }
+    return requests.put(api_url, headers=headers, json=data)
 
 # Read config
 config = configparser.ConfigParser()
@@ -291,14 +420,18 @@ if config['INPUT']['Mode'] == "sftp":
     transport.connect(username=open("username.txt", "r").read().strip(), password=open("password.txt", "r").read().strip())
     ftp_server = paramiko.SFTPClient.from_transport(transport)
 
-# Load the data
-print("LOADING VANILLA DATA")
-vanilla_df = loadVanillaData(config['VANILLALEADERBOARD']['CreateCSV'], config['VANILLALEADERBOARD']['CSVPath'], config['INPUT']['Mode'], ftp_server, config['INPUT']['FTPPath'])
-print("LOADING COBBLEMON DATA")
-if config['GLOBALMATRIX']['UseCSV'] == "false":
-    cobblemon_df = loadCobblemonData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['INPUT']['Mode'], ftp_server, config['INPUT']['FTPPath'])
-else:
-    cobblemon_df = pd.read_csv(config['GLOBALMATRIX']['CSVPath'], index_col=[0,1,2], skipinitialspace=True)
+if config['VANILLALEADERBOARD']['Enable'] == "true":
+    # Load the data
+    print("LOADING VANILLA DATA")
+    vanilla_df = loadVanillaData(config['VANILLALEADERBOARD']['CreateCSV'], config['VANILLALEADERBOARD']['CSVPath'], config['INPUT']['Mode'], ftp_server, config['INPUT']['FTPPath'])
+
+
+if config['COBBLEMONLEADERBOARDS']['TotalEnable'] == "true" or config['COBBLEMONLEADERBOARDS']['ShinyEnable'] == "true" or config['COBBLEMONLEADERBOARDS']['LegEnable'] == "true":
+    print("LOADING COBBLEMON DATA")
+    if config['GLOBALMATRIX']['UseCSV'] == "false":
+        cobblemon_df = loadCobblemonData(config['GLOBALMATRIX']['CreateCSV'], config['GLOBALMATRIX']['CSVPath'], config['INPUT']['Mode'], ftp_server, config['INPUT']['FTPPath'])
+    else:
+        cobblemon_df = pd.read_csv(config['GLOBALMATRIX']['CSVPath'], index_col=[0,1,2], skipinitialspace=True)
 
 # Close the Connection
 if config['INPUT']['Mode'] == "ftp":
@@ -354,5 +487,93 @@ if config['COBBLEMONLEADERBOARDS']['LegEnable'] == "true":
     player_sum.drop(ignore_names, inplace=True, errors='ignore')
     #print(player_sum)
     most_pokemons_leaderboard(player_sum, config, "legendary")
+
+# Export the Excel to images
+export_excel_to_image(config)
+
+if config['GIT']['UseGit'] == "true":
+    GITHUB_USERNAME = config['GIT']['Username']
+    REPO_NAME = config['GIT']['Repo']
+    BRANCH = config['GIT']['Branch']
+    GITHUB_TOKEN = config['GIT']['Token'].strip()
+    
+    # Vérification du token
+    if not GITHUB_TOKEN or GITHUB_TOKEN.startswith('"') or GITHUB_TOKEN.endswith('"'):
+        print("❌ Erreur : Le token GitHub est mal formaté. Assurez-vous qu'il n'y a pas de guillemets dans le fichier de configuration.")
+        exit(1)
+
+    try:
+        if config['COBBLEMONLEADERBOARDS']['TotalEnable'] == "true":
+            with open("leaderboard2.png", "rb") as img_file:
+                img_data = base64.b64encode(img_file.read()).decode("utf-8")
+            headers = {
+                "Authorization": f"token {GITHUB_TOKEN}",
+                "Accept": "application/vnd.github.v3+json"
+            }
+            file_name = os.path.basename("leaderboard2.png")
+            api_url = f"https://api.github.com/repos/{GITHUB_USERNAME}/{REPO_NAME}/contents/{file_name}"
+            
+            exists, sha = check_file_exists(api_url, headers)
+            if exists:
+                print("📝 Mise à jour de l'image existante...")
+                response = update_image(api_url, headers, img_data, sha)
+            else:
+                print("⬆️ Upload d'une nouvelle image...")
+                response = upload_image(api_url, headers, img_data)
+            if response.status_code in [200, 201]:
+                print(f"✅ Opération réussie : https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/{BRANCH}/{file_name}")
+            else:
+                print(f"❌ Erreur ({response.status_code}): {response.json()}")
+    except Exception as e:
+        print("❌ Erreur lors de l'opération.")
+        print(e)
+    try:
+        if config['COBBLEMONLEADERBOARDS']['ShinyEnable'] == "true":
+            with open("leaderboard3.png", "rb") as img_file:
+                img_data = base64.b64encode(img_file.read()).decode("utf-8")
+            headers = {
+                "Authorization": f"token {GITHUB_TOKEN}",
+                "Accept": "application/vnd.github.v3+json"
+            }
+            file_name = os.path.basename("leaderboard3.png")
+            api_url = f"https://api.github.com/repos/{GITHUB_USERNAME}/{REPO_NAME}/contents/{file_name}"
+            exists, sha = check_file_exists(api_url, headers)
+            if exists:
+                print("📝 Mise à jour de l'image existante...")
+                response = update_image(api_url, headers, img_data, sha)
+            else:
+                print("⬆️ Upload d'une nouvelle image...")
+                response = upload_image(api_url, headers, img_data)
+            if response.status_code in [200, 201]:
+                print(f"✅ Opération réussie : https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/{BRANCH}/{file_name}")
+            else:
+                print(f"❌ Erreur ({response.status_code}): {response.json()}")
+    except Exception as e:
+        print("❌ Erreur lors de l'opération.")
+        print(e)
+    try:
+        if config['COBBLEMONLEADERBOARDS']['LegEnable'] == "true":
+            with open("leaderboard4.png", "rb") as img_file:
+                img_data = base64.b64encode(img_file.read()).decode("utf-8")
+            headers = {
+                "Authorization": f"token {GITHUB_TOKEN}",
+                "Accept": "application/vnd.github.v3+json"
+            }
+            file_name = os.path.basename("leaderboard4.png")
+            api_url = f"https://api.github.com/repos/{GITHUB_USERNAME}/{REPO_NAME}/contents/{file_name}"
+            exists, sha = check_file_exists(api_url, headers)
+            if exists:
+                print("📝 Mise à jour de l'image existante...")
+                response = update_image(api_url, headers, img_data, sha)
+            else:
+                print("⬆️ Upload d'une nouvelle image...")
+                response = upload_image(api_url, headers, img_data)
+            if response.status_code in [200, 201]:
+                print(f"✅ Opération réussie : https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/{BRANCH}/{file_name}")            
+            else:
+                print(f"❌ Erreur ({response.status_code}): {response.json()}")
+    except Exception as e:
+        print("❌ Erreur lors de l'opération.")
+        print(e)
 
 print("Done!")
