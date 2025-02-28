@@ -1,0 +1,7 @@
+pandas
+numpy
+openpyxl
+paramiko
+excel2img
+requests
+configparser
