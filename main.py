@@ -14,6 +14,81 @@ import requests # type: ignore
 import base64
 import stat
 
+def log_error(config, error_message):
+    """Log error to error.log file with config info and credentials check"""
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("error.log", "w", encoding="utf-8") as f:
+        f.write(f"=== Error logged at {timestamp} ===\n\n")
+        f.write(f"Error message: {error_message}\n\n")
+        
+        f.write("=== INPUT Configuration ===\n")
+        for key in config['INPUT']:
+            f.write(f"{key}: {config['INPUT'][key]}\n")
+
+        f.write("\n=== GIT Configuration ===\n")
+        for key in config['GIT']:
+            print(f"{key}: {config['GIT'][key]}")
+            if key != 'token':
+                f.write(f"{key}: {config['GIT'][key]}\n")
+            else:
+                f.write(f"{key}: {config['GIT'][key][:10]}{'*'*(len(config['GIT'][key])-10)}\n")
+        
+        f.write("\n=== Credentials Check ===\n")
+        if config['INPUT']['Mode'] in ['ftp', 'sftp']:
+            username_exists = os.path.exists("username.txt")
+            password_exists = os.path.exists("password.txt")
+            f.write(f"username.txt exists: {username_exists}\n")
+            f.write(f"password.txt exists: {password_exists}\n")
+            
+            if not username_exists or not password_exists:
+                f.write("\nWARNING: Required credential files are missing!\n")
+        else:
+            f.write("No credentials required for this input mode\n")
+
+        f.write("\n=== Librairies check ===\n")
+        try:
+            f.write("pandas: OK\n")
+        except ImportError:
+            f.write("pandas: ERROR\n")
+        
+        try:
+            f.write("numpy: OK\n")
+        except ImportError:
+            f.write("numpy: ERROR\n")
+        
+        try:
+            f.write("openpyxl: OK\n")
+        except ImportError:
+            f.write("openpyxl: ERROR\n")
+        
+        try:
+            f.write("paramiko: OK\n")
+        except ImportError:
+            f.write("paramiko: ERROR\n")
+
+        try:
+            f.write("excel2img: OK\n")
+        except ImportError:
+            f.write("excel2img: ERROR\n")
+
+        try:
+            f.write("requests: OK\n")
+        except ImportError:
+            f.write("requests: ERROR\n")
+
+        try:
+            f.write("base64: OK\n")
+        except ImportError:
+            f.write("base64: ERROR\n")
+
+        try:
+            f.write("configparser: OK\n")
+        except ImportError:
+            f.write("configparser: ERROR\n")
+
+        
+
+
 def list_sftp_directory(sftp, path="."):
     """List contents of directory and parent directory for debugging"""
     try:
@@ -30,291 +105,298 @@ def list_sftp_directory(sftp, path="."):
 
 def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
-    if inputmode == "ftp" or inputmode == "sftp":
-        if ftppath == "":
-            ftppath_complete = "world/stats"
-        else:
-            ftppath_complete = ftppath + "/world/stats"
-        if inputmode == "ftp":
-            ftpserver.cwd(ftppath)
-            with open("data/usercache/usercache.json", "wb") as file:
-                ftpserver.retrbinary(f"RETR usercache.json", file.write)
-            names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            # Go back to root
-            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
-            # Get directories
-            filenames = ftpserver.nlst(ftppath_complete)
-            ftpserver.cwd(ftppath_complete)
-        else:
-            try:
-                ftpserver.chdir(ftppath)
-            except IOError:
-                print(f"Failed to change to directory {ftppath}")
-                list_sftp_directory(ftpserver)
-                raise
-            
-            try:
-                ftpserver.get("usercache.json", "data/usercache/usercache.json")
-            except IOError:
-                print("Failed to get usercache.json")
-                list_sftp_directory(ftpserver)
-                raise
-
-            names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            
-            try:
-                current_path = ftpserver.getcwd()
-                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
-                if depth > 0:
-                    ftpserver.chdir("../" * depth)  # Return to root
-                print(f"Trying to access {ftppath_complete}")
-                filenames = ftpserver.listdir(ftppath_complete)
-                ftpserver.chdir(ftppath_complete)
-            except IOError:
-                print(f"Failed to access {ftppath_complete}")
-                list_sftp_directory(ftpserver)
-                raise
-
-        for filename in filenames:
-            if filename[-1] == ".":
-                continue
-            filename = filename.split("/")[-1]
-            print("Now processing", filename)
-            # Download the file to process
-            local_file = "data/stats"+filename
-            with open(local_file, "wb") as file:
-                if inputmode == "ftp":
-                    ftpserver.retrbinary(f"RETR {filename}", file.write)
-                else:
-                    ftpserver.get(filename, local_file)
-            with open(local_file, "r") as file:
-                data = json.load(file)
-            os.remove(local_file)
-            
-            # Import the JSON to a Pandas DF
-            temp_df = pd.json_normalize(data, meta_prefix=True)
-            temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-            temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
-            # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
-            temp_df.index = temp_df.index.str.split('.', expand=True)
-            # If a stat name has a dot in it, remove the part after the dot
-            if len(temp_df.index.levshape) > 3:
-                temp_df.index = temp_df.index.droplevel(3)
-                temp_df = temp_df.groupby(level=[0,1,2]).sum()
-            #print(temp_df)
-            #temp_df.to_csv('temp.csv')
-            if df.empty:
-                df = temp_df
+    try:
+        if inputmode == "ftp" or inputmode == "sftp":
+            if ftppath == "root":
+                ftppath_complete = "world/stats"
             else:
-                df = df.join(temp_df, how="outer")
-        
-        # Go back to root
-        if inputmode == "ftp":
-            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
-        else:
-            current_path = ftpserver.getcwd()
-            depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
-            if depth > 0:
-                ftpserver.chdir("../" * depth)
-    else:
-        names_file = open('data/usercache/usercache.json', 'r')
-        names = pd.DataFrame(json.load(names_file))
-        for filename in os.listdir('data/stats'):
-            if filename == ".gitignore":
-                continue
-            print("Now processing", filename)
-            file = open('data/stats/' + filename)
-            data = json.load(file)
-            # Import the JSON to a Pandas DF
-            temp_df = pd.json_normalize(data, meta_prefix=True)
-            temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-            temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
-            # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
-            temp_df.index = temp_df.index.str.split('.', expand=True)
-            # If a stat name has a dot in it, remove the part after the dot
-            if len(temp_df.index.levshape) > 3:
-                temp_df.index = temp_df.index.droplevel(3)
-                temp_df = temp_df.groupby(level=[0,1,2]).sum()
-            #print(temp_df)
-            #temp_df.to_csv('temp.csv')
-            if df.empty:
-                df = temp_df
-            else:
-                df = df.join(temp_df, how="outer")
-    
-    # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
-    df = df.fillna(0)
-    if csvtoggle == "true":
-        df.to_csv(csvpath)
-    return df
-
-def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
-    df = pd.DataFrame()
-    root_dirnames = []
-    player_count = {}  # To handle duplicate player names
-        
-    if inputmode == "ftp" or inputmode == "sftp":
-        if ftppath == "root":
-            ftppath_complete = "world/cobblemonplayerdata"
-        else:
-            ftppath_complete = ftppath + "/world/cobblemonplayerdata"
-        if inputmode == "ftp":
-            ftpserver.cwd(ftppath)
-            with open("data/usercache/usercache.json", "wb") as file:
-                ftpserver.retrbinary(f"RETR usercache.json", file.write)
-            names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            # Go back to root
-            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
-            # Get directories
-            root_dirnames = ftpserver.nlst(ftppath_complete)
-            ftpserver.cwd(ftppath_complete)
-        else:
-            try:
-                ftpserver.chdir(ftppath)
-            except IOError:
-                print(f"Failed to change to directory {ftppath}")
-                list_sftp_directory(ftpserver)
-                raise
-            
-            try:
-                ftpserver.get("usercache.json", "data/usercache/usercache.json")
-            except IOError:
-                print("Failed to get usercache.json")
-                list_sftp_directory(ftpserver)
-                raise
-
-            names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
-            
-            try:
-                current_path = ftpserver.getcwd()
-                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
-                if depth > 0:
-                    ftpserver.chdir("../" * depth)  # Return to root
-                print(f"Trying to access {ftppath_complete}")
-                root_dirnames = ftpserver.listdir(ftppath_complete)
-                ftpserver.chdir(ftppath_complete)
-            except IOError:
-                print(f"Failed to access {ftppath_complete}")
-                list_sftp_directory(ftpserver)
-                raise
-            
-        for dirname in root_dirnames:
-            if dirname[-1] == ".":
-                continue
-            # Go to the subfolder
+                ftppath_complete = ftppath + "/world/stats"
             if inputmode == "ftp":
-                ftpserver.cwd(dirname.split("/")[-1])
-                filenames = ftpserver.nlst()
+                ftpserver.cwd(ftppath)
+                with open("data/usercache/usercache.json", "wb") as file:
+                    ftpserver.retrbinary(f"RETR usercache.json", file.write)
+                names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+                # Go back to root
+                ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+                # Get directories
+                filenames = ftpserver.nlst(ftppath_complete)
+                ftpserver.cwd(ftppath_complete)
             else:
-                ftpserver.chdir(dirname.split("/")[-1])
-                filenames = ftpserver.listdir()
-            
-            for filename in filenames:
-                if filename == "." or filename == "..":
-                    continue
-                print("Now processing", filename)
+                try:
+                    ftpserver.chdir(ftppath)
+                except IOError:
+                    print(f"Failed to change to directory {ftppath}")
+                    list_sftp_directory(ftpserver)
+                    raise
                 
+                try:
+                    ftpserver.get("usercache.json", "data/usercache/usercache.json")
+                except IOError:
+                    print("Failed to get usercache.json")
+                    list_sftp_directory(ftpserver)
+                    raise
+
+                names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+                
+                try:
+                    current_path = ftpserver.getcwd()
+                    depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                    if depth > 0:
+                        ftpserver.chdir("../" * depth)  # Return to root
+                    print(f"Trying to access {ftppath_complete}")
+                    filenames = ftpserver.listdir(ftppath_complete)
+                    ftpserver.chdir(ftppath_complete)
+                except IOError:
+                    print(f"Failed to access {ftppath_complete}")
+                    list_sftp_directory(ftpserver)
+                    raise
+
+            for filename in filenames:
+                if filename[-1] == ".":
+                    continue
+                filename = filename.split("/")[-1]
+                print("Now processing", filename)
                 # Download the file to process
-                local_file = "data/cobblemonplayerdata/"+filename
+                local_file = "data/stats"+filename
                 with open(local_file, "wb") as file:
                     if inputmode == "ftp":
                         ftpserver.retrbinary(f"RETR {filename}", file.write)
                     else:
                         ftpserver.get(filename, local_file)
-                
                 with open(local_file, "r") as file:
-                    data = json.load(file)['extraData']['cobbledex_discovery']['registers']
+                    data = json.load(file)
+                os.remove(local_file)
                 
-                temp_df = pd.json_normalize(data, meta_prefix=True)
-                temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-                temp_df = temp_df.transpose().iloc[:]
-                if temp_name.empty:
-                    print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
-                    temp_name = filename[:-5]
-                    player_name = temp_name
-                else:
-                    player_name = temp_name.iloc[0]
-                
-                # Manage duplicates
-                if player_name in player_count:
-                    player_count[player_name] += 1
-                    player_name = f"{player_name}_{player_count[player_name]}"
-                else:
-                    player_count[player_name] = 1
-                
-                temp_df = temp_df.rename({0: player_name}, axis=1)
-                
-                if not temp_df.empty:
-                    temp_df.index = temp_df.index.str.split('.', expand=True)
-                    if df.empty:
-                        df = temp_df
-                    else:
-                        df = df.join(temp_df, how="outer")
-                else:
-                    df[player_name] = np.nan
-                
-            if inputmode == "ftp":
-                ftpserver.cwd("../")  # Move back to the parent directory
-            else:
-                ftpserver.chdir("..")
-        # Go back to root
-        if inputmode == "ftp":
-            ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
-        else:
-            current_path = ftpserver.getcwd()
-            depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
-            if depth > 0:
-                ftpserver.chdir("../" * depth)
-    else:
-        names_file = open('data/usercache/usercache.json', 'r')
-        names = pd.DataFrame(json.load(names_file))
-        i = -1
-        path = 'data/cobblemonplayerdata'
-        for dirpath, dirnames, filenames in os.walk(path):
-            if len(dirnames) > 0:
-                root_dirnames = dirnames
-            for filename in filenames:
-                if filename == ".gitignore":
-                    continue
-                print("Now processing", filename)
-                file = open(path + '/' + root_dirnames[i] + '/' + filename)
-                data = json.load(file)['extraData']['cobbledex_discovery']['registers']
                 # Import the JSON to a Pandas DF
                 temp_df = pd.json_normalize(data, meta_prefix=True)
                 temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
-                temp_df = temp_df.transpose().iloc[:]
-                
-                if temp_name.empty:
-                    print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
-                    temp_name = filename[:-5]
-                    player_name = temp_name
+                temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
+                # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
+                temp_df.index = temp_df.index.str.split('.', expand=True)
+                # If a stat name has a dot in it, remove the part after the dot
+                if len(temp_df.index.levshape) > 3:
+                    temp_df.index = temp_df.index.droplevel(3)
+                    temp_df = temp_df.groupby(level=[0,1,2]).sum()
+                #print(temp_df)
+                #temp_df.to_csv('temp.csv')
+                if df.empty:
+                    df = temp_df
                 else:
-                    player_name = temp_name.iloc[0]
-                
-                # Manage duplicates
-                if player_name in player_count:
-                    player_count[player_name] += 1
-                    player_name = f"{player_name}_{player_count[player_name]}"
+                    df = df.join(temp_df, how="outer")
+            
+            # Go back to root
+            if inputmode == "ftp":
+                ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+            else:
+                current_path = ftpserver.getcwd()
+                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                if depth > 0:
+                    ftpserver.chdir("../" * depth)
+        else:
+            names_file = open('data/usercache/usercache.json', 'r')
+            names = pd.DataFrame(json.load(names_file))
+            for filename in os.listdir('data/stats'):
+                if filename == ".gitignore":
+                    continue
+                print("Now processing", filename)
+                file = open('data/stats/' + filename)
+                data = json.load(file)
+                # Import the JSON to a Pandas DF
+                temp_df = pd.json_normalize(data, meta_prefix=True)
+                temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+                temp_df = temp_df.transpose().iloc[1:].rename({0: temp_name.iloc[0]}, axis=1)
+                # Split the index (stats.blabla.blabla) into 3 indexes (stats, blabla, blabla)
+                temp_df.index = temp_df.index.str.split('.', expand=True)
+                # If a stat name has a dot in it, remove the part after the dot
+                if len(temp_df.index.levshape) > 3:
+                    temp_df.index = temp_df.index.droplevel(3)
+                    temp_df = temp_df.groupby(level=[0,1,2]).sum()
+                #print(temp_df)
+                #temp_df.to_csv('temp.csv')
+                if df.empty:
+                    df = temp_df
                 else:
-                    player_count[player_name] = 1
-                
-                temp_df = temp_df.rename({0: player_name}, axis=1)
-                
-                if not temp_df.empty:
-                    temp_df.index = temp_df.index.str.split('.', expand=True)
-                    if df.empty:
-                        df = temp_df
-                    else:
-                        df = df.join(temp_df, how="outer")
-                else:
-                    df[player_name] = np.nan
-            i += 1
-    # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
-    df = df.fillna(0)
-    if csvtoggle == "true":
-        df.to_csv(csvpath)
-    return df
+                    df = df.join(temp_df, how="outer")
+        
+        # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
+        df = df.fillna(0)
+        if csvtoggle == "true":
+            df.to_csv(csvpath)
+        return df
+    except Exception as e:
+        log_error(config, str(e))
+        raise
 
+def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
+    df = pd.DataFrame()
+    try:
+        if inputmode == "ftp" or inputmode == "sftp":
+            root_dirnames = []
+            player_count = {}  # To handle duplicate player names
+                
+            if ftppath == "root":
+                ftppath_complete = "world/cobblemonplayerdata"
+            else:
+                ftppath_complete = ftppath + "/world/cobblemonplayerdata"
+            if inputmode == "ftp":
+                ftpserver.cwd(ftppath)
+                with open("data/usercache/usercache.json", "wb") as file:
+                    ftpserver.retrbinary(f"RETR usercache.json", file.write)
+                names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+                # Go back to root
+                ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+                # Get directories
+                root_dirnames = ftpserver.nlst(ftppath_complete)
+                ftpserver.cwd(ftppath_complete)
+            else:
+                try:
+                    ftpserver.chdir(ftppath)
+                except IOError:
+                    print(f"Failed to change to directory {ftppath}")
+                    list_sftp_directory(ftpserver)
+                    raise
+                
+                try:
+                    ftpserver.get("usercache.json", "data/usercache/usercache.json")
+                except IOError:
+                    print("Failed to get usercache.json")
+                    list_sftp_directory(ftpserver)
+                    raise
+
+                names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
+                
+                try:
+                    current_path = ftpserver.getcwd()
+                    depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                    if depth > 0:
+                        ftpserver.chdir("../" * depth)  # Return to root
+                    print(f"Trying to access {ftppath_complete}")
+                    root_dirnames = ftpserver.listdir(ftppath_complete)
+                    ftpserver.chdir(ftppath_complete)
+                except IOError:
+                    print(f"Failed to access {ftppath_complete}")
+                    list_sftp_directory(ftpserver)
+                    raise
+                
+            for dirname in root_dirnames:
+                if dirname[-1] == ".":
+                    continue
+                # Go to the subfolder
+                if inputmode == "ftp":
+                    ftpserver.cwd(dirname.split("/")[-1])
+                    filenames = ftpserver.nlst()
+                else:
+                    ftpserver.chdir(dirname.split("/")[-1])
+                    filenames = ftpserver.listdir()
+                
+                for filename in filenames:
+                    if filename == "." or filename == "..":
+                        continue
+                    print("Now processing", filename)
+                    
+                    # Download the file to process
+                    local_file = "data/cobblemonplayerdata/"+filename
+                    with open(local_file, "wb") as file:
+                        if inputmode == "ftp":
+                            ftpserver.retrbinary(f"RETR {filename}", file.write)
+                        else:
+                            ftpserver.get(filename, local_file)
+                    
+                    with open(local_file, "r") as file:
+                        data = json.load(file)['extraData']['cobbledex_discovery']['registers']
+                    
+                    temp_df = pd.json_normalize(data, meta_prefix=True)
+                    temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+                    temp_df = temp_df.transpose().iloc[:]
+                    if temp_name.empty:
+                        print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
+                        temp_name = filename[:-5]
+                        player_name = temp_name
+                    else:
+                        player_name = temp_name.iloc[0]
+                    
+                    # Manage duplicates
+                    if player_name in player_count:
+                        player_count[player_name] += 1
+                        player_name = f"{player_name}_{player_count[player_name]}"
+                    else:
+                        player_count[player_name] = 1
+                    
+                    temp_df = temp_df.rename({0: player_name}, axis=1)
+                    
+                    if not temp_df.empty:
+                        temp_df.index = temp_df.index.str.split('.', expand=True)
+                        if df.empty:
+                            df = temp_df
+                        else:
+                            df = df.join(temp_df, how="outer")
+                    else:
+                        df[player_name] = np.nan
+                    
+                if inputmode == "ftp":
+                    ftpserver.cwd("../")  # Move back to the parent directory
+                else:
+                    ftpserver.chdir("..")
+            # Go back to root
+            if inputmode == "ftp":
+                ftpserver.cwd("../" * (len(ftpserver.pwd().split("/"))-1))
+            else:
+                current_path = ftpserver.getcwd()
+                depth = len([x for x in current_path.split("/") if x]) if current_path != "/" else 0
+                if depth > 0:
+                    ftpserver.chdir("../" * depth)
+        else:
+            names_file = open('data/usercache/usercache.json', 'r')
+            names = pd.DataFrame(json.load(names_file))
+            i = -1
+            path = 'data/cobblemonplayerdata'
+            for dirpath, dirnames, filenames in os.walk(path):
+                if len(dirnames) > 0:
+                    root_dirnames = dirnames
+                for filename in filenames:
+                    if filename == ".gitignore":
+                        continue
+                    print("Now processing", filename)
+                    file = open(path + '/' + root_dirnames[i] + '/' + filename)
+                    data = json.load(file)['extraData']['cobbledex_discovery']['registers']
+                    # Import the JSON to a Pandas DF
+                    temp_df = pd.json_normalize(data, meta_prefix=True)
+                    temp_name = names.loc[names['uuid'] == filename[:-5]]['name']
+                    temp_df = temp_df.transpose().iloc[:]
+                    
+                    if temp_name.empty:
+                        print("No username found for UUID", filename[:-5], " in usercache.json, using UUID for this player instead.")
+                        temp_name = filename[:-5]
+                        player_name = temp_name
+                    else:
+                        player_name = temp_name.iloc[0]
+                    
+                    # Manage duplicates
+                    if player_name in player_count:
+                        player_count[player_name] += 1
+                        player_name = f"{player_name}_{player_count[player_name]}"
+                    else:
+                        player_count[player_name] = 1
+                    
+                    temp_df = temp_df.rename({0: player_name}, axis=1)
+                    
+                    if not temp_df.empty:
+                        temp_df.index = temp_df.index.str.split('.', expand=True)
+                        if df.empty:
+                            df = temp_df
+                        else:
+                            df = df.join(temp_df, how="outer")
+                    else:
+                        df[player_name] = np.nan
+                i += 1
+        # Replace missing values by 0 (the stat has simply not been initialized because the associated action was not performed)
+        df = df.fillna(0)
+        if csvtoggle == "true":
+            df.to_csv(csvpath)
+        return df
+    except Exception as e:
+        log_error(config, str(e))
+        raise
 
 def getVanillaLeaderboard(df, cat, subcat):
     row = df.loc['stats'].loc[cat].loc[subcat].sort_values()
@@ -434,12 +516,20 @@ config.read('config.ini', encoding='utf8')
 # Connect to FTP if activated
 ftp_server = None
 if config['INPUT']['Mode'] == "ftp":
-    ftp_server = ftplib.FTP(config['INPUT']['Host'], open("username.txt", "r").read(), open("password.txt", "r").read())
-    ftp_server.encoding = "utf-8"
+    try:
+        ftp_server = ftplib.FTP(config['INPUT']['Host'], open("username.txt", "r").read(), open("password.txt", "r").read())
+        ftp_server.encoding = "utf-8"
+    except Exception as e:
+        log_error(config, str(e))
+        raise
 if config['INPUT']['Mode'] == "sftp":
-    transport = paramiko.Transport((config['INPUT']['Host'], int(config['INPUT']['Port'])))
-    transport.connect(username=open("username.txt", "r").read().strip(), password=open("password.txt", "r").read().strip())
-    ftp_server = paramiko.SFTPClient.from_transport(transport)
+    try:
+        transport = paramiko.Transport((config['INPUT']['Host'], int(config['INPUT']['Port'])))
+        transport.connect(username=open("username.txt", "r").read().strip(), password=open("password.txt", "r").read().strip())
+        ftp_server = paramiko.SFTPClient.from_transport(transport)
+    except Exception as e:
+        log_error(config, str(e))
+        raise
 
 if config['VANILLALEADERBOARD']['Enable'] == "true":
     # Load the data
