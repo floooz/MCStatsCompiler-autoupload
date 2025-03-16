@@ -107,12 +107,17 @@ def loadVanillaData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
     df = pd.DataFrame()
     try:
         if inputmode == "ftp" or inputmode == "sftp":
+
             if ftppath == "root":
+                ftppath = ""
+                
+            if ftppath == "":
                 ftppath_complete = "world/stats"
             else:
                 ftppath_complete = ftppath + "/world/stats"
             if inputmode == "ftp":
-                ftpserver.cwd(ftppath)
+                if ftppath:
+                    ftpserver.cwd(ftppath)
                 with open("data/usercache/usercache.json", "wb") as file:
                     ftpserver.retrbinary(f"RETR usercache.json", file.write)
                 names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
@@ -233,13 +238,17 @@ def loadCobblemonData(csvtoggle, csvpath, inputmode, ftpserver, ftppath):
         if inputmode == "ftp" or inputmode == "sftp":
             root_dirnames = []
             player_count = {}  # To handle duplicate player names
-                
+            
             if ftppath == "root":
+                ftppath = ""
+                
+            if ftppath == "":
                 ftppath_complete = "world/cobblemonplayerdata"
             else:
                 ftppath_complete = ftppath + "/world/cobblemonplayerdata"
             if inputmode == "ftp":
-                ftpserver.cwd(ftppath)
+                if ftppath:
+                    ftpserver.cwd(ftppath)
                 with open("data/usercache/usercache.json", "wb") as file:
                     ftpserver.retrbinary(f"RETR usercache.json", file.write)
                 names = pd.DataFrame(json.load(open("data/usercache/usercache.json", "r")))
